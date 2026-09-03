@@ -1,0 +1,133 @@
+.footer {
+  padding: 5rem 2rem 2rem;
+  background-color: var(--color-carbon-black);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  letter-spacing: 0.15em;
+  color: var(--color-off-white);
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.techDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.coord {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.rule {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+.columnTitle {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--color-off-white);
+  margin-bottom: 1.5rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.list li a {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  transition: var(--transition-fast);
+}
+
+.list li a:hover {
+  color: var(--color-off-white);
+  padding-left: 4px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.bottom p {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.carbonTexture {
+  width: 30px;
+  height: 30px;
+  opacity: 0.15;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h10v10H0zm10 10h10v10H10z' fill='%23ffffff' fill-opacity='0.3'/%3E%3C/svg%3E");
+  background-size: 4px 4px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

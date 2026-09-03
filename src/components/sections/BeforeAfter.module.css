@@ -1,0 +1,108 @@
+.beforeAfter {
+  background-color: var(--color-carbon-black);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.slider {
+  position: relative;
+  height: 450px;
+  cursor: ew-resize;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.sliderImage {
+  position: absolute;
+  inset: 0;
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.handleLine {
+  flex: 1;
+  width: 2px;
+  background-color: var(--color-off-white);
+}
+
+.handleGrip {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-obsidian);
+  flex-shrink: 0;
+}
+
+.sliderLabel {
+  position: absolute;
+  top: 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--color-off-white);
+  z-index: 2;
+  padding: 0.3rem 0.6rem;
+  background: rgba(5, 5, 5, 0.5);
+}
+
+.labelBefore {
+  left: 1rem;
+}
+
+.labelAfter {
+  right: 1rem;
+}
+
+.sliderInfo {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.infoCategory {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.infoService {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--color-off-white);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .slider {
+    height: 300px;
+  }
+}

@@ -1,0 +1,60 @@
+.heading {
+  margin-bottom: 4rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.center .meta {
+  justify-content: center;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.number {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+.divider {
+  width: 30px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  color: var(--color-off-white);
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.center .subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,125 @@
+.packages {
+  background-color: var(--color-obsidian);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+}
+
+.card {
+  background-color: var(--color-carbon-black);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  background-color: var(--color-graphite);
+}
+
+.featured {
+  border-color: var(--color-accent);
+  background-color: rgba(198, 98, 37, 0.05);
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  background-color: var(--color-accent);
+  color: var(--color-off-white);
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  padding: 0.4rem 0.8rem;
+  transform: translateY(-50%);
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  color: var(--color-off-white);
+  margin-bottom: 0.5rem;
+}
+
+.idealFor {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.listItem svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
+  margin-top: 2px;
+}
+
+.cta {
+  display: block;
+  text-align: center;
+  padding: 0.875rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-off-white);
+  transition: var(--transition-fast);
+}
+
+.featured .cta {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.cta:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 2rem 1.5rem;
+  }
+}

@@ -1,0 +1,129 @@
+.brandIntro {
+  background-color: var(--color-carbon-black);
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  color: var(--color-off-white);
+  margin-bottom: 2rem;
+}
+
+.accent {
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.text {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.collab {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.collabLine {
+  width: 1px;
+  min-height: 100%;
+  background: linear-gradient(to bottom, var(--color-accent), transparent);
+  flex-shrink: 0;
+}
+
+.collabLabel {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--color-text-secondary);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.collabTitle {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  color: var(--color-off-white);
+  margin-bottom: 0.75rem;
+}
+
+.collabText {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.imageContainer {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+}
+
+.image {
+  transition: transform 8s ease;
+}
+
+.imageContainer:hover .image {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(5, 5, 5, 0.4) 0%, transparent 60%);
+}
+
+.imageBadge {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.badgeYear {
+  font-size: 1rem;
+  color: var(--color-off-white);
+  letter-spacing: 0.15em;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .imageContainer {
+    height: 350px;
+  }
+
+  .collab {
+    margin-top: 2rem;
+  }
+}
