@@ -6,7 +6,20 @@
   align-items: center;
   padding: 0 2rem;
   overflow: hidden;
-  background-color: var(--color-obsidian); /* Fallback */
+  background-color: var(--color-obsidian);
+}
+
+/* 
+  Wrapper specifically for parallax translation.
+  will-change tells the browser to optimize this layer for transform changes.
+*/
+.parallaxWrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  will-change: transform;
 }
 
 .videoBackground {
@@ -14,34 +27,25 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
 }
 
 .bgMedia {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center; /* Keep subject centered on desktop */
-  display: block; /* Remove bottom spacing of inline elements */
+  object-position: center center;
+  display: block;
 }
 
-/* Cinematic Overlay */
 .overlay {
   position: absolute;
   inset: 0;
-  /* 
-    Combined overlay: 
-    1. Subtle overall darkening
-    2. Stronger vignette around edges
-    3. Darker bottom fade for readability and transition to next section
-    4. Radial gradient from center to add contrast behind text
-  */
   background: 
     radial-gradient(circle at 50% 50%, rgba(5,5,5,0.2) 0%, rgba(5,5,5,0.6) 100%),
     linear-gradient(to bottom, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.1) 40%, rgba(5,5,5,0.7) 80%, rgba(5,5,5,1) 100%);
   z-index: 1;
-  opacity: 0; /* GSAP will animate this to 1 */
-  visibility: hidden; /* GSAP uses autoAlpha */
+  opacity: 0;
+  visibility: hidden;
 }
 
 .content {
@@ -50,7 +54,7 @@
   max-width: var(--container-max);
   width: 100%;
   margin: 0 auto;
-  padding-top: 5rem; /* Space for navbar */
+  padding-top: 5rem;
 }
 
 .eyebrowWrapper {
@@ -69,7 +73,7 @@
 }
 
 .title {
-  font-size: clamp(3rem, 6vw, 6rem); /* Highly responsive fluid typography */
+  font-size: clamp(3rem, 6vw, 6rem);
   line-height: 1.05;
   color: var(--color-off-white);
   margin-bottom: 2rem;
@@ -78,25 +82,21 @@
 .maskContainer {
   display: inline-block;
   overflow: hidden;
-  vertical-align: top; /* Prevents jumping */
-  padding-bottom: 0.1em; /* Prevent descenders from clipping */
+  vertical-align: top;
+  padding-bottom: 0.1em;
 }
 
-/* 
-  The inner span needs to be inline-block so it can be translated.
-  The global .gsap-mask class in the TSX applies here.
-*/
 :global(.gsap-mask) {
   display: inline-block;
 }
 
 :global(.gsap-mask > span) {
   display: inline-block;
-  transform: translateY(120%); /* Initial state for GSAP */
+  transform: translateY(120%);
 }
 
 .highlightContainer {
-  margin-top: 0.1em; /* Slight gap between lines */
+  margin-top: 0.1em;
 }
 
 .highlight {
@@ -104,9 +104,6 @@
   -webkit-text-stroke: 1px var(--color-off-white);
   position: relative;
 }
-
-/* Optional metallic fill effect for the stroke text after a delay, 
-   but since user wanted fast, premium animation, we keep it clean. */
 
 .subtitle {
   font-size: clamp(1rem, 1.5vw, 1.125rem);
@@ -203,17 +200,8 @@
   100% { top: 100%; }
 }
 
-/* RESPONSIVENESS */
-
 @media (max-width: 992px) {
   .bgMedia {
-    /* 
-       On mobile/tablet, the video is 16:9 but screen is tall. 
-       Usually the car is in the center, so 'center center' is fine.
-       If the car is lower in the frame, 'center bottom' works. 
-       Let's stick to 'center center' as requested to keep the main action visible,
-       but we ensure it covers the height.
-    */
     object-position: center center; 
   }
 }
@@ -224,7 +212,7 @@
   }
 
   .content {
-    padding-top: 2rem; /* Reduce top padding on mobile */
+    padding-top: 2rem;
   }
 
   .title {
@@ -239,7 +227,7 @@
   .primaryBtn, .secondaryBtn {
     text-align: center;
     width: 100%;
-    padding: 1.2rem; /* Larger touch target */
+    padding: 1.2rem;
   }
   
   .eyebrow {
