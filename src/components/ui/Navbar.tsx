@@ -22,19 +22,19 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "HOME", href: "#home" },
-    { name: "SERVICES", href: "#services" },
-    { name: "TRANSFORMATIONS", href: "#transformations" },
-    { name: "STUDIO", href: "#studio" },
-    { name: "REVIEWS", href: "#reviews" },
-    { name: "CONTACT", href: "#contact" },
+    { name: "HOME", href: "/#home" },
+    { name: "SERVICES", href: "/#services" },
+    { name: "TRANSFORMATIONS", href: "/#transformations" },
+    { name: "STUDIO", href: "/#studio" },
+    { name: "REVIEWS", href: "/#reviews" },
+    { name: "CONTACT", href: "/#contact" },
   ];
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
         <div className={styles.logoContainer}>
-          <Link href="#home" className={styles.logo}>
+          <Link href="/" className={styles.logo}>
             CARBON
           </Link>
         </div>
@@ -56,9 +56,9 @@ export default function Navbar() {
         </nav>
 
         <div className={styles.actionContainer}>
-          <a href="#booking" className={styles.ctaButton}>
+          <Link href="/#booking" className={styles.ctaButton}>
             BOOK YOUR TRANSFORMATION
-          </a>
+          </Link>
           <button 
             className={styles.hamburger} 
             onClick={() => setMenuOpen(!menuOpen)}
