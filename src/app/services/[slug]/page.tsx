@@ -7,9 +7,9 @@ import { services } from "@/data/siteData";
 import styles from "./ServicePage.module.css";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export function generateStaticParams() {
@@ -18,8 +18,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ServicePage({ params }: Props) {
-  const service = services.find((s) => s.slug === params.slug);
+export default async function ServicePage({ params }: Props) {
+  const { slug } = await params;
+  const service = services.find((s) => s.slug === slug);
 
   if (!service) {
     notFound();
@@ -86,7 +87,7 @@ export default function ServicePage({ params }: Props) {
               </div>
 
               <div className={styles.detailBox}>
-                <h3 className={styles.detailTitle}>WHAT'S INCLUDED</h3>
+                <h3 className={styles.detailTitle}>WHAT&apos;S INCLUDED</h3>
                 <ul className={styles.detailList}>
                   {service.included.map((item, i) => (
                     <li key={i}>

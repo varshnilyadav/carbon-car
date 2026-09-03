@@ -76,7 +76,7 @@ export default function Hero() {
 
     // --- SCROLL PARALLAX ANIMATION ---
     // Use matchMedia to handle responsive parallax intensities
-    let mm = gsap.matchMedia(container);
+    const mm = gsap.matchMedia(container);
 
     mm.add({
       // Desktop / Tablet
@@ -84,7 +84,7 @@ export default function Hero() {
       // Mobile
       isMobile: "(max-width: 768px)"
     }, (context) => {
-      let { isDesktop } = context.conditions as { isDesktop: boolean };
+      const { isDesktop } = context.conditions as { isDesktop: boolean };
       
       // Setup the scale initially to prevent edge gaps during parallax
       gsap.set(videoWrapperRef.current, { scale: 1.1 });
