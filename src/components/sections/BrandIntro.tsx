@@ -40,8 +40,8 @@ export default function BrandIntro() {
           <div className={styles.imageInner}>
             <Image
               ref={imageRef}
-              src="/assets/carbon carzspa.png"
-              alt="Carbon × Carzspa Collaboration"
+              src="/assets/carbon carspa.png"
+              alt="Carbon × CarSpa Collaboration"
               fill
               className={styles.image}
               style={{ objectFit: "cover" }}
@@ -64,14 +64,14 @@ export default function BrandIntro() {
               Carbon is an elite automotive transformation studio. We treat every project as a unique engineering challenge, combining precision detailing, protective films, and performance builds to elevate your vehicle far beyond factory standards.
             </p>
             <p className={styles.text}>
-              Through our strategic partnership, we have seamlessly integrated Carbon&apos;s visionary automotive philosophy with CarzSpa&apos;s industry-leading surface protection technology—delivering an unmatched standard of excellence.
+              Through our strategic partnership, we have seamlessly integrated Carbon&apos;s visionary automotive philosophy with CarSpa&apos;s industry-leading surface protection technology—delivering an unmatched standard of excellence.
             </p>
           </div>
 
           <div className={`${styles.collab} reveal`}>
             <div className={styles.collabLine}></div>
             <div className={styles.collabContent}>
-              <span className={styles.collabTitle}>CARBON × CARZSPA</span>
+              <span className={styles.collabTitle}>CARBON × CARSPA</span>
             </div>
           </div>
         </div>
