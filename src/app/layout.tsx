@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
+import FloatingContact from "@/components/ui/FloatingContact";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${outfit.variable}`}>
         {children}
+        <FloatingContact />
       </body>
     </html>
   );
