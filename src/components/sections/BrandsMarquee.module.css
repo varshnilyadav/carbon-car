@@ -1,0 +1,149 @@
+.brandsWrapper {
+  background-color: var(--color-black);
+  padding: 4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.brandsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.premiumSection {
+  margin-bottom: 0;
+}
+
+.brandsLabel {
+  padding: 0 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.sectionTag {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.marqueeContainer {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  overflow: hidden;
+  /* Fade out edges */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 40s linear infinite;
+}
+
+.marqueeReverse {
+  animation: marqueeScrollReverse 35s linear infinite;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem;
+}
+
+.brandText {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
+}
+
+.marqueeTrack:hover .brandText {
+  color: rgba(255, 255, 255, 0.05); /* Dim all when hovered */
+}
+
+.brandText:hover {
+  color: var(--color-off-white) !important; /* Highlight specific brand */
+}
+
+.luxury {
+  font-weight: 300;
+  letter-spacing: 0.2em;
+}
+
+.bold {
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.normal {
+  font-weight: 500;
+}
+
+.premiumBrandText {
+  font-family: var(--font-inter);
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color var(--transition-fast);
+}
+
+.marqueeTrack:hover .premiumBrandText {
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.premiumBrandText:hover {
+  color: var(--color-accent) !important;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Because array is doubled */
+  }
+}
+
+@keyframes marqueeScrollReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .brandsWrapper {
+    padding: 3rem 0;
+  }
+  
+  .brandText {
+    font-size: 1.5rem;
+  }
+  
+  .premiumBrandText {
+    font-size: 1.25rem;
+  }
+  
+  .brandItem {
+    padding: 0 1.5rem;
+  }
+}

@@ -1,6 +1,7 @@
 import Preloader from "@/components/ui/Preloader";
 import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/sections/Hero";
+import BrandsMarquee from "@/components/sections/BrandsMarquee";
 import BrandIntro from "@/components/sections/BrandIntro";
 import CarbonDifference from "@/components/sections/CarbonDifference";
 import Services from "@/components/sections/Services";
@@ -21,6 +22,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <BrandsMarquee />
         <BrandIntro />
         <CarbonDifference />
         <Services />
