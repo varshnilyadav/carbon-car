@@ -46,6 +46,35 @@
 
 .logoContainer {
   flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.logoLink:hover {
+  opacity: 0.92;
+  transform: scale(1.02);
+}
+
+.logoImage {
+  height: 38px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logoImage {
+    height: 30px;
+    max-width: 140px;
+  }
 }
 
 .logo {

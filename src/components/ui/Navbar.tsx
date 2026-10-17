@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -98,8 +99,15 @@ export default function Navbar() {
       >
         <div className={styles.container}>
           <div className={styles.logoContainer}>
-            <Link href="/" className={styles.logo}>
-              CARBON
+            <Link href="/" className={styles.logoLink} aria-label="CARBON - The Detailing Studio Home">
+              <Image
+                src="/assets/carbon-nav-logo.webp"
+                alt="CARBON - The Detailing Studio"
+                width={150}
+                height={50}
+                className={styles.logoImage}
+                priority
+              />
             </Link>
           </div>
 
