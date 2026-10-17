@@ -17,7 +17,7 @@ export default function Testimonials() {
     <section className={`section ${styles.testimonials}`} id="reviews" ref={ref}>
       <div className="container">
         <SectionHeading
-          number="09"
+          number="06"
           label="REVIEWS"
           title="TRUSTED BY AUTOMOTIVE ENTHUSIASTS"
           align="center"

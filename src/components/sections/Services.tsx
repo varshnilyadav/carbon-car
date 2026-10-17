@@ -13,7 +13,7 @@ export default function Services() {
     <section className={`section ${styles.services}`} id="services" ref={ref}>
       <div className="container">
         <SectionHeading
-          number="03"
+          number="02"
           label="SERVICES"
           title="TRANSFORM EVERY ELEMENT."
           subtitle="Professional detailing. Long-lasting protection. Immaculate results."

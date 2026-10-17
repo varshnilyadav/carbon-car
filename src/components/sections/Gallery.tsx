@@ -17,10 +17,11 @@ export default function Gallery() {
   );
 
   return (
-    <section className={`section ${styles.gallery}`} ref={ref}>
+    <section className={`section ${styles.gallery}`} id="transformations" ref={ref}>
+      <span id="gallery" style={{ position: "absolute", top: 0 }} />
       <div className="container">
         <SectionHeading
-          number="08"
+          number="05"
           label="GALLERY"
           title="CAR TRANSFORMATION GALLERY"
           align="center"

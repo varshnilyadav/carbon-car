@@ -20,7 +20,7 @@ export default function Process() {
     <section className={`section ${styles.process}`} ref={ref}>
       <div className="container">
         <SectionHeading
-          number="06"
+          number="03"
           label="PROCESS"
           title="HOW WE TRANSFORM."
           align="center"

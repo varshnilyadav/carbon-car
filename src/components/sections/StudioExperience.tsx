@@ -12,7 +12,7 @@ export default function StudioExperience() {
       <div className={styles.grid}>
         <div className={styles.content}>
           <div className="reveal">
-            <span className={styles.eyebrow}>07 / THE STUDIO</span>
+            <span className={styles.eyebrow}>04 / THE STUDIO</span>
             <h2 className={styles.title}>WELCOME TO THE CARBON LAB.</h2>
             <p className={styles.text}>
               Our facility was designed with a single purpose: to provide the ultimate environment for automotive perfection. Climate-controlled detailing bays, advanced LED inspection tunnels, and a surgical-grade workspace ensure every vehicle is treated with uncompromising care.

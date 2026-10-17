@@ -23,7 +23,7 @@ export default function BookingForm() {
           
           <div className={`${styles.info} reveal`}>
             <SectionHeading
-              number="10"
+              number="07"
               label="CONSULTATION"
               title="READY TO TRANSFORM YOUR CAR?"
               subtitle="Schedule a consultation at the Carbon Studio to discuss your vision, inspect your vehicle, and engineer a custom transformation plan."

@@ -3,10 +3,7 @@ import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/sections/Hero";
 import BrandsMarquee from "@/components/sections/BrandsMarquee";
 import BrandIntro from "@/components/sections/BrandIntro";
-import CarbonDifference from "@/components/sections/CarbonDifference";
 import Services from "@/components/sections/Services";
-import Packages from "@/components/sections/Packages";
-import BeforeAfter from "@/components/sections/BeforeAfter";
 import Process from "@/components/sections/Process";
 import StudioExperience from "@/components/sections/StudioExperience";
 import Gallery from "@/components/sections/Gallery";
@@ -24,10 +21,7 @@ export default function Home() {
         <Hero />
         <BrandsMarquee />
         <BrandIntro />
-        <CarbonDifference />
         <Services />
-        <Packages />
-        <BeforeAfter />
         <Process />
         <StudioExperience />
         <Gallery />

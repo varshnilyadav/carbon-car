@@ -18,7 +18,7 @@ export default function FAQ() {
     <section className={`section ${styles.faqSection}`} ref={ref}>
       <div className={`container ${styles.container}`}>
         <SectionHeading
-          number="11"
+          number="08"
           label="FAQ"
           title="FREQUENTLY ASKED QUESTIONS"
           align="center"
