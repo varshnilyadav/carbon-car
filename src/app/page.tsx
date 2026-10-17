@@ -1,4 +1,3 @@
-import Preloader from "@/components/ui/Preloader";
 import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/sections/Hero";
 import BrandsMarquee from "@/components/sections/BrandsMarquee";
@@ -15,7 +14,6 @@ import Footer from "@/components/ui/Footer";
 export default function Home() {
   return (
     <>
-      <Preloader />
       <Navbar />
       <main>
         <Hero />

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Orbitron } from "next/font/google";
 import "./globals.css";
 import FloatingContact from "@/components/ui/FloatingContact";
+import Preloader from "@/components/ui/Preloader";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -9,9 +10,9 @@ const inter = Inter({
   display: 'swap',
 });
 
-const outfit = Outfit({ 
+const orbitron = Orbitron({ 
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-orbitron",
   display: 'swap',
 });
 
@@ -34,7 +35,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${outfit.variable}`}>
+      <body className={`${inter.variable} ${orbitron.variable}`}>
+        <Preloader />
         {children}
         <FloatingContact />
       </body>
