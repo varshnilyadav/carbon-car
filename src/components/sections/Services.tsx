@@ -1,16 +1,14 @@
 "use client";
 
-import { useReveal } from "../ui/useReveal";
 import SectionHeading from "../ui/SectionHeading";
 import { services } from "@/data/siteData";
 import { ServiceCard } from "../ui/ServiceCard";
+import Reveal from "@/components/motion/Reveal";
 import styles from "./Services.module.css";
 
 export default function Services() {
-  const ref = useReveal();
-
   return (
-    <section className={`section ${styles.services}`} id="services" ref={ref}>
+    <section className={`section ${styles.services}`} id="services">
       <div className="container">
         <SectionHeading
           number="02"
@@ -21,10 +19,11 @@ export default function Services() {
 
         <div className={styles.grid}>
           {services.map((service, index) => (
-            <div 
-              key={service.id} 
-              className="reveal"
-              style={{ transitionDelay: `${(index % 3) * 0.1}s` }}
+            <Reveal
+              key={service.id}
+              y={30}
+              duration={0.65}
+              delay={index * 0.08}
             >
               <ServiceCard
                 slug={service.slug}
@@ -32,7 +31,7 @@ export default function Services() {
                 description={service.shortDescription}
                 image={service.image}
               />
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

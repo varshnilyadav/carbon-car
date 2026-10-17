@@ -53,11 +53,11 @@
 .gridItem:nth-child(8) { grid-column: span 1; grid-row: span 1; }
 
 .gridItem img {
-  transition: transform var(--transition-smooth);
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gridItem:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .overlay {
@@ -69,7 +69,7 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity var(--transition-fast);
+  transition: opacity 0.3s ease;
 }
 
 .gridItem:hover .overlay {
@@ -83,7 +83,7 @@
   color: var(--color-off-white);
   margin-bottom: 1rem;
   transform: translateY(10px);
-  transition: transform var(--transition-fast);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gridItem:hover .category {
@@ -100,13 +100,13 @@
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  transform: translateY(10px);
-  transition: transform var(--transition-fast);
-  transition-delay: 0.05s;
+  line-height: 1;
+  transform: translateY(10px) rotate(0deg);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
 }
 
 .gridItem:hover .icon {
-  transform: translateY(0);
+  transform: translateY(0) rotate(90deg);
 }
 
 /* Lightbox */

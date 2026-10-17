@@ -21,11 +21,17 @@ export default function Preloader() {
         setProgress(100);
         clearInterval(interval);
         setTimeout(() => {
-          setFading(true);
+          setFading(true); // Triggers curtainLift CSS
+          if (typeof window !== "undefined") {
+            window.dispatchEvent(new CustomEvent("preloaderCurtainStart"));
+          }
           setTimeout(() => {
             setLoading(false);
             setFading(false);
-          }, 450); // Fade out duration
+            if (typeof window !== "undefined") {
+              window.dispatchEvent(new CustomEvent("preloaderComplete"));
+            }
+          }, 850); // Curtain lift duration
         }, 180); // Dwell time at 100%
       } else {
         setProgress(current);

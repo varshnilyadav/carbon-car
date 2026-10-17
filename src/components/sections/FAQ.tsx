@@ -1,13 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useReveal } from "../ui/useReveal";
+import { motion, AnimatePresence } from "framer-motion";
 import SectionHeading from "../ui/SectionHeading";
 import { faqs } from "@/data/siteData";
 import styles from "./FAQ.module.css";
 
 export default function FAQ() {
-  const ref = useReveal();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFAQ = (index: number) => {
@@ -15,7 +14,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className={`section ${styles.faqSection}`} ref={ref}>
+    <section className={`section ${styles.faqSection}`} id="faq">
       <div className={`container ${styles.container}`}>
         <SectionHeading
           number="08"
@@ -25,32 +24,44 @@ export default function FAQ() {
         />
 
         <div className={styles.accordion}>
-          {faqs.map((faq, index) => (
-            <div 
-              key={index} 
-              className={`${styles.faqItem} reveal`}
-              style={{ transitionDelay: `${index * 0.05}s` }}
-            >
-              <button 
-                className={`${styles.questionBtn} ${openIndex === index ? styles.active : ""}`}
-                onClick={() => toggleFAQ(index)}
-              >
-                <span className={styles.question}>{faq.question}</span>
-                <div className={styles.icon}>
-                  <div className={styles.iconLine}></div>
-                  <div className={`${styles.iconLine} ${styles.vertical}`}></div>
-                </div>
-              </button>
-              <div 
-                className={styles.answerContainer}
-                style={{ height: openIndex === index ? "auto" : "0px", opacity: openIndex === index ? 1 : 0 }}
-              >
-                <div className={styles.answerInner}>
-                  <p className={styles.answer}>{faq.answer}</p>
-                </div>
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div key={index} className={styles.faqItem}>
+                <button
+                  className={`${styles.questionBtn} ${isOpen ? styles.active : ""}`}
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={isOpen}
+                >
+                  <span className={styles.question}>{faq.question}</span>
+                  <motion.div
+                    className={styles.icon}
+                    animate={{ rotate: isOpen ? 45 : 0 }}
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <span className={styles.plusSymbol}>+</span>
+                  </motion.div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      style={{ overflow: "hidden" }}
+                    >
+                      <div className={styles.answerInner}>
+                        <p className={styles.answer}>{faq.answer}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

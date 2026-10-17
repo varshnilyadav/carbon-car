@@ -3,6 +3,8 @@ import { Inter, Orbitron } from "next/font/google";
 import "./globals.css";
 import FloatingContact from "@/components/ui/FloatingContact";
 import Preloader from "@/components/ui/Preloader";
+import SmoothScroll from "@/components/motion/SmoothScroll";
+import CarbonTextureTracker from "@/components/motion/CarbonTextureTracker";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -36,9 +38,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${orbitron.variable}`}>
-        <Preloader />
-        {children}
-        <FloatingContact />
+        <SmoothScroll>
+          <CarbonTextureTracker />
+          <Preloader />
+          {children}
+          <FloatingContact />
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import styles from "./Hero.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Magnetic from "@/components/motion/Magnetic";
 
 // Register ScrollTrigger
 if (typeof window !== "undefined") {
@@ -21,14 +22,11 @@ export default function Hero() {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (prefersReducedMotion) {
-      // Pause video if reduced motion is preferred
       if (videoRef.current) {
         videoRef.current.pause();
       }
-      
-      // Just make everything visible without animation
-      gsap.set(".gsap-reveal", { autoAlpha: 1, y: 0 });
-      gsap.set(".gsap-mask span", { y: 0 });
+      gsap.set(".hero-word", { y: "0%", autoAlpha: 1 });
+      gsap.set(".gsap-eyebrow, .gsap-desc, .gsap-cta, .gsap-scroll", { autoAlpha: 1, y: 0 });
       gsap.set(".gsap-overlay", { autoAlpha: 1 });
       return;
     }
@@ -36,95 +34,101 @@ export default function Hero() {
     // --- ENTRANCE ANIMATION TIMELINE ---
     const tl = gsap.timeline({
       defaults: { ease: "power3.out" },
+      delay: 0.2,
     });
 
+    // Dark overlay ease
     tl.to(".gsap-overlay", {
       autoAlpha: 1,
-      duration: 1.5,
+      duration: 1.4,
       ease: "power2.inOut",
-    }, 0.2);
+    }, 0);
 
+    // Eyebrow badge
     tl.fromTo(".gsap-eyebrow", 
       { autoAlpha: 0, y: 15 },
-      { autoAlpha: 1, y: 0, duration: 1 },
-      "-=0.5"
+      { autoAlpha: 1, y: 0, duration: 0.9 },
+      0.15
     );
 
-    tl.fromTo(".gsap-mask span",
-      { y: "120%" },
-      { y: "0%", duration: 1.2, stagger: 0.15 },
+    // Headline: line by line masked slide-up, staggered ~60ms per word
+    tl.fromTo(".hero-word",
+      { y: "120%", autoAlpha: 0 },
+      { y: "0%", autoAlpha: 1, duration: 1.1, stagger: 0.06, ease: "power3.out" },
+      "-=0.6"
+    );
+
+    // Subtext fades up
+    tl.fromTo(".gsap-desc",
+      { autoAlpha: 0, y: 20 },
+      { autoAlpha: 1, y: 0, duration: 0.9 },
       "-=0.7"
     );
 
-    tl.fromTo(".gsap-desc",
-      { autoAlpha: 0, y: 20 },
-      { autoAlpha: 1, y: 0, duration: 1 },
-      "-=0.8"
-    );
-
+    // CTAs fade up
     tl.fromTo(".gsap-cta",
-      { autoAlpha: 0, y: 15 },
+      { autoAlpha: 0, y: 16 },
       { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.1 },
-      "-=0.8"
+      "-=0.7"
     );
 
+    // Scroll indicator
     tl.fromTo(".gsap-scroll",
       { autoAlpha: 0 },
-      { autoAlpha: 1, duration: 1 },
-      "-=0.2"
+      { autoAlpha: 1, duration: 0.9 },
+      "-=0.3"
     );
 
+    // Very slow scale 1 -> 1.08 for video
+    if (videoRef.current) {
+      gsap.fromTo(videoRef.current,
+        { scale: 1 },
+        { scale: 1.08, duration: 14, ease: "power1.out" }
+      );
+    }
+
     // --- SCROLL PARALLAX ANIMATION ---
-    // Use matchMedia to handle responsive parallax intensities
     const mm = gsap.matchMedia(container);
 
     mm.add({
-      // Desktop / Tablet
       isDesktop: "(min-width: 769px)",
-      // Mobile
       isMobile: "(max-width: 768px)"
     }, (context) => {
       const { isDesktop } = context.conditions as { isDesktop: boolean };
       
-      // Setup the scale initially to prevent edge gaps during parallax
-      gsap.set(videoWrapperRef.current, { scale: 1.1 });
+      if (videoWrapperRef.current) {
+        gsap.set(videoWrapperRef.current, { scale: 1.05 });
 
-      // Parallax timeline linked to scroll
-      const parallaxTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        }
-      });
+        const parallaxTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          }
+        });
 
-      // Video moves vertically slower than scroll
-      parallaxTl.to(videoWrapperRef.current, {
-        yPercent: isDesktop ? 20 : 5, // 20% on desktop, 5% on mobile
-        ease: "none"
-      }, 0);
+        parallaxTl.to(videoWrapperRef.current, {
+          yPercent: isDesktop ? 18 : 5,
+          ease: "none"
+        }, 0);
 
-      // Scroll indicator fades out quickly on scroll
-      parallaxTl.to(".gsap-scroll", {
-        autoAlpha: 0,
-        y: 20,
-        ease: "power1.inOut"
-      }, 0);
+        parallaxTl.to(".gsap-scroll", {
+          autoAlpha: 0,
+          y: 20,
+          ease: "power1.inOut"
+        }, 0);
+      }
     });
 
     return () => {
-      mm.revert(); // Cleanup matchMedia
+      mm.revert();
     };
 
   }, { scope: container });
 
   return (
     <section className={styles.hero} id="home" ref={container}>
-      {/* 
-        We wrap the video and overlay in a container that will be translated.
-        This ensures the overlay stays perfectly attached to the video movement.
-      */}
       <div className={styles.parallaxWrapper} ref={videoWrapperRef}>
         <div className={styles.videoBackground}>
           <video
@@ -134,9 +138,10 @@ export default function Hero() {
             muted
             loop
             playsInline
+            preload="metadata"
             poster="/hero-bg.jpg"
           >
-            <source src="/hero video.mp4" type="video/mp4" />
+            <source src="/hero-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className={`${styles.overlay} gsap-overlay`}></div>
@@ -152,13 +157,14 @@ export default function Hero() {
         
         <h1 className={styles.title}>
           <span className={styles.maskContainer}>
-            <span className="gsap-mask"><span>ENGINEERED TO</span></span>
+            <span className="hero-word">ENGINEERED</span>
+          </span>{" "}
+          <span className={styles.maskContainer}>
+            <span className="hero-word">TO</span>
           </span>
           <br/>
           <span className={`${styles.maskContainer} ${styles.highlightContainer}`}>
-            <span className="gsap-mask">
-              <span className={styles.highlight}>TRANSFORM.</span>
-            </span>
+            <span className={`hero-word ${styles.highlight}`}>TRANSFORM.</span>
           </span>
         </h1>
         
@@ -168,8 +174,12 @@ export default function Hero() {
         </p>
         
         <div className={styles.actions}>
-          <a href="#booking" className={`${styles.primaryBtn} gsap-cta`}>BOOK YOUR TRANSFORMATION</a>
-          <a href="#services" className={`${styles.secondaryBtn} gsap-cta`}>EXPLORE SERVICES</a>
+          <Magnetic strength={0.3}>
+            <a href="#booking" className={`${styles.primaryBtn} gsap-cta`}>BOOK YOUR TRANSFORMATION</a>
+          </Magnetic>
+          <Magnetic strength={0.3}>
+            <a href="#services" className={`${styles.secondaryBtn} gsap-cta`}>EXPLORE SERVICES</a>
+          </Magnetic>
         </div>
       </div>
 

@@ -38,12 +38,34 @@
   text-transform: uppercase;
 }
 
+.titleWrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
 .title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3.5rem);
   line-height: 1.1;
   color: var(--color-off-white);
   margin-bottom: 0;
+}
+
+.glossSweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
 }
 
 .subtitle {

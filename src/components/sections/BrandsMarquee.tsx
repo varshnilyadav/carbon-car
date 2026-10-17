@@ -1,7 +1,8 @@
 "use client";
 
 import styles from "./BrandsMarquee.module.css";
-import { useReveal } from "../ui/useReveal";
+import Marquee from "@/components/motion/Marquee";
+import Reveal from "@/components/motion/Reveal";
 
 const carBrands = [
   { name: "HYUNDAI", type: "normal" },
@@ -32,44 +33,45 @@ const premiumBrands = [
 ];
 
 export default function BrandsMarquee() {
-  const ref = useReveal();
-
   return (
-    <div className={styles.brandsWrapper} ref={ref}>
+    <div className={styles.brandsWrapper}>
       {/* Car Brands Marquee */}
-      <section className={`${styles.brandsSection} reveal`}>
-        <div className={styles.brandsLabel}>
-          <span className={styles.sectionTag}>BRANDS WE SERVICE</span>
-        </div>
+      <section className={styles.brandsSection}>
+        <Reveal y={15} duration={0.6}>
+          <div className={styles.brandsLabel}>
+            <span className={styles.sectionTag}>BRANDS WE SERVICE</span>
+          </div>
+        </Reveal>
         <div className={styles.marqueeContainer}>
-          <div className={styles.marqueeTrack}>
-            {/* Double the array for infinite scroll effect */}
-            {[...carBrands, ...carBrands].map((brand, i) => (
+          <Marquee speed={45} direction="left" pauseOnHover>
+            {carBrands.map((brand, i) => (
               <div key={i} className={styles.brandItem}>
                 <span className={`${styles.brandText} ${styles[brand.type]}`}>
                   {brand.name}
                 </span>
               </div>
             ))}
-          </div>
+          </Marquee>
         </div>
       </section>
 
       {/* Premium Brands Marquee */}
-      <section className={`${styles.brandsSection} ${styles.premiumSection} reveal`} style={{ transitionDelay: "0.2s" }}>
-        <div className={styles.brandsLabel}>
-          <span className={styles.sectionTag}>PREMIUM BRANDS WE USE</span>
-        </div>
+      <section className={`${styles.brandsSection} ${styles.premiumSection}`}>
+        <Reveal y={15} duration={0.6} delay={0.15}>
+          <div className={styles.brandsLabel}>
+            <span className={styles.sectionTag}>PREMIUM BRANDS WE USE</span>
+          </div>
+        </Reveal>
         <div className={styles.marqueeContainer}>
-          <div className={`${styles.marqueeTrack} ${styles.marqueeReverse}`}>
-            {[...premiumBrands, ...premiumBrands].map((brand, i) => (
+          <Marquee speed={38} direction="right" pauseOnHover>
+            {premiumBrands.map((brand, i) => (
               <div key={i} className={styles.brandItem}>
                 <span className={styles.premiumBrandText}>
                   {brand}
                 </span>
               </div>
             ))}
-          </div>
+          </Marquee>
         </div>
       </section>
     </div>

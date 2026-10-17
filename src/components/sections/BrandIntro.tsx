@@ -1,45 +1,40 @@
 "use client";
 
 import Image from "next/image";
-import { useReveal } from "../ui/useReveal";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import Reveal from "@/components/motion/Reveal";
 import styles from "./BrandIntro.module.css";
-import { useEffect, useRef } from "react";
 
 export default function BrandIntro() {
-  const ref = useReveal();
   const sectionRef = useRef<HTMLElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
-  // Subtle parallax effect on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current || !imageRef.current) return;
-      
-      const rect = sectionRef.current.getBoundingClientRect();
-      const scrollProgress = 1 - (rect.bottom / (window.innerHeight + rect.height));
-      
-      if (scrollProgress > 0 && scrollProgress < 1) {
-        // Move image slightly slower than scroll (parallax)
-        const yPos = scrollProgress * 40 - 20; // -20px to 20px translation
-        imageRef.current.style.transform = `translateY(${yPos}px) scale(1.03)`;
-      }
-    };
+  // Inner parallax scroll tracking
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
 
-    window.addEventListener("scroll", handleScroll);
-    // Initial call
-    handleScroll();
-    
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.08, 1.02]);
 
   return (
     <section className={`section ${styles.brandIntro}`} ref={sectionRef}>
-      <div className={`container ${styles.grid}`} ref={ref}>
-        {/* Left: Image */}
-        <div className={`${styles.imageWrapper} reveal`}>
-          <div className={styles.imageInner}>
+      <div className={`container ${styles.grid}`}>
+        {/* Left: Image with clip-path wipe & inner parallax */}
+        <motion.div
+          className={styles.imageWrapper}
+          initial={shouldReduceMotion ? { opacity: 0 } : { clipPath: "inset(100% 0% 0% 0%)" }}
+          whileInView={shouldReduceMotion ? { opacity: 1 } : { clipPath: "inset(0% 0% 0% 0%)" }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <motion.div
+            className={styles.imageInner}
+            style={shouldReduceMotion ? undefined : { y: imageY, scale: imageScale }}
+          >
             <Image
-              ref={imageRef}
               src="/assets/carbon carspa.png"
               alt="Carbon × CarSpa Collaboration"
               fill
@@ -48,32 +43,43 @@ export default function BrandIntro() {
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />
-          </div>
+          </motion.div>
           <div className={styles.graphiteTreatment}></div>
-        </div>
+        </motion.div>
 
-        {/* Right: Content */}
+        {/* Right: Content with staggered Reveal */}
         <div className={styles.content}>
-          <div className="reveal">
+          <Reveal y={20} duration={0.6} delay={0.1}>
             <span className={styles.eyebrow}>ABOUT CARBON</span>
+          </Reveal>
+
+          <Reveal y={25} duration={0.7} delay={0.2}>
             <h2 className={styles.title}>
               MORE THAN DETAILING.<br />
               <span className={styles.accent}>A COMPLETE AUTOMOTIVE TRANSFORMATION.</span>
             </h2>
+          </Reveal>
+
+          <Reveal y={20} duration={0.6} delay={0.3}>
             <p className={styles.text}>
               Carbon is an elite automotive transformation studio. We treat every project as a unique engineering challenge, combining precision detailing, protective films, and performance builds to elevate your vehicle far beyond factory standards.
             </p>
+          </Reveal>
+
+          <Reveal y={20} duration={0.6} delay={0.4}>
             <p className={styles.text}>
               Through our strategic partnership, we have seamlessly integrated Carbon&apos;s visionary automotive philosophy with CarSpa&apos;s industry-leading surface protection technology—delivering an unmatched standard of excellence.
             </p>
-          </div>
+          </Reveal>
 
-          <div className={`${styles.collab} reveal`}>
-            <div className={styles.collabLine}></div>
-            <div className={styles.collabContent}>
-              <span className={styles.collabTitle}>CARBON × CARSPA</span>
+          <Reveal y={15} duration={0.6} delay={0.5}>
+            <div className={styles.collab}>
+              <div className={styles.collabLine}></div>
+              <div className={styles.collabContent}>
+                <span className={styles.collabTitle}>CARBON × CARSPA</span>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

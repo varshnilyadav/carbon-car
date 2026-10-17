@@ -2,138 +2,190 @@
   background-color: var(--color-obsidian);
   position: relative;
   overflow: hidden;
+  padding: 8rem 0;
 }
 
-.timelineContainer {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 4rem 0;
-}
-
-/* Horizontal line for desktop */
-.timelineLine {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.timeline {
+.processLayout {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1rem;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
   position: relative;
-  z-index: 2;
+  margin-top: 4rem;
 }
 
-.step {
+.stickyHeader {
+  position: sticky;
+  top: 120px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stickyDesc {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 420px;
+}
+
+.stickyBadge {
+  display: inline-flex;
   align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  width: fit-content;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+}
+
+.timelineWrap {
   position: relative;
+  padding-left: 3.5rem;
 }
 
-/* Alternate elements top and bottom on desktop */
-.step:nth-child(odd) {
-  justify-content: flex-end;
-  padding-bottom: 2rem;
+/* Background guide track */
+.timelineTrack {
+  position: absolute;
+  top: 0;
+  left: 11px;
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.06);
 }
 
-.step:nth-child(even) {
-  justify-content: flex-start;
-  padding-top: 2rem;
-  flex-direction: column-reverse;
+/* Active vertical line that scrubs scaleY */
+.timelineLine {
+  position: absolute;
+  top: 0;
+  left: 11px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-accent) 0%, #f5c044 100%);
+  box-shadow: 0 0 12px rgba(198, 98, 37, 0.7);
+  transform-origin: top center;
+  transform: scaleY(0);
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.stepItem {
+  position: relative;
+  transition: all 0.4s ease;
+  opacity: 0.35;
 }
 
 .stepDot {
-  width: 12px;
-  height: 12px;
-  background-color: var(--color-accent);
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(198, 98, 37, 0.2);
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform var(--transition-fast);
+  left: -3.5rem;
+  top: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-obsidian);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 2;
 }
 
-.step:hover .stepDot {
-  transform: translate(-50%, -50%) scale(1.5);
+.stepDotInner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.4;
+  transition: all 0.3s ease;
 }
 
-.stepContent {
-  text-align: center;
-  padding: 0 0.5rem;
+.stepItem:hover .stepDot,
+:global(.process-step-active) .stepDot {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 14px rgba(198, 98, 37, 0.6);
+}
+
+.stepItem:hover .stepDotInner,
+:global(.process-step-active) .stepDotInner {
+  opacity: 1;
+  transform: scale(1.3);
 }
 
 .stepNumber {
   font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.05);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
   display: block;
   margin-bottom: 0.5rem;
 }
 
 .stepTitle {
   font-family: var(--font-heading);
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
   color: var(--color-off-white);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
 }
 
 .stepDesc {
-  font-size: 0.75rem;
   color: var(--color-text-secondary);
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-/* Vertical timeline for mobile */
-@media (max-width: 992px) {
-  .timelineContainer {
-    padding: 0 1rem;
+/* Mobile responsive fallback */
+@media (max-width: 768px) {
+  .process {
+    padding: 5rem 0;
   }
 
+  .processLayout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .stickyHeader {
+    position: static;
+  }
+
+  .timelineWrap {
+    padding-left: 2.5rem;
+  }
+
+  .timelineTrack,
   .timelineLine {
-    top: 0;
-    left: 20px;
-    width: 1px;
-    height: 100%;
-    transform: none;
-  }
-
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .step, .step:nth-child(odd), .step:nth-child(even) {
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0 0 0 3rem;
-    justify-content: flex-start;
+    left: 8px;
   }
 
   .stepDot {
-    top: 6px;
-    left: 14px;
-    transform: none;
+    left: -2.5rem;
+    width: 18px;
+    height: 18px;
   }
 
-  .step:hover .stepDot {
-    transform: scale(1.5);
+  .stepDotInner {
+    width: 6px;
+    height: 6px;
   }
 
-  .stepContent {
-    text-align: left;
-    padding: 0;
+  .stepItem {
+    opacity: 1; /* Fallback to standard visibility on mobile */
+  }
+
+  .stepTitle {
+    font-size: 1.15rem;
   }
 }

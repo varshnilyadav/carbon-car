@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './ServiceCard.module.css';
@@ -11,8 +13,25 @@ interface ServiceCardProps {
 }
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({ slug, title, description, image }) => {
+  const cardRef = useRef<HTMLAnchorElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    cardRef.current.style.setProperty("--mx", `${x}px`);
+    cardRef.current.style.setProperty("--my", `${y}px`);
+  };
+
   return (
-    <Link href={`/services/${slug}`} className={styles.card}>
+    <Link 
+      href={`/services/${slug}`} 
+      className={styles.card}
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+    >
+      <div className={styles.glossSweep} aria-hidden="true" />
       <div className={styles.imageWrapper}>
         <Image 
           src={image} 
