@@ -1,13 +1,13 @@
 import { MetadataRoute } from "next";
+import { siteConfig } from "@/data/siteConfig";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://carbon-car.vercel.app";
-
   return {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: "/api/",
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${siteConfig.url}/sitemap.xml`,
   };
 }

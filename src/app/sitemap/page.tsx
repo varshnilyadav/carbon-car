@@ -3,11 +3,35 @@ import Link from "next/link";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import { services } from "@/data/siteData";
+import { siteConfig } from "@/data/siteConfig";
 import styles from "./Sitemap.module.css";
 
 export const metadata: Metadata = {
   title: "Sitemap | CARBON Automotive Studio Hyderabad",
   description: "Complete architectural sitemap of CARBON detailing studio. Explore services, PPF packages, transformations, and studio information.",
+  alternates: {
+    canonical: `${siteConfig.url}/sitemap`,
+  },
+  openGraph: {
+    type: "website",
+    url: `${siteConfig.url}/sitemap`,
+    title: "Sitemap | CARBON Automotive Studio Hyderabad",
+    description: "Complete architectural sitemap of CARBON detailing studio. Explore services, PPF packages, transformations, and studio information.",
+    images: [
+      {
+        url: `${siteConfig.url}/images/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "CARBON Website Directory & Sitemap",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sitemap | CARBON Automotive Studio Hyderabad",
+    description: "Complete architectural sitemap of CARBON detailing studio.",
+    images: [`${siteConfig.url}/images/og-image.jpg`],
+  },
 };
 
 const mainPages = [

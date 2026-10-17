@@ -9,6 +9,7 @@ import ServiceGallery from "@/components/ui/ServiceGallery";
 import PPFPackages from "@/components/sections/PPFPackages";
 import ClaroPPFSection from "@/components/sections/ClaroPPFSection";
 import { services } from "@/data/siteData";
+import { siteConfig } from "@/data/siteConfig";
 import styles from "./ServicePage.module.css";
 
 interface Props {
@@ -28,13 +29,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
 
+  const pageUrl = `${siteConfig.url}/services/${slug}`;
+  const imageUrl = `${siteConfig.url}${service.image}`;
+
   return {
     title: `${service.title} | CARBON Automotive Studio Hyderabad`,
     description: service.shortDescription,
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
+      type: "article",
+      url: pageUrl,
       title: `${service.title} | CARBON Hyderabad`,
       description: service.shortDescription,
-      images: [{ url: service.image }],
+      images: [
+        {
+          url: imageUrl,
+          width: 1600,
+          height: 1000,
+          alt: service.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${service.title} | CARBON Hyderabad`,
+      description: service.shortDescription,
+      images: [imageUrl],
     },
   };
 }
@@ -52,8 +74,36 @@ export default async function ServicePage({ params }: Props) {
     .filter((s) => s.slug !== service.slug)
     .slice(0, 3);
 
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.shortDescription,
+    url: `${siteConfig.url}/services/${slug}`,
+    image: `${siteConfig.url}${service.image}`,
+    provider: {
+      "@type": "AutoRepair",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      telephone: siteConfig.telephoneRaw,
+      sameAs: [
+        siteConfig.instagramUrl,
+        siteConfig.facebookUrl,
+        siteConfig.googleMapsUrl,
+      ],
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Hyderabad",
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <Navbar />
       <main className={styles.main}>
         {/* Service Hero */}
