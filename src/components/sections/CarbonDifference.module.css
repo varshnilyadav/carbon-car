@@ -1,33 +1,64 @@
 .difference {
   background-color: var(--color-obsidian);
   position: relative;
+  overflow: hidden;
+  padding: 6.5rem 0;
+}
+
+.difference::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.pillarWrapper {
+  width: 100%;
+  height: 100%;
 }
 
 .pillar {
-  padding: 3rem;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  transition: var(--transition-smooth);
+  padding: 2.25rem 2rem;
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
   position: relative;
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pillar::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--color-accent);
+  background: linear-gradient(90deg, var(--color-accent), #f39c12);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform var(--transition-smooth);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pillar:hover::before {
@@ -35,56 +66,119 @@
 }
 
 .pillar:hover {
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(24, 24, 24, 0.85);
+  border-color: rgba(198, 98, 37, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(198, 98, 37, 0.08);
+}
+
+.pillarTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.iconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  transition: all 0.3s ease;
+}
+
+.pillar:hover .iconBox {
+  background: rgba(198, 98, 37, 0.12);
+  border-color: rgba(198, 98, 37, 0.3);
+  color: var(--color-off-white);
+  transform: scale(1.05);
 }
 
 .pillarNumber {
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.06);
-  display: block;
-  margin-bottom: 1rem;
-  transition: color var(--transition-fast);
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
 }
 
 .pillar:hover .pillarNumber {
-  color: rgba(198, 98, 37, 0.3);
+  color: rgba(198, 98, 37, 0.5);
 }
 
 .pillarLine {
-  width: 30px;
-  height: 1px;
+  width: 24px;
+  height: 1.5px;
   background-color: var(--color-accent);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: width 0.35s ease;
+}
+
+.pillar:hover .pillarLine {
+  width: 48px;
 }
 
 .pillarTitle {
   font-family: var(--font-heading);
-  font-size: 1rem;
-  letter-spacing: 0.15em;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
   color: var(--color-off-white);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .pillarText {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--color-text-secondary);
   line-height: 1.7;
+  flex: 1;
+}
+
+.cardHoverGlow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(198, 98, 37, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.pillar:hover .cardHoverGlow {
+  opacity: 1;
 }
 
 @media (max-width: 992px) {
+  .difference {
+    padding: 5rem 0;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
+  .difference {
+    padding: 4rem 0;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2.5rem;
   }
 
   .pillar {
-    padding: 2rem;
+    padding: 1.75rem 1.5rem;
   }
 }

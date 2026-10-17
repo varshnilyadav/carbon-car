@@ -42,7 +42,7 @@ export default function Navbar() {
 
   // Track active section via IntersectionObserver
   useEffect(() => {
-    const sectionIds = ["home", "services", "transformations", "studio", "reviews", "contact"];
+    const sectionIds = ["home", "about", "why-choose-carbon", "services", "transformations", "studio", "reviews", "contact"];
     const observers: IntersectionObserver[] = [];
 
     sectionIds.forEach((id) => {
@@ -71,6 +71,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "HOME", href: "/#home", id: "home" },
+    { name: "ABOUT", href: "/#about", id: "about" },
     { name: "SERVICES", href: "/#services", id: "services" },
     { name: "TRANSFORMATIONS", href: "/#transformations", id: "transformations" },
     { name: "STUDIO", href: "/#studio", id: "studio" },

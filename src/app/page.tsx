@@ -2,6 +2,7 @@ import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/sections/Hero";
 import BrandsMarquee from "@/components/sections/BrandsMarquee";
 import BrandIntro from "@/components/sections/BrandIntro";
+import CarbonDifference from "@/components/sections/CarbonDifference";
 import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
 import StudioExperience from "@/components/sections/StudioExperience";
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <BrandsMarquee />
         <BrandIntro />
+        <CarbonDifference />
         <Services />
         <Process />
         <StudioExperience />

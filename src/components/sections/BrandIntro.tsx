@@ -20,7 +20,7 @@ export default function BrandIntro() {
   const imageScale = useTransform(scrollYProgress, [0, 1], [1.08, 1.02]);
 
   return (
-    <section className={`section ${styles.brandIntro}`} ref={sectionRef}>
+    <section className={`section ${styles.brandIntro}`} id="about" ref={sectionRef}>
       <div className={`container ${styles.grid}`}>
         {/* Left: Image with clip-path wipe & inner parallax */}
         <motion.div
@@ -50,7 +50,7 @@ export default function BrandIntro() {
         {/* Right: Content with staggered Reveal */}
         <div className={styles.content}>
           <Reveal y={20} duration={0.6} delay={0.1}>
-            <span className={styles.eyebrow}>ABOUT CARBON</span>
+            <span className={styles.eyebrow}>ABOUT US</span>
           </Reveal>
 
           <Reveal y={25} duration={0.7} delay={0.2}>
