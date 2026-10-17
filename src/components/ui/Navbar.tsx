@@ -18,7 +18,7 @@ export default function Navbar() {
     const handleScroll = () => {
       const currentY = window.scrollY;
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      
+
       // Update scroll progress (0 - 100)
       if (totalScroll > 0) {
         setScrollProgress(Math.min(100, Math.max(0, (currentY / totalScroll) * 100)));
@@ -83,7 +83,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top thin scroll-progress bar */}
-      <div 
+      <div
         className={styles.progressBar}
         style={{ width: `${scrollProgress}%` }}
         role="progressbar"
@@ -93,9 +93,8 @@ export default function Navbar() {
       />
 
       <header
-        className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${
-          hidden && !menuOpen ? styles.headerHidden : ""
-        }`}
+        className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${hidden && !menuOpen ? styles.headerHidden : ""
+          }`}
       >
         <div className={styles.container}>
           <div className={styles.logoContainer}>
@@ -133,7 +132,7 @@ export default function Navbar() {
 
           <div className={styles.actionContainer}>
             <Link href="/#booking" className={styles.ctaButton}>
-              BOOK YOUR TRANSFORMATION
+              BOOK YOUR SLOT
             </Link>
             <button
               className={styles.hamburger}
