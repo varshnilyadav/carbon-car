@@ -16,14 +16,13 @@ export default function StudioExperience() {
     offset: ["start end", "end start"],
   });
 
-  // Parallax the three images at different speeds
-  const yParallax1 = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
-  const yParallax2 = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
-  const yParallax3 = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
+  // Smooth subtle inner parallax for the showcase studio image
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.05, 1.01]);
 
   return (
     <section className={`section ${styles.studio}`} id="studio" ref={sectionRef}>
-      <div className={styles.grid}>
+      <div className={`container ${styles.grid}`}>
         <div className={styles.content}>
           <Reveal y={20} duration={0.6}>
             <span className={styles.eyebrow}>04 / THE STUDIO</span>
@@ -54,65 +53,29 @@ export default function StudioExperience() {
           </Reveal>
         </div>
 
-        <div className={styles.imageGrid}>
-          {/* Main Tall Image with Parallax Speed 1 */}
-          <div className={`${styles.imageWrapper} ${styles.tall}`}>
-            <motion.div
-              style={
-                shouldReduceMotion
-                  ? { width: "100%", height: "100%", position: "relative" }
-                  : { y: yParallax1, scale: 1.04, width: "100%", height: "100%", position: "relative" }
-              }
-            >
-              <Image
-                src="/images/studio.webp"
-                alt="Carbon Studio Detailing & PPF Clean Bay in Hyderabad"
-                fill
-                style={{ objectFit: "contain", backgroundColor: "var(--color-carbon-black)" }}
-                sizes="(max-width: 992px) 100vw, 50vw"
-              />
-            </motion.div>
-          </div>
-
-          <div className={styles.smallImages}>
-            {/* Small Image 1 with Parallax Speed 2 */}
-            <div className={styles.imageWrapper}>
+        <div className={styles.showcaseWrapper}>
+          <Reveal y={25} duration={0.75} delay={0.2}>
+            <div className={styles.imageFrame}>
               <motion.div
+                className={styles.imageInner}
                 style={
                   shouldReduceMotion
-                    ? { width: "100%", height: "100%", position: "relative" }
-                    : { y: yParallax2, scale: 1.08, width: "100%", height: "100%", position: "relative" }
+                    ? undefined
+                    : { y: imageY, scale: imageScale }
                 }
               >
                 <Image
-                  src="/images/services/interior-exterior-detailing.webp"
-                  alt="Multi-stage detailing process at Carbon Studio"
+                  src="/images/studio.webp"
+                  alt="Carbon Studio Detailing & PPF Clean Bay in Hyderabad"
                   fill
-                  style={{ objectFit: "cover" }}
-                  sizes="(max-width: 992px) 50vw, 25vw"
+                  priority
+                  className={styles.image}
+                  sizes="(max-width: 992px) 100vw, 55vw"
                 />
               </motion.div>
+              <div className={styles.imageGlowOverlay} />
             </div>
-
-            {/* Small Image 2 with Parallax Speed 3 */}
-            <div className={styles.imageWrapper}>
-              <motion.div
-                style={
-                  shouldReduceMotion
-                    ? { width: "100%", height: "100%", position: "relative" }
-                    : { y: yParallax3, scale: 1.08, width: "100%", height: "100%", position: "relative" }
-                }
-              >
-                <Image
-                  src="/images/services/ppf.webp"
-                  alt="Precision PPF installation at Carbon Studio"
-                  fill
-                  style={{ objectFit: "cover" }}
-                  sizes="(max-width: 992px) 50vw, 25vw"
-                />
-              </motion.div>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
