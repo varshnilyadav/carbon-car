@@ -51,7 +51,7 @@ export default function Footer() {
 
                 {/* Address */}
                 <a
-                  href="https://www.google.com/maps/place/CARBON/@17.4253809,78.3925916,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb91cd034b5469:0x580848e2ba547d27!8m2!3d17.4253809!4d78.3951665!16s%2Fg%2F11x9bphbmx!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
+                  href="https://maps.app.goo.gl/mFHht68AYNDtpZAD8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.infoCard}
@@ -64,7 +64,7 @@ export default function Footer() {
                   </div>
                   <div className={styles.infoCardContent}>
                     <span className={styles.infoCardLabel}>Address</span>
-                    <span className={styles.infoCardValue}>Plot No 21, Sainath Colony, Hyderabad, Telangana</span>
+                    <span className={styles.infoCardValue}>CARBON Studio, Hyderabad, Telangana</span>
                   </div>
                 </a>
               </div>
@@ -73,7 +73,7 @@ export default function Footer() {
             {/* Right Column: Map Wrapper */}
             <div className={`${styles.mapWrapper} map-wrapper`}>
               <iframe
-                src="https://maps.google.com/maps?q=CARBON+Hyderabad+17.4253809,78.3951665&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=CARBON+Hyderabad+17.425366,78.395036&t=&z=17&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -127,7 +127,7 @@ export default function Footer() {
             <h3 className={styles.columnTitle}>CONNECT</h3>
             <ul className={styles.list}>
               <li><a href="https://www.instagram.com/carbon.hyd/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-              <li><a href="https://www.google.com/maps/place/CARBON/@17.4253809,78.3951665,952m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bcb91cd034b5469:0x580848e2ba547d27!8m2!3d17.4253809!4d78.3951665!16s%2Fg%2F11x9bphbmx?entry=ttu" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+              <li><a href="https://maps.app.goo.gl/mFHht68AYNDtpZAD8" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
               <li><a href="https://wa.me/919959517361" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
               <li><a href="tel:+919959517361">+91 9959517361</a></li>
             </ul>
