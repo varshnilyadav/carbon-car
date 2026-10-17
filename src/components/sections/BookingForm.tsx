@@ -78,14 +78,13 @@ export default function BookingForm() {
                     <label htmlFor="service">PRIMARY SERVICE</label>
                     <select id="service" required defaultValue="">
                       <option value="" disabled>Select a service</option>
-                      <option value="ppf">Paint Protection Film</option>
-                      <option value="ceramic">Ceramic Coating</option>
-                      <option value="detailing">Premium Detailing</option>
-                      <option value="wrapping">Vinyl Wrapping</option>
-                      <option value="performance">Performance Upgrades</option>
-                      <option value="bodykits">Bodykits & Styling</option>
-                      <option value="restoration">Restoration</option>
-                      <option value="other">Not Sure / Multiple</option>
+                      <option value="interior-exterior-detailing">Interior & Exterior Detailing</option>
+                      <option value="graphene-coating">Graphene Coating</option>
+                      <option value="ceramic-coating">Ceramic Coating</option>
+                      <option value="ppf">Paint Protection Film (PPF)</option>
+                      <option value="color-ppf">Color PPF</option>
+                      <option value="sun-films">Sun Films</option>
+                      <option value="other">Multiple Services / Consultation</option>
                     </select>
                   </div>
                 </div>

@@ -31,12 +31,12 @@ export default function Footer() {
           <div className={styles.links}>
             <h3 className={styles.columnTitle}>SERVICES</h3>
             <ul className={styles.list}>
-              <li><Link href="#services">PPF</Link></li>
-              <li><Link href="#services">Bodykits</Link></li>
-              <li><Link href="#services">Performance</Link></li>
-              <li><Link href="#services">Restoration</Link></li>
-              <li><Link href="#services">Paint & Detailing</Link></li>
-              <li><Link href="#services">Ceramic Coating</Link></li>
+              <li><Link href="/services/interior-exterior-detailing">Interior & Exterior Detailing</Link></li>
+              <li><Link href="/services/graphene-coating">Graphene Coating</Link></li>
+              <li><Link href="/services/ceramic-coating">Ceramic Coating</Link></li>
+              <li><Link href="/services/ppf">Paint Protection Film (PPF)</Link></li>
+              <li><Link href="/services/color-ppf">Color PPF</Link></li>
+              <li><Link href="/services/sun-films">Sun Films</Link></li>
             </ul>
           </div>
 

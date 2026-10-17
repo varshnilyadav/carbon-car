@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
+import { ServiceCard } from "@/components/ui/ServiceCard";
 import { services } from "@/data/siteData";
 import styles from "./ServicePage.module.css";
 
@@ -26,6 +27,11 @@ export default async function ServicePage({ params }: Props) {
     notFound();
   }
 
+  // Related services (exclude current service, take up to 3)
+  const relatedServices = services
+    .filter((s) => s.slug !== service.slug)
+    .slice(0, 3);
+
   return (
     <>
       <Navbar />
@@ -43,6 +49,11 @@ export default async function ServicePage({ params }: Props) {
             <div className={styles.heroOverlay}></div>
           </div>
           <div className={styles.heroContent}>
+            <div className={styles.backNav}>
+              <Link href="/#services" className={styles.backLink}>
+                ← BACK TO SERVICES
+              </Link>
+            </div>
             <span className={styles.eyebrow}>CARBON SERVICE</span>
             <h1 className={styles.title}>{service.title}</h1>
             <p className={styles.tagline}>{service.tagline}</p>
@@ -124,11 +135,35 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </section>
 
+        {/* Related Services */}
+        {relatedServices.length > 0 && (
+          <section className={styles.relatedSection}>
+            <div className="container">
+              <div className={styles.relatedHeader}>
+                <h2 className={styles.sectionTitle}>EXPLORE RELATED SERVICES</h2>
+                <div className={styles.headerLine}></div>
+              </div>
+              <div className={styles.relatedGrid}>
+                {relatedServices.map((rel) => (
+                  <div key={rel.id}>
+                    <ServiceCard
+                      slug={rel.slug}
+                      title={rel.title}
+                      description={rel.shortDescription}
+                      image={rel.image}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* CTA */}
         <section className={styles.ctaSection}>
           <div className={styles.ctaContainer}>
-            <h2>READY TO PROCEED?</h2>
-            <p>Schedule a consultation to discuss this service for your vehicle.</p>
+            <h2>READY TO TRANSFORM YOUR CAR?</h2>
+            <p>Schedule a consultation with a Carbon specialist to engineer a bespoke treatment plan for your vehicle.</p>
             <Link href="/#booking" className={styles.ctaBtn}>
               BOOK THIS SERVICE
             </Link>

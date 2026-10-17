@@ -14,206 +14,193 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: "foam-wash",
-    slug: "foam-wash",
-    title: "Foam Wash",
-    tagline: "Safe, effective exterior cleaning.",
-    shortDescription: "A meticulous exterior wash using premium snow foam to safely lift dirt without scratching your paint.",
-    description: "Our signature foam wash is the foundation of proper car care. We use pH-neutral snow foam to encapsulate and lift dirt particles safely away from your vehicle's clear coat. This prevents the swirl marks commonly caused by traditional tunnel washes or improper hand washing techniques.",
-    image: "/services/general.jpg",
+    id: "interior-exterior-detailing",
+    slug: "interior-exterior-detailing",
+    title: "Interior & Exterior Detailing",
+    tagline: "Comprehensive care restoring pristine cleanliness and refined gloss across all surfaces.",
+    shortDescription: "Complete vehicle care designed to restore cleanliness, enhance gloss, and refresh every detail. From deep interior cleaning and upholstery care to exterior washing, decontamination, and finishing, every surface receives meticulous attention.",
+    description: "Our Interior & Exterior Detailing service delivers complete, meticulous care engineered to restore cleanliness, enhance gloss, and refresh every single detail of your vehicle. The exterior begins with a multi-stage pH-neutral snow foam wash, followed by chemical iron fallout removal and mechanical clay decontamination to clear embedded road contaminants. Exterior surfaces, plastics, and wheels are then treated to a refined protective finishing sealant. Inside the cabin, every crevice receives surgical attention: deep fiber extraction, thorough vacuuming, steam sanitization of vents, and pH-balanced conditioning of leather and vinyl surfaces. Note: This service is designed for thorough rejuvenation and surface cleansing; it is clearly distinguished from multi-stage abrasive paint correction or permanent ceramic and film installations.",
+    image: "/images/services/interior-exterior-detailing.webp",
     benefits: [
-      "Scratch-free cleaning process",
-      "Removes road grime and traffic film",
-      "Safe for ceramic coatings and PPF",
-      "Enhances natural gloss"
+      "Non-abrasive surface cleansing safe for factory finishes, clear coats, and trim",
+      "Comprehensive leather conditioning and upholstery extraction to prevent cracking and wear",
+      "Removal of bonded industrial fallout, road grime, and brake dust without micro-scratching",
+      "Deep cabin steam sanitization eliminating allergens, bacteria, and interior odors",
+      "Hydrophobic finishing sealant application for short-to-medium term shine and water repellency"
     ],
     included: [
-      "Snow foam pre-soak",
-      "Two-bucket safe hand wash",
-      "Wheel face and barrel cleaning",
-      "Tire dressing",
-      "Streak-free glass cleaning"
+      "Multi-stage pH-neutral snow foam pre-soak & two-bucket scratch-free contact wash",
+      "Chemical iron fallout dissolution and mechanical fine-grade clay bar decontamination",
+      "High-pressure wheel face, inner barrel, and brake caliper cleaning with satin tire dressing",
+      "Complete cabin deep vacuuming including trunk, seat tracks, and hard-to-reach crevices",
+      "Steam cleaning of air vents, dashboard seams, center console, and door jambs",
+      "Leather deep cleaning followed by matte UV-protectant conditioning / fabric extraction",
+      "Streak-free interior and exterior optical glass polishing",
+      "Protective paint sealant and trim rejuvenation dressing"
     ],
     process: [
-      { title: "Pre-Rinse", description: "High-pressure rinse to remove loose debris." },
-      { title: "Foam Soak", description: "Thick snow foam applied to lift stubborn dirt." },
-      { title: "Agitation", description: "Gentle wash with microfiber mitts using the two-bucket method." },
-      { title: "Drying", description: "Safe drying using forced air and plush microfiber towels." }
+      { title: "Decontamination Wash", description: "Snow foam pre-soak, iron dissolution, and mechanical clay bar treatment to lift bonded road grime." },
+      { title: "Cabin Steam Extraction", description: "Deep vacuuming, high-temperature steam sanitization of vents, and upholstery extraction." },
+      { title: "Conditioning & Treatment", description: "Nourishing leather with pH-balanced conditioners and dressing interior plastics with non-greasy UV blockers." },
+      { title: "Finishing & Sealant", description: "Hand-applied paint sealant, optical glass cleaning, and final lighting inspection." }
     ],
-    recommendedFor: "Regular maintenance every 2-4 weeks to keep your vehicle looking its best."
+    recommendedFor: "Daily drivers requiring an intensive seasonal refresh, vehicles returning from road trips, pre-sale preparations, and owners seeking immaculate maintenance without heavy machine paint correction."
+  },
+  {
+    id: "graphene-coating",
+    slug: "graphene-coating",
+    title: "Graphene Coating",
+    tagline: "Next-generation carbon-matrix surface defense delivering extreme slickness and heat dissipation.",
+    shortDescription: "Advanced graphene-infused surface protection designed to enhance gloss, improve water repellency, and make routine maintenance easier. A premium finish for owners seeking long-lasting paint protection.",
+    description: "Graphene Coating represents the forefront of modern nano-surface protection. Infused with reduced graphene oxide matrices, this advanced formulation bonds tightly with your vehicle's clear coat to deliver an ultra-slick, resilient protective barrier. Graphene's honeycomb molecular structure offers natural heat dissipation properties, which helps reduce surface temperatures in direct sunlight and significantly lowers the risk of mineral water spotting compared to conventional coatings. The result is a hyper-reflective wet-look gloss, remarkable water contact angles, and effortless washing characteristics. Durability and ongoing performance depend on surface preparation, adherence to manufacturer curing schedules, environmental exposure, and proper pH-neutral maintenance washing routines.",
+    image: "/images/services/graphene-coating.webp",
+    benefits: [
+      "High contact angle hydrophobicity delivering rapid water sheeting and self-cleaning performance",
+      "Superior thermal dissipation properties that help mitigate mineral water-spot etching",
+      "Deep, glass-like reflective depth and unmatched slickness to the touch",
+      "Chemical resistance against aggressive environmental fallout, bird droppings, and tree sap",
+      "Simplifies routine maintenance, reducing wash times and minimizing the risk of wash-induced swirls"
+    ],
+    included: [
+      "Intensive exterior decontamination wash, chemical fallout remover, and clay bar treatment",
+      "Single to multi-stage machine polishing to enhance paint clarity and reflectivity",
+      "Complete panel wipe using isopropyl alcohol solvent to ensure a grease-free bonding surface",
+      "Hand application of professional-grade graphene coating across all painted body panels",
+      "Coating of exterior plastics, headlights, and front-facing trim components",
+      "Controlled infrared (IR) heat curing adhering strictly to product-specific cure cycles"
+    ],
+    process: [
+      { title: "Surface Preparation", description: "Multi-stage decontamination wash and clay bar to remove all bonded fallout and contaminants." },
+      { title: "Paint Enhancement", description: "Machine polishing to level minor blemishes and optimize clear coat clarity for bonding." },
+      { title: "Graphene Application", description: "Precise hand application in overlapping cross-hatch sections with timed flash-off leveling." },
+      { title: "Controlled Curing", description: "Studio dwell time and infrared heat curing to complete initial cross-linking before vehicle release." }
+    ],
+    recommendedFor: "Owners seeking cutting-edge surface protection with superior water-spot resistance, deep gloss, and reduced maintenance effort under demanding climate conditions."
   },
   {
     id: "ceramic-coating",
     slug: "ceramic-coating",
     title: "Ceramic Coating",
-    tagline: "Long-lasting gloss and extreme protection.",
-    shortDescription: "Advanced nano-ceramic technology that bonds to your paint, offering years of protection and incredible shine.",
-    description: "Ceramic coating is the ultimate liquid armor for your vehicle. By bonding at a molecular level with your clear coat, it creates a semi-permanent layer of protection that is harder than factory paint. It provides extreme hydrophobicity, making your car self-cleaning and incredibly easy to maintain.",
-    image: "/services/ceramic.jpg",
+    tagline: "Durable nano-ceramic liquid glass shield providing candy-like gloss and chemical resistance.",
+    shortDescription: "A durable protective coating that enhances paint gloss, adds a slick finish, and helps resist environmental contaminants. Keep your vehicle looking refined with easier cleaning and maintenance.",
+    description: "Ceramic Coating is an established standard in high-end automotive surface protection. Utilizing advanced silicon dioxide (SiO2) nanotechnology, the liquid coating chemically bonds with the vehicle's factory clear coat, curing into a semi-permanent sacrificial glass shield. Prior to application, the paint undergoes thorough surface decontamination and optional machine polishing to remove swirl marks, haze, and oxidation, ensuring the optical clarity beneath the coating is flawless. Once cured, ceramic coating shields the paint from UV oxidation, bird droppings, acid rain, and road film, while imparting a rich candy-like depth and intense hydrophobic behavior that keeps your vehicle cleaner for longer between washes.",
+    image: "/images/services/ceramic-coating.webp",
     benefits: [
-      "Years of durable protection",
-      "Extreme hydrophobic (water-repelling) properties",
-      "Candy-like gloss and depth",
-      "Protection against UV rays and oxidation",
-      "Chemical resistance to bird droppings and sap"
+      "Semi-permanent sacrificial barrier protecting factory clear coat from environmental fallout",
+      "Intense candy-like gloss, optical clarity, and color depth that enhances paintwork",
+      "High hydrophobicity causing water and contaminants to bead and slide effortlessly off surfaces",
+      "UV protection guarding against clear coat oxidation, premature aging, and fading",
+      "Low surface energy making routine maintenance washes substantially faster and safer"
     ],
     included: [
-      "Decontamination wash",
-      "Clay bar treatment",
-      "Single stage paint enhancement (polish)",
-      "Panel wipe prep",
-      "Professional ceramic coating application"
+      "Comprehensive multi-step exterior wash and iron fallout dissolution",
+      "Mechanical clay bar treatment to remove embedded industrial fallout",
+      "Paint enhancement / machine polishing to eliminate light swirls and maximize gloss",
+      "Solvent panel wipe to inspect clear coat and ensure optimal coating bonding",
+      "Multi-panel hand application and leveling of premium nano-ceramic coating",
+      "Ceramic coating of external plastics, wheel faces, and glass surfaces",
+      "Climate-controlled initial curing period under studio inspection lights"
     ],
     process: [
-      { title: "Prep Wash", description: "Thorough stripping wash to remove old waxes." },
-      { title: "Decontamination", description: "Chemical and mechanical removal of embedded iron and fallout." },
-      { title: "Paint Correction", description: "Machine polishing to remove swirls and maximize gloss." },
-      { title: "Application", description: "Careful leveling of the ceramic coating onto all painted surfaces." }
+      { title: "Decontamination", description: "Thorough multi-stage stripping wash and clay bar decontamination to purify the clear coat." },
+      { title: "Machine Polishing", description: "Precision machine refinement to eliminate swirls, light scratches, and haze." },
+      { title: "Ceramic Bonding", description: "Careful hand-leveling of nano-ceramic SiO2 coating across all exterior painted surfaces." },
+      { title: "Cure & Verification", description: "Controlled temperature curing and 360-degree LED inspection before customer handover." }
     ],
-    recommendedFor: "New vehicles, recently polished vehicles, or anyone wanting long-term protection."
+    recommendedFor: "Brand-new vehicles preserving factory paint integrity, restored pre-owned cars, and discerning owners wanting long-lasting gloss with easy maintenance."
   },
   {
     id: "ppf",
-    slug: "ppf-wrap-sunfilm",
-    title: "PPF / Wrap / Sunfilm",
-    tagline: "The ultimate physical barrier against the elements.",
-    shortDescription: "Paint Protection Film (PPF), Vinyl Wraps, and Automotive Sunfilm to protect and customize your ride.",
-    description: "Whether you want invisible rock chip protection with PPF, a complete color change with a vinyl wrap, or heat rejection with premium sunfilm, we provide flawless installations using industry-leading materials.",
-    image: "/services/ppf.jpg",
+    slug: "ppf",
+    title: "Paint Protection Film (PPF)",
+    tagline: "Optically clear, self-healing polyurethane armor shielding your paint from stone chips and road debris.",
+    shortDescription: "A transparent protective film designed to help shield your vehicle's paint from stone chips, minor scratches, road debris, and everyday wear. Preserve your original paint while maintaining its factory appearance.",
+    description: "Paint Protection Film (PPF) is the definitive physical barrier engineered to protect your vehicle's factory paintwork against real-world driving conditions. Constructed from advanced high-tensile thermoplastic polyurethane (TPU), the film provides robust impact absorption against airborne stone chips, highway gravel, road salt, bug splatter, and minor surface abrasions. The top layer features advanced elastomeric polymers that self-heal light swirl marks and fine scratches when exposed to natural ambient heat or warm water. Every installation begins with a rigorous paint inspection and panel prep, utilizing precision computer-cut templates or custom bespoke bulk wrapping with tucked edges for a near-invisible finish. While PPF offers superior protection against standard road debris and daily driving hazards, it is designed to mitigate impacts rather than guarantee absolute invulnerability against severe collisions.",
+    image: "/images/services/ppf.webp",
     benefits: [
-      "Self-healing scratch protection (PPF)",
-      "Prevents rock chips and road damage",
-      "Customizable aesthetics (Wraps)",
-      "Heat and UV rejection (Sunfilm)"
+      "High impact resistance shielding vulnerable paintwork from high-speed stone chips and gravel",
+      "Self-healing elastomeric topcoat that erases fine swirl marks and light scratches with heat",
+      "Optically transparent finish that preserves the exact factory depth, color, and metallic sparkle",
+      "Stain, chemical, and UV resistance preventing premature paint discoloration and yellowing",
+      "Edge-wrapped installation methodology wherever panel gaps permit for a seamless appearance"
     ],
     included: [
-      "Meticulous surface preparation",
-      "Custom template cutting",
-      "Seamless edge wrapping",
-      "Post-installation quality check"
+      "Full vehicle exterior wash, iron chemical decontamination, and surface claying",
+      "Pre-installation single-stage polish to ensure clear coat perfection beneath the film",
+      "Computer-aided precision template plotting or bespoke custom panel cut pattern selection",
+      "Dust-controlled bay installation using specialized slip and tack solutions",
+      "Edge wrapping around hood corners, fenders, door edges, and bumper recesses",
+      "Post-installation heat setting, seam inspection, and final quality control check"
     ],
     process: [
-      { title: "Consultation", description: "Choosing the right film for your needs." },
-      { title: "Prep", description: "Deep cleaning and decontamination of the surface." },
-      { title: "Installation", description: "Expert application using slip solutions and heat." },
-      { title: "Curing", description: "Allowing the film to settle and bond properly." }
+      { title: "Paint Inspection & Prep", description: "Meticulous surface decontamination and gloss refinement under specialized studio lighting." },
+      { title: "Template Alignment", description: "Digital design plotting or bespoke custom wrapping mapped to exact vehicle body lines." },
+      { title: "Precision Installation", description: "Dust-free application in dedicated bays with specialized squeegeeing to prevent silvering." },
+      { title: "Edge Wrapping & Cure", description: "Tucking edges into panel gaps, followed by post-heating and inspection for zero lifting." }
     ],
-    recommendedFor: "High-impact areas (bumper, hood), complete vehicle protection, or custom styling."
+    recommendedFor: "New luxury vehicles, sports cars, highway commuters, and any vehicle owner seeking the highest level of physical protection against stone chips and road hazards."
   },
   {
-    id: "interior-detailing",
-    slug: "interior-detailing",
-    title: "Interior Detailing",
-    tagline: "Restore your cabin to factory freshness.",
-    shortDescription: "Deep cleaning, stain removal, and protection for all interior surfaces including leather, fabric, and plastics.",
-    description: "You spend all your time inside the car, so it deserves just as much attention as the outside. Our interior detailing service deeply cleans, sanitizes, and protects every inch of your cabin, returning it to a like-new condition.",
-    image: "/services/detailing.jpg",
+    id: "color-ppf",
+    slug: "color-ppf",
+    title: "Color PPF",
+    tagline: "Bespoke styling and personalized aesthetics combined with authentic protective film durability.",
+    shortDescription: "Transform your vehicle's appearance with colored paint protection film that combines a fresh visual identity with a protective layer. Explore bold colors and sophisticated finishes while helping protect the underlying paint.",
+    description: "Color PPF bridges the gap between the vibrant aesthetics of vehicle vinyl wraps and the heavy-duty physical defense of authentic thermoplastic polyurethane protection film. Unlike traditional thin vinyl wraps that offer minimal impact resistance, Color PPF features full-thickness TPU construction with self-healing properties, UV blockers, and deep color saturation free of vinyl's typical orange-peel texture. Available in a curated spectrum of finishes—including ultra-high gloss, stealth satin, deep metallics, and bespoke tones—it allows you to redefine your vehicle's visual identity while safeguarding the original factory paint beneath. The transformation is completely reversible, preserving the resale value and untouched condition of your original clear coat.",
+    image: "/images/services/color-ppf.webp",
     benefits: [
-      "Removal of tough stains and odors",
-      "Sanitization of high-touch areas",
-      "UV protection for plastics and leather",
-      "Restores original matte finish (no greasy shine)"
+      "Striking visual transformation with the clarity, depth, and mirror reflection of OEM-grade paint",
+      "Genuine full-thickness TPU film providing robust stone chip and scratch protection",
+      "Self-healing topcoat technology that clears minor wash swirls and scuffs with ambient heat",
+      "100% reversible installation that shields and preserves the factory clear coat underneath",
+      "Variety of finishes available including high-gloss solid colors, satin stealth, and metallic tones"
     ],
     included: [
-      "Thorough vacuuming",
-      "Steam cleaning of vents and crevices",
-      "Leather deep cleaning and conditioning",
-      "Fabric extraction (if needed)",
-      "Interior glass cleaning"
+      "In-studio color and finish consultation exploring gloss, satin, and metallic selections",
+      "Full exterior strip wash, chemical iron removal, and mechanical decontamination",
+      "Careful disassembly of non-structural components (emblems, lights, trim) for seamless edge tucking",
+      "Full-body precision installation of selected colored paint protection film",
+      "Deep edge wrapping into door apertures, panel seams, and bumper recesses",
+      "Thermal post-heating cycle and 24-hour settling inspection before client handover"
     ],
     process: [
-      { title: "Vacuum & Dust", description: "Removing loose dirt from all surfaces." },
-      { title: "Deep Clean", description: "Using specialized cleaners and brushes on panels and seats." },
-      { title: "Steam & Extract", description: "Lifting stubborn stains and sanitizing." },
-      { title: "Protect", description: "Applying non-greasy UV protectants to all materials." }
+      { title: "Consultation & Selection", description: "Choosing the exact color palette, metallic flake density, or stealth satin finish for your vehicle." },
+      { title: "Vehicle Prep & Teardown", description: "Purification wash, decontamination, and safe removal of badges and trims for flush coverage." },
+      { title: "Color Film Installation", description: "Tension-balanced wet installation ensuring uniform color distribution without stretching distortion." },
+      { title: "Edge Sealing & Inspection", description: "Post-heating all wrapped borders and inspecting under multi-angle studio lighting." }
     ],
-    recommendedFor: "Daily drivers, family vehicles, or preparing a car for sale."
+    recommendedFor: "Automotive enthusiasts wanting a custom, head-turning color change combined with real stone-chip protection that standard vinyl wraps cannot match."
   },
   {
-    id: "exterior-detailing",
-    slug: "exterior-detailing",
-    title: "Exterior Detailing",
-    tagline: "Rejuvenate your vehicle's paint and trim.",
-    shortDescription: "Comprehensive exterior deep cleaning, decontamination, and gloss enhancement.",
-    description: "More than just a wash, our exterior detailing involves a deep chemical and mechanical decontamination of your paint, followed by a polish to enhance gloss and a sealant to protect the finish.",
-    image: "/services/paint.jpg",
+    id: "sun-films",
+    slug: "sun-films",
+    title: "Sun Films",
+    tagline: "High-performance automotive window films for solar rejection, UV defense, and cabin comfort.",
+    shortDescription: "Upgrade cabin comfort and privacy with automotive window films selected for your vehicle. Depending on the film specification, enjoy reduced solar heat and glare, UV protection, and a cleaner, more refined appearance. All installations must comply with applicable Indian vehicle-window tint regulations.",
+    description: "Our Sun Films service provides premium automotive window films specifically engineered to elevate cabin comfort, reduce glare, and protect vehicle interiors from the harsh tropical sun. Utilizing advanced nano-ceramic and infrared-rejecting technology, these films reject a substantial portion of solar heat without relying on illegal dark dyes. The non-metallized construction ensures zero interference with electronic systems including GPS, cellular signals, and RFID toll tags. Depending on film specification, occupants enjoy up to 99% UV radiation blocking—preventing leather upholstery fading and dashboard cracking while minimizing eye fatigue during daytime driving. All film recommendations and installations are executed with strict adherence to applicable Indian vehicle-window tint regulations, balancing optical transparency, legal compliance, and thermal comfort.",
+    image: "/images/services/sun-films.webp",
     benefits: [
-      "Removes embedded contamination",
-      "Restores smooth-as-glass feel to paint",
-      "Enhances depth and clarity",
-      "Provides short-to-medium term protection"
+      "Blocks up to 99% of harmful UV radiation, protecting occupants' skin and interior leather/dash trims",
+      "Substantial infrared heat reduction, significantly lowering cabin temperatures in direct sunlight",
+      "Reduces harsh sun glare and headlight reflection for improved driving clarity and comfort",
+      "Non-metallic nano-ceramic construction with zero interference with mobile, GPS, or RFID systems",
+      "Installed in full alignment with applicable Indian motor vehicle glass transparency regulations"
     ],
     included: [
-      "Foam wash",
-      "Iron decontamination",
-      "Clay bar treatment",
-      "Machine applied polish/sealant",
-      "Trim dressing"
+      "Detailed film consultation reviewing thermal rejection specs and regulatory transparency guidelines",
+      "Multi-stage mechanical glass cleaning and micro-particulate scraping on all window panes",
+      "Exterior precision heat shrinking for seamless, bubble-free contouring on curved glass",
+      "Interior slip installation performed in a dedicated low-dust detailing bay",
+      "Micro-edge shaved finishing along frameless or roll-down window top edges",
+      "Post-installation moisture check and curing guidelines"
     ],
     process: [
-      { title: "Wash", description: "Thorough two-bucket wash." },
-      { title: "Decontaminate", description: "Removing iron particles and bonded dirt." },
-      { title: "Enhance", description: "Light machine polish to boost gloss." },
-      { title: "Protect", description: "Application of a premium paint sealant." }
+      { title: "Glass Preparation", description: "Deep mechanical scrubbing and blade decontamination of interior and exterior glass." },
+      { title: "Thermal Contouring", description: "Heat-shrinking the film on the glass exterior to mirror exact curvature and eliminate tension." },
+      { title: "Clean Room Application", description: "Slip installation on interior glass using filtered solutions and precision squeegeeing." },
+      { title: "Edge Finishing", description: "Micro-edge shaving and heat-setting of all borders for a clean, factory-like aesthetic." }
     ],
-    recommendedFor: "Vehicles that feel rough to the touch or lack shine."
-  },
-  {
-    id: "ac-sterilization",
-    slug: "ac-sterilization",
-    title: "A/C Sterilization",
-    tagline: "Breathe clean, fresh air.",
-    shortDescription: "Eliminates odors, bacteria, and mold from your vehicle's air conditioning system.",
-    description: "Over time, your car's A/C system can harbor bacteria and mold, leading to musty odors and poor air quality. Our sterilization process cleans the system from the inside out.",
-    image: "/services/restoration.jpg",
-    benefits: [
-      "Eliminates musty A/C odors",
-      "Kills bacteria and mold spores",
-      "Improves cabin air quality",
-      "Enhances cooling efficiency"
-    ],
-    included: [
-      "A/C vent steam cleaning",
-      "Evaporator core cleaning treatment",
-      "Ozone generator treatment (optional)",
-      "Cabin air filter inspection"
-    ],
-    process: [
-      { title: "Inspect", description: "Checking the cabin air filter condition." },
-      { title: "Treat", description: "Injecting antibacterial cleaner into the A/C system." },
-      { title: "Circulate", description: "Running the system to distribute the cleaner." },
-      { title: "Purify", description: "Optional ozone treatment for severe odors." }
-    ],
-    recommendedFor: "Cars with bad odors, older vehicles, or allergy sufferers."
-  },
-  {
-    id: "engine-degreasing",
-    slug: "engine-degreasing",
-    title: "Engine Degreasing",
-    tagline: "A clean engine runs cooler and looks better.",
-    shortDescription: "Safe and thorough cleaning of your engine bay to remove grease, oil, and dirt.",
-    description: "A clean engine bay not only looks great but makes spotting leaks and doing maintenance easier. We use safe degreasers and low-pressure water to clean without damaging sensitive electronics.",
-    image: "/services/performance.jpg",
-    benefits: [
-      "Removes heavy grease and grime",
-      "Makes spotting leaks easier",
-      "Improves resale value",
-      "Protects plastics and hoses from drying out"
-    ],
-    included: [
-      "Covering sensitive electronics",
-      "Application of safe degreaser",
-      "Agitation with detailing brushes",
-      "Low-pressure rinse",
-      "Dressing plastics and hoses"
-    ],
-    process: [
-      { title: "Prep", description: "Protecting the alternator, intake, and electrical boxes." },
-      { title: "Degrease", description: "Applying cleaner and letting it break down the grime." },
-      { title: "Agitate", description: "Brushing all accessible areas." },
-      { title: "Dress", description: "Applying a water-based dressing for a satin finish." }
-    ],
-    recommendedFor: "Before selling a car, after a fluid leak is fixed, or for show cars."
+    recommendedFor: "Vehicle owners seeking relief from solar heat, protection against leather fading and interior cracking, and reduced driving glare while remaining compliant with vehicle tint regulations."
   }
 ];
 
