@@ -396,14 +396,22 @@ export interface GalleryItem {
 }
 
 export const galleryItems: GalleryItem[] = [
-  { id: "g1", src: "/gallery/gallery-1.jpg", alt: "PPF installation on luxury vehicle", category: "PPF" },
-  { id: "g2", src: "/gallery/gallery-2.jpg", alt: "Ceramic coating application", category: "DETAILING" },
-  { id: "g3", src: "/gallery/gallery-3.jpg", alt: "Vehicle vinyl wrap", category: "WRAPPING" },
-  { id: "g4", src: "/gallery/gallery-4.jpg", alt: "Engine performance upgrade", category: "PERFORMANCE" },
-  { id: "g5", src: "/gallery/gallery-5.jpg", alt: "Complete vehicle restoration", category: "RESTORATION" },
-  { id: "g6", src: "/gallery/gallery-6.jpg", alt: "Bodykit installation", category: "BODYKITS" },
-  { id: "g7", src: "/gallery/gallery-7.jpg", alt: "Paint correction detail", category: "DETAILING" },
-  { id: "g8", src: "/gallery/gallery-8.jpg", alt: "Premium vehicle detailing", category: "DETAILING" },
+  { id: "g1", src: "/gallery/gallery-1.webp", alt: "Ferrari 488 GTB Full Body Paint Protection Film & Detailing", category: "PPF" },
+  { id: "g2", src: "/gallery/gallery-2.webp", alt: "Audi Q7 Exterior Deep Clean & Multi-Stage Paint Correction", category: "DETAILING" },
+  { id: "g3", src: "/gallery/gallery-3.webp", alt: "Porsche High-Performance Brake Caliper Servicing", category: "PERFORMANCE" },
+  { id: "g4", src: "/gallery/gallery-4.webp", alt: "Porsche Red Brake Calipers & Alloy Wheel Refinement", category: "PERFORMANCE" },
+  { id: "g5", src: "/gallery/gallery-5.webp", alt: "Ferrari Underbody Inspection & Suspension Tune on Hydraulic Lift", category: "PERFORMANCE" },
+  { id: "g6", src: "/gallery/gallery-6.webp", alt: "Ferrari F430 Classic Restoration & Multi-Stage Paint Correction", category: "RESTORATION" },
+  { id: "g7", src: "/gallery/gallery-7.webp", alt: "BMW M2 Aerodynamic Bodykit & Lamborghini Huracan at Carbon Studio", category: "BODYKITS" },
+  { id: "g8", src: "/gallery/gallery-8.webp", alt: "Classic Ferrari F430 Complete Studio Restoration & Finish", category: "RESTORATION" },
+  { id: "g9", src: "/gallery/gallery-9.webp", alt: "Custom BMW M2 Performance Build & Handover", category: "BODYKITS" },
+  { id: "g10", src: "/gallery/gallery-10.webp", alt: "Mercedes-Maybach Luxury Detailing & VIP Studio Handover", category: "DETAILING" },
+  { id: "g11", src: "/gallery/gallery-11.webp", alt: "Purple Audi RS Ultra-Gloss Nano Ceramic Coating & Wheel Protection", category: "DETAILING" },
+  { id: "g12", src: "/gallery/gallery-12.webp", alt: "Dust-Controlled PPF Installation Bay with Aegis SPX Film", category: "PPF" },
+  { id: "g13", src: "/gallery/gallery-13.webp", alt: "Range Rover Velar Deep Black Gloss Paint Correction & Protection", category: "DETAILING" },
+  { id: "g14", src: "/gallery/gallery-14.webp", alt: "Lamborghini Huracan Spyder Custom Vinyl Wrap & Detailing", category: "WRAPPING" },
+  { id: "g15", src: "/gallery/gallery-15.webp", alt: "BMW Precision TPU Paint Protection Film Installation", category: "PPF" },
+  { id: "g16", src: "/gallery/gallery-16.webp", alt: "Range Rover Custom Bulk Film Application & Edge Tucking", category: "PPF" },
 ];
 
 export const galleryCategories = [
