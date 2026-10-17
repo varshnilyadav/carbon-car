@@ -1,3 +1,9 @@
+export interface ServiceGalleryImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface Service {
   id: string;
   slug: string;
@@ -10,6 +16,7 @@ export interface Service {
   included: string[];
   process: { title: string; description: string }[];
   recommendedFor: string;
+  images?: ServiceGalleryImage[];
 }
 
 export const services: Service[] = [

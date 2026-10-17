@@ -4,6 +4,7 @@ import SectionHeading from "../ui/SectionHeading";
 import { services } from "@/data/siteData";
 import { ServiceCard } from "../ui/ServiceCard";
 import Reveal from "@/components/motion/Reveal";
+import TiltCard from "@/components/motion/TiltCard";
 import styles from "./Services.module.css";
 
 export default function Services() {
@@ -24,13 +25,17 @@ export default function Services() {
               y={30}
               duration={0.65}
               delay={index * 0.08}
+              width="100%"
+              className={styles.revealItem}
             >
-              <ServiceCard
-                slug={service.slug}
-                title={service.title}
-                description={service.shortDescription}
-                image={service.image}
-              />
+              <TiltCard>
+                <ServiceCard
+                  slug={service.slug}
+                  title={service.title}
+                  description={service.shortDescription}
+                  image={service.image}
+                />
+              </TiltCard>
             </Reveal>
           ))}
         </div>

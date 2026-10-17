@@ -1,0 +1,73 @@
+.tiltRoot {
+  perspective: 1000px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.tiltCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  border-radius: 4px;
+}
+
+/* Subtle border highlight following cursor */
+.borderGlow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 5px;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.28),
+    rgba(198, 98, 37, 0.3) 30%,
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  padding: 1px;
+}
+
+/* Moving soft radial highlight over card surface */
+.highlight {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.15),
+    rgba(198, 98, 37, 0.08) 40%,
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.35s ease;
+  mix-blend-mode: screen;
+}
+
+.tiltCard:hover .borderGlow,
+.tiltCard:hover .highlight {
+  opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .tiltRoot {
+    perspective: none;
+  }
+  .tiltCard {
+    transform: none !important;
+  }
+  .borderGlow,
+  .highlight {
+    display: none;
+  }
+}

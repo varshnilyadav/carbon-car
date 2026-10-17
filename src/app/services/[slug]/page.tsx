@@ -1,9 +1,13 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import { ServiceCard } from "@/components/ui/ServiceCard";
+import ServiceGallery from "@/components/ui/ServiceGallery";
+import PPFPackages from "@/components/sections/PPFPackages";
+import ClaroPPFSection from "@/components/sections/ClaroPPFSection";
 import { services } from "@/data/siteData";
 import styles from "./ServicePage.module.css";
 
@@ -17,6 +21,22 @@ export function generateStaticParams() {
   return services.map((service) => ({
     slug: service.slug,
   }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const service = services.find((s) => s.slug === slug);
+  if (!service) return {};
+
+  return {
+    title: `${service.title} | CARBON Automotive Studio Hyderabad`,
+    description: service.shortDescription,
+    openGraph: {
+      title: `${service.title} | CARBON Hyderabad`,
+      description: service.shortDescription,
+      images: [{ url: service.image }],
+    },
+  };
 }
 
 export default async function ServicePage({ params }: Props) {
@@ -78,11 +98,24 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </section>
 
+        {/* Picture Gallery Space on Every Service Page */}
+        <ServiceGallery
+          images={service.images}
+          serviceTitle={service.title}
+        />
+
+        {/* PPF Specific Sections: Packages and Claro PPF */}
+        {service.slug === "ppf" && (
+          <>
+            <PPFPackages />
+            <ClaroPPFSection />
+          </>
+        )}
+
         {/* Benefits & Included */}
         <section className={styles.detailsSection}>
           <div className="container">
             <div className={styles.detailsGrid}>
-              
               <div className={styles.detailBox}>
                 <h3 className={styles.detailTitle}>KEY BENEFITS</h3>
                 <ul className={styles.detailList}>
@@ -108,7 +141,6 @@ export default async function ServicePage({ params }: Props) {
                   ))}
                 </ul>
               </div>
-
             </div>
           </div>
         </section>

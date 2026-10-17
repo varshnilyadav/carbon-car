@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SectionHeading from "../ui/SectionHeading";
 import Magnetic from "@/components/motion/Magnetic";
 import Reveal from "@/components/motion/Reveal";
@@ -16,6 +16,29 @@ export default function BookingForm() {
     service: "",
     message: "",
   });
+
+  // Pre-select service & package from URL query params (e.g. /?service=ppf&package=advance#booking)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const timer = setTimeout(() => {
+      const params = new URLSearchParams(window.location.search);
+      const serviceParam = params.get("service");
+      const packageParam = params.get("package");
+
+      if (serviceParam || packageParam) {
+        setFormData((prev) => ({
+          ...prev,
+          service: serviceParam ? serviceParam : (packageParam ? "ppf" : prev.service),
+          message: packageParam
+            ? `Interested in the ${packageParam.toUpperCase()} PPF Package.`
+            : prev.message,
+        }));
+      }
+    }, 50);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>

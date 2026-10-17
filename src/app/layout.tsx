@@ -19,6 +19,7 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://carbon-car.vercel.app"),
   title: "CARBON | Premium Car Detailing, PPF, Ceramic Coating & Performance in Hyderabad",
   description: "Carbon is Hyderabad's automotive transformation studio specializing in PPF, ceramic coating, detailing, wrapping, bodykits, restoration, paint and performance upgrades.",
   keywords: "car detailing Hyderabad, premium car detailing Hyderabad, PPF Hyderabad, paint protection film Hyderabad, ceramic coating Hyderabad, car wrapping Hyderabad, car modification Hyderabad",
