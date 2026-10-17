@@ -40,7 +40,74 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     gsap.ticker.add(onTick);
     gsap.ticker.lagSmoothing(0);
 
+    // Global anchor click interception for smooth Lenis scrolling
+    const handleAnchorClick = (e: MouseEvent) => {
+      const anchor = (e.target as HTMLElement).closest("a");
+      if (!anchor) return;
+
+      const href = anchor.getAttribute("href");
+      if (!href) return;
+
+      let targetId = "";
+      if (href.startsWith("#")) {
+        targetId = href;
+      } else if (href.startsWith("/#") && (window.location.pathname === "/" || window.location.pathname === "")) {
+        targetId = href.substring(1);
+      } else if (href.includes("#") && href.startsWith("/?") && (window.location.pathname === "/" || window.location.pathname === "")) {
+        targetId = href.substring(href.indexOf("#"));
+      }
+
+      if (targetId && targetId.length > 1) {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          lenis.scrollTo(targetEl as HTMLElement, {
+            offset: -50,
+            duration: 1.2,
+          });
+          history.pushState(null, "", targetId);
+
+          if (
+            targetId === "#booking" ||
+            targetId === "#consultation" ||
+            targetId === "#consulting" ||
+            targetId === "#consulting-form"
+          ) {
+            setTimeout(() => {
+              const nameInput = document.getElementById("name") as HTMLInputElement | null;
+              nameInput?.focus();
+            }, 1200);
+          }
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+
+    // Handle initial hash on page load (e.g. user arrived via /#booking or /#consultation)
+    if (window.location.hash) {
+      setTimeout(() => {
+        const targetEl = document.querySelector(window.location.hash);
+        if (targetEl) {
+          lenis.scrollTo(targetEl as HTMLElement, {
+            offset: -50,
+            duration: 1.2,
+          });
+          if (
+            window.location.hash === "#booking" ||
+            window.location.hash === "#consultation"
+          ) {
+            setTimeout(() => {
+              const nameInput = document.getElementById("name") as HTMLInputElement | null;
+              nameInput?.focus();
+            }, 1200);
+          }
+        }
+      }, 350);
+    }
+
     return () => {
+      document.removeEventListener("click", handleAnchorClick);
       gsap.ticker.remove(onTick);
       if (typeof window !== "undefined") {
         delete (window as unknown as { __lenis?: Lenis }).__lenis;

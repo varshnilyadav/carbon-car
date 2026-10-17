@@ -5,11 +5,36 @@ import Link from "next/link";
 import styles from "./FloatingContact.module.css";
 
 export default function FloatingContact() {
+  const handleBookNow = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (typeof window !== "undefined") {
+      const target = document.getElementById("consultation") || document.getElementById("booking");
+      if (target && (window.location.pathname === "/" || window.location.pathname === "")) {
+        e.preventDefault();
+        const lenis = (window as unknown as { __lenis?: { scrollTo: (t: HTMLElement, opts: object) => void } }).__lenis;
+        if (lenis) {
+          lenis.scrollTo(target, { offset: -50, duration: 1.2 });
+        } else {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+        history.pushState(null, "", "#consultation");
+        setTimeout(() => {
+          const nameInput = document.getElementById("name") as HTMLInputElement | null;
+          nameInput?.focus();
+        }, 1200);
+      }
+    }
+  };
+
   return (
     <>
       {/* Left Bottom Corner: Floating CTA Banner (BOOK NOW) */}
       <div className={styles.leftBottomBanner}>
-        <Link href="/#booking" className={styles.bookNowBtn} aria-label="Book your transformation now">
+        <Link
+          href="/#consultation"
+          onClick={handleBookNow}
+          className={styles.bookNowBtn}
+          aria-label="Book your consultation now"
+        >
           <span className={styles.pulseDot} />
           <span className={styles.bookText}>BOOK NOW</span>
           <svg

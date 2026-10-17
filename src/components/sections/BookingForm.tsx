@@ -67,7 +67,10 @@ export default function BookingForm() {
   };
 
   return (
-    <section className={`section ${styles.booking}`} id="booking">
+    <section className={`section ${styles.booking}`} id="booking" style={{ position: "relative" }}>
+      <span id="consultation" style={{ position: "absolute", top: "-60px" }} />
+      <span id="consulting" style={{ position: "absolute", top: "-60px" }} />
+      <span id="consulting-form" style={{ position: "absolute", top: "-60px" }} />
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.info}>
