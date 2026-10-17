@@ -35,8 +35,8 @@ export default function BrandIntro() {
             style={shouldReduceMotion ? undefined : { y: imageY, scale: imageScale }}
           >
             <Image
-              src="/assets/carbon carspa.png"
-              alt="Carbon × CarSpa Collaboration"
+              src="/assets/carbon-facade.webp"
+              alt="Carbon Detailing & PPF Studio Hyderabad"
               fill
               className={styles.image}
               style={{ objectFit: "cover" }}
@@ -68,7 +68,7 @@ export default function BrandIntro() {
 
           <Reveal y={20} duration={0.6} delay={0.4}>
             <p className={styles.text}>
-              Through our strategic partnership, we have seamlessly integrated Carbon&apos;s visionary automotive philosophy with CarSpa&apos;s industry-leading surface protection technology—delivering an unmatched standard of excellence.
+              Operating from our cutting-edge studio in Hyderabad, our master technicians utilize precision LED inspection lighting, climate-controlled bays, and the world&apos;s finest ceramic coatings and self-healing films to deliver an unmatched standard of automotive excellence.
             </p>
           </Reveal>
 
@@ -76,7 +76,7 @@ export default function BrandIntro() {
             <div className={styles.collab}>
               <div className={styles.collabLine}></div>
               <div className={styles.collabContent}>
-                <span className={styles.collabTitle}>CARBON × CARSPA</span>
+                <span className={styles.collabTitle}>CARBON AUTOMOTIVE STUDIO</span>
               </div>
             </div>
           </Reveal>
