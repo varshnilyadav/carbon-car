@@ -127,6 +127,7 @@ export default function Footer() {
             <h3 className={styles.columnTitle}>CONNECT</h3>
             <ul className={styles.list}>
               <li><a href="https://www.instagram.com/carbon.hyd/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+              <li><a href="https://www.facebook.com/Carbon.hyd/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
               <li><a href="https://maps.app.goo.gl/mFHht68AYNDtpZAD8" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
               <li><a href="https://wa.me/919959517361" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
               <li><a href="tel:+919959517361">+91 9959517361</a></li>
