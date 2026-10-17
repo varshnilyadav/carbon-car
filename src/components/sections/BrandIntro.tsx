@@ -16,36 +16,32 @@ export default function BrandIntro() {
     offset: ["start end", "end start"],
   });
 
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.08, 1.02]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.06, 1.01]);
 
   return (
     <section className={`section ${styles.brandIntro}`} id="about" ref={sectionRef}>
       <div className={`container ${styles.grid}`}>
-        {/* Left: Image with clip-path wipe & inner parallax */}
-        <motion.div
-          className={styles.imageWrapper}
-          initial={shouldReduceMotion ? { opacity: 0 } : { clipPath: "inset(100% 0% 0% 0%)" }}
-          whileInView={shouldReduceMotion ? { opacity: 1 } : { clipPath: "inset(0% 0% 0% 0%)" }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <motion.div
-            className={styles.imageInner}
-            style={shouldReduceMotion ? undefined : { y: imageY, scale: imageScale }}
-          >
-            <Image
-              src="/assets/carbon-facade.webp"
-              alt="Carbon Detailing & PPF Studio Hyderabad"
-              fill
-              className={styles.image}
-              style={{ objectFit: "cover" }}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority
-            />
-          </motion.div>
-          <div className={styles.graphiteTreatment}></div>
-        </motion.div>
+        {/* Left: Facade Image with Reveal & subtle inner parallax */}
+        <Reveal y={24} duration={0.75} className={styles.imageCol}>
+          <div className={styles.imageWrapper}>
+            <motion.div
+              className={styles.imageInner}
+              style={shouldReduceMotion ? undefined : { y: imageY, scale: imageScale }}
+            >
+              <Image
+                src="/assets/carbon-facade.webp"
+                alt="Carbon Detailing & PPF Studio Hyderabad"
+                fill
+                className={styles.image}
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </motion.div>
+            <div className={styles.graphiteTreatment}></div>
+          </div>
+        </Reveal>
 
         {/* Right: Content with staggered Reveal */}
         <div className={styles.content}>
