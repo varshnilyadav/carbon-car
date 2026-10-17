@@ -102,12 +102,14 @@ export default function Footer() {
           <div className={styles.links}>
             <h3 className={styles.columnTitle}>EXPLORE</h3>
             <ul className={styles.list}>
-              <li><Link href="#home">Home</Link></li>
-              <li><Link href="#services">Services</Link></li>
-              <li><Link href="#transformations">Transformations</Link></li>
-              <li><Link href="#studio">Studio</Link></li>
-              <li><Link href="#reviews">Reviews</Link></li>
-              <li><Link href="#contact">Contact</Link></li>
+              <li><Link href="/#home">Home</Link></li>
+              <li><Link href="/#about">About</Link></li>
+              <li><Link href="/#services">Services</Link></li>
+              <li><Link href="/#transformations">Transformations</Link></li>
+              <li><Link href="/#studio">Studio</Link></li>
+              <li><Link href="/#reviews">Reviews</Link></li>
+              <li><Link href="/#contact">Contact</Link></li>
+              <li><Link href="/sitemap">Sitemap</Link></li>
             </ul>
           </div>
 
