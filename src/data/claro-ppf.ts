@@ -23,6 +23,7 @@ export interface ClaroPPFData {
   brandName: string;
   tagline?: string;
   description?: string;
+  brandImage?: string;
   logoUrl?: string; // TODO: add path e.g. "/images/claro-logo.png" when ready
   videoUrl?: string; // TODO: add path e.g. "/videos/claro-showcase.mp4" or YouTube embed URL
   galleryImages?: { src: string; alt: string }[];
@@ -37,9 +38,8 @@ export const claroPPFData: ClaroPPFData = {
   // TODO: confirm brand description with studio
   description:
     "Claro PPF is Carbon's in-house paint protection film solution, engineered in collaboration with world-class polymer laboratories to withstand high tropical heat, heavy UV exposure, and abrasive road debris. Built with advanced aliphatic TPU and high-tensile elastomeric top-coats, Claro provides exceptional optical transparency and durable self-healing defense.",
-  // TODO: provide brand logo image path once designed
+  brandImage: "/images/claro-ppf.webp",
   logoUrl: "",
-  // TODO: provide promotional brand video once produced
   videoUrl: "",
   galleryImages: [], // TODO: drop Claro installation photos when available
   highlights: [

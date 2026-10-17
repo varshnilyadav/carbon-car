@@ -66,7 +66,7 @@
 .imageWrapper {
   position: relative;
   width: 100%;
-  padding-top: 65%; /* 16:9 approx */
+  padding-top: 62.5%; /* 16:10 */
   overflow: hidden;
   background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -75,11 +75,87 @@
 
 .image {
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover .image {
-  transform: scale(1.05);
+  transform: scale(1.06);
+}
+
+.imageBottomGradient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(18, 18, 18, 0.75) 80%,
+    var(--color-carbon-black) 100%
+  );
+  z-index: 1;
+}
+
+.serviceBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--color-off-white);
+  background: rgba(5, 5, 5, 0.78);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+/* Fallback placeholder if image fails */
+.placeholderBox {
+  position: relative;
+  width: 100%;
+  padding-top: 62.5%;
+  background: 
+    linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.98)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.015) 0px,
+      rgba(255, 255, 255, 0.015) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transform: translateZ(8px);
+}
+
+.placeholderInner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.placeholderText {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: var(--color-off-white);
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.placeholderSub {
+  font-family: monospace;
+  font-size: 0.62rem;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
 }
 
 .content {

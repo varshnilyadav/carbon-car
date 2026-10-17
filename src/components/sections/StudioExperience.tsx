@@ -61,14 +61,14 @@ export default function StudioExperience() {
               style={
                 shouldReduceMotion
                   ? { width: "100%", height: "100%", position: "relative" }
-                  : { y: yParallax1, scale: 1.08, width: "100%", height: "100%", position: "relative" }
+                  : { y: yParallax1, scale: 1.04, width: "100%", height: "100%", position: "relative" }
               }
             >
               <Image
-                src="/studio-bg.jpg"
-                alt="Carbon Studio Main Bay"
+                src="/images/studio.webp"
+                alt="Carbon Studio Detailing & PPF Clean Bay in Hyderabad"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain", backgroundColor: "var(--color-carbon-black)" }}
                 sizes="(max-width: 992px) 100vw, 50vw"
               />
             </motion.div>
@@ -81,12 +81,12 @@ export default function StudioExperience() {
                 style={
                   shouldReduceMotion
                     ? { width: "100%", height: "100%", position: "relative" }
-                    : { y: yParallax2, scale: 1.12, width: "100%", height: "100%", position: "relative" }
+                    : { y: yParallax2, scale: 1.08, width: "100%", height: "100%", position: "relative" }
                 }
               >
                 <Image
-                  src="/services/detailing.jpg"
-                  alt="Detailing Process"
+                  src="/images/services/interior-exterior-detailing.webp"
+                  alt="Multi-stage detailing process at Carbon Studio"
                   fill
                   style={{ objectFit: "cover" }}
                   sizes="(max-width: 992px) 50vw, 25vw"
@@ -104,8 +104,8 @@ export default function StudioExperience() {
                 }
               >
                 <Image
-                  src="/services/ppf.jpg"
-                  alt="PPF Installation"
+                  src="/images/services/ppf.webp"
+                  alt="Precision PPF installation at Carbon Studio"
                   fill
                   style={{ objectFit: "cover" }}
                   sizes="(max-width: 992px) 50vw, 25vw"

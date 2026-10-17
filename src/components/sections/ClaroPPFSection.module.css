@@ -51,6 +51,27 @@
   margin-bottom: 1.5rem;
 }
 
+.brandImageWrapper {
+  max-width: 900px;
+  width: 100%;
+  margin: 2.5rem auto 1.5rem;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-obsidian);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+}
+
+.brandImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 /* Highlights Grid */
 .highlightsGrid {
   display: grid;

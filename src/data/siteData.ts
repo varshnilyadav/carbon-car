@@ -51,7 +51,24 @@ export const services: Service[] = [
       { title: "Conditioning & Treatment", description: "Nourishing leather with pH-balanced conditioners and dressing interior plastics with non-greasy UV blockers." },
       { title: "Finishing & Sealant", description: "Hand-applied paint sealant, optical glass cleaning, and final lighting inspection." }
     ],
-    recommendedFor: "Daily drivers requiring an intensive seasonal refresh, vehicles returning from road trips, pre-sale preparations, and owners seeking immaculate maintenance without heavy machine paint correction."
+    recommendedFor: "Daily drivers requiring an intensive seasonal refresh, vehicles returning from road trips, pre-sale preparations, and owners seeking immaculate maintenance without heavy machine paint correction.",
+    images: [
+      {
+        src: "/images/services/interior-exterior-detailing.webp",
+        alt: "Complete interior and exterior detailing transformation",
+        caption: "Full Vehicle Restoration & Detail"
+      },
+      {
+        src: "/services/interior-exterior-detailing/exterior-detailing.webp",
+        alt: "Exterior detailing snow foam pre-wash and contact decontamination",
+        caption: "Multi-Stage Exterior Decontamination"
+      },
+      {
+        src: "/services/interior-exterior-detailing/interior-detailing.webp",
+        alt: "Cabin steam sanitization, leather conditioning, and deep extraction",
+        caption: "Surgical Interior Detailing"
+      }
+    ]
   },
   {
     id: "graphene-coating",
@@ -176,7 +193,19 @@ export const services: Service[] = [
       { title: "Color Film Installation", description: "Tension-balanced wet installation ensuring uniform color distribution without stretching distortion." },
       { title: "Edge Sealing & Inspection", description: "Post-heating all wrapped borders and inspecting under multi-angle studio lighting." }
     ],
-    recommendedFor: "Automotive enthusiasts wanting a custom, head-turning color change combined with real stone-chip protection that standard vinyl wraps cannot match."
+    recommendedFor: "Automotive enthusiasts wanting a custom, head-turning color change combined with real stone-chip protection that standard vinyl wraps cannot match.",
+    images: [
+      {
+        src: "/images/services/color-ppf.webp",
+        alt: "Bespoke color PPF application combining color transformation with TPU protection",
+        caption: "Color PPF Transformation"
+      },
+      {
+        src: "/services/color-ppf/color-ppf-2.webp",
+        alt: "Full vehicle body wrap in high-gloss color paint protection film",
+        caption: "Deep Gloss Finish & Seamless Edge Wrap"
+      }
+    ]
   },
   {
     id: "sun-films",

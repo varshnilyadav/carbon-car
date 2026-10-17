@@ -51,6 +51,7 @@ export default function ClaroPPFSection() {
     brandName,
     tagline,
     description,
+    brandImage,
     logoUrl,
     videoUrl,
     highlights,
@@ -81,6 +82,20 @@ export default function ClaroPPFSection() {
             )}
 
             {description && <p className={styles.brandDesc}>{description}</p>}
+
+            {/* Brand Graphic/Artwork Image Slot */}
+            {brandImage && (
+              <div className={styles.brandImageWrapper}>
+                <Image
+                  src={brandImage}
+                  alt="Claro PPF Engineered Paint Protection Film"
+                  width={1427}
+                  height={1102}
+                  className={styles.brandImage}
+                  style={{ objectFit: "contain", width: "100%", height: "auto" }}
+                />
+              </div>
+            )}
           </Reveal>
         </div>
 
