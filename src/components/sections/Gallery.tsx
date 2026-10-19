@@ -7,12 +7,10 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionHeading from "../ui/SectionHeading";
-import Magnetic from "@/components/motion/Magnetic";
-import { galleryItems, galleryCategories } from "@/data/siteData";
+import { galleryItems } from "@/data/siteData";
 import styles from "./Gallery.module.css";
 
 export default function Gallery() {
-  const [activeCategory, setActiveCategory] = useState("ALL");
   const [activeItem, setActiveItem] = useState<(typeof galleryItems)[0] | null>(null);
 
   const sectionRef = useRef<HTMLElement>(null);
@@ -20,44 +18,10 @@ export default function Gallery() {
   const progressBarRef = useRef<HTMLDivElement>(null);
   const counterRef = useRef<HTMLDivElement>(null);
 
-  const filteredItems = galleryItems.filter(
-    (item) => activeCategory === "ALL" || item.category === activeCategory
-  );
-
+  const filteredItems = galleryItems;
   const shouldCenterRow = filteredItems.length <= 1;
 
-  // Handle filter selection with smooth scroll reset to gallery start
-  const handleCategoryChange = (cat: string) => {
-    if (cat === activeCategory) return;
-
-    if (sectionRef.current) {
-      const rect = sectionRef.current.getBoundingClientRect();
-      if (rect.top < -10) {
-        if (typeof window !== "undefined") {
-          const lenis = (
-            window as unknown as {
-              __lenis?: {
-                scrollTo: (
-                  target: HTMLElement,
-                  opts?: { offset?: number; duration?: number }
-                ) => void;
-              };
-            }
-          ).__lenis;
-
-          if (lenis) {
-            lenis.scrollTo(sectionRef.current, { offset: 0, duration: 0.6 });
-          } else {
-            sectionRef.current.scrollIntoView({ behavior: "smooth" });
-          }
-        }
-      }
-    }
-
-    setActiveCategory(cat);
-  };
-
-  // Reset progress bar & counter on category change, and refresh ScrollTrigger after layout settles
+  // Reset progress bar & counter on mount, and refresh ScrollTrigger after layout settles
   useEffect(() => {
     if (progressBarRef.current) {
       progressBarRef.current.style.transform = "scaleX(0)";
@@ -71,7 +35,7 @@ export default function Gallery() {
     }, 420);
 
     return () => clearTimeout(timer);
-  }, [activeCategory, filteredItems.length]);
+  }, []);
 
   // Lock Lenis and body scroll when Lightbox is open
   useEffect(() => {
@@ -209,7 +173,7 @@ export default function Gallery() {
         mm.revert();
       };
     },
-    { dependencies: [activeCategory, filteredItems.length], scope: sectionRef }
+    { dependencies: [], scope: sectionRef }
   );
 
   const handleNext = (e: React.MouseEvent) => {
@@ -233,7 +197,7 @@ export default function Gallery() {
       <span id="gallery" style={{ position: "absolute", top: 0 }} />
 
       <div className={styles.pinWrapper}>
-        {/* Pinned top: SectionHeading and Filters */}
+        {/* Pinned top: SectionHeading */}
         <div className={styles.pinnedHeader}>
           <div className="container">
             <SectionHeading
@@ -242,19 +206,6 @@ export default function Gallery() {
               title="CAR TRANSFORMATION GALLERY"
               align="center"
             />
-
-            <div className={styles.filters}>
-              {galleryCategories.map((cat) => (
-                <Magnetic key={cat} strength={0.2}>
-                  <button
-                    className={`${styles.filterBtn} ${activeCategory === cat ? styles.active : ""}`}
-                    onClick={() => handleCategoryChange(cat)}
-                  >
-                    {cat}
-                  </button>
-                </Magnetic>
-              ))}
-            </div>
           </div>
         </div>
 
