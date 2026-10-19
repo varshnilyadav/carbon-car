@@ -75,7 +75,7 @@
 /* Highlights Grid */
 .highlightsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.5rem;
   margin-bottom: 4rem;
 }
@@ -281,13 +281,13 @@
 
 @media (max-width: 1024px) {
   .highlightsGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 640px) {
   .highlightsGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .specsSection {
     padding: 1.5rem;

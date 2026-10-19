@@ -7,7 +7,7 @@
 
 .processLayout {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 4rem;
   position: relative;
   margin-top: 4rem;
@@ -152,7 +152,7 @@
   }
 
   .processLayout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2.5rem;
     margin-top: 2rem;
   }

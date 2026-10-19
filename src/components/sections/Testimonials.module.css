@@ -110,7 +110,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 11px;
+  font-size: 0.75rem;
   color: var(--color-text-secondary);
 }
 

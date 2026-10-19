@@ -7,7 +7,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
   gap: 4rem;
   align-items: center;
 }
@@ -19,7 +19,7 @@
 
 .eyebrow {
   font-family: var(--font-heading);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   letter-spacing: 0.3em;
   color: var(--color-accent);
   display: block;
@@ -64,7 +64,7 @@
 
 .statLabel {
   font-family: var(--font-heading);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   color: var(--color-text-secondary);
 }
@@ -126,7 +126,7 @@
   }
 
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
 }

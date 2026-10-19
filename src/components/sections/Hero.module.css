@@ -73,7 +73,7 @@
 }
 
 .title {
-  font-size: clamp(3rem, 6vw, 6rem);
+  font-size: clamp(2rem, 5.5vw, 6rem);
   line-height: 1.05;
   color: var(--color-off-white);
   margin-bottom: 2rem;
@@ -170,7 +170,7 @@
 
 .scrollText {
   font-family: var(--font-heading);
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   color: var(--color-text-secondary);
   margin-bottom: 1rem;
@@ -242,7 +242,7 @@
   
   .eyebrow {
     letter-spacing: 0.2em;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
   }
 
   .scrollIndicator {

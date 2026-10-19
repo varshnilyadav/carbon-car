@@ -4,7 +4,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
 }
 
@@ -34,7 +34,7 @@
   background-color: var(--color-accent);
   color: var(--color-off-white);
   font-family: var(--font-heading);
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   padding: 0.4rem 0.8rem;
   transform: translateY(-50%);
@@ -90,7 +90,7 @@
   text-align: center;
   padding: 0.875rem 1.5rem;
   font-family: var(--font-heading);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--color-off-white);
@@ -109,14 +109,14 @@
 
 @media (max-width: 992px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
 }
 
 @media (max-width: 600px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .card {

@@ -70,6 +70,33 @@ export default function Navbar() {
     };
   }, []);
 
+  // Lock page scroll (and stop Lenis if present) while the menu is open, restore on close, Esc, or link click
+  useEffect(() => {
+    const lenis = (window as unknown as { __lenis?: { stop: () => void; start: () => void } }).__lenis;
+
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+      lenis?.stop();
+    } else {
+      document.body.style.overflow = "";
+      lenis?.start();
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      lenis?.start();
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [menuOpen]);
+
   const navLinks = [
     { name: "HOME", href: "/#home", id: "home" },
     { name: "ABOUT", href: "/#about", id: "about" },
@@ -96,6 +123,7 @@ export default function Navbar() {
         className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${hidden && !menuOpen ? styles.headerHidden : ""
           }`}
       >
+        <div className={styles.headerBg} aria-hidden="true" />
         <div className={styles.container}>
           <div className={styles.logoContainer}>
             <Link href="/" className={styles.logoLink} aria-label="CARBON - The Detailing Studio Home">
