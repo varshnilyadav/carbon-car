@@ -1,79 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import SectionHeading from "../ui/SectionHeading";
 import Reveal from "@/components/motion/Reveal";
 import styles from "./CarbonDifference.module.css";
-
-const pillars = [
-  {
-    number: "01",
-    title: "SURGICAL PRECISION",
-    description: "Every cut, edge wrap, and panel alignment is executed with micron-level accuracy. We measure clearances and paint thickness in microns, not millimeters.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-        <circle cx="12" cy="12" r="10" />
-        <line x1="22" y1="12" x2="18" y2="12" />
-        <line x1="6" y1="12" x2="2" y2="12" />
-        <line x1="12" y1="6" x2="12" y2="2" />
-        <line x1="12" y1="22" x2="12" y2="18" />
-      </svg>
-    ),
-  },
-  {
-    number: "02",
-    title: "CERTIFIED CRAFTSMEN",
-    description: "Our detailing specialists and film technicians bring extensive expertise working on exotics, supercars, and luxury vehicles with obsessive care.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-      </svg>
-    ),
-  },
-  {
-    number: "03",
-    title: "10,000 SQ FT CLEAN LAB",
-    description: "Hyderabad's purpose-built automotive facility featuring climate-controlled dust-free bays, hospital-grade filtration, and high-CRI inspection light tunnels.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-        <rect x="3" y="3" width="18" height="18" rx="2" />
-        <path d="M3 9h18M9 21V9" />
-      </svg>
-    ),
-  },
-  {
-    number: "04",
-    title: "TIER-1 PROTECTION FILMS",
-    description: "Exclusively installing genuine Claro PPF and Aegis SPX thermoplastic polyurethane with self-healing topcoats and up to 10-year manufacturer warranty.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-  },
-  {
-    number: "05",
-    title: "ZERO-BLADE PAINT SAFETY",
-    description: "Zero razor blades on exposed factory paint. We employ precision computer-aided template plotting and tucked-edge wrapping for near-invisible protection.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-        <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
-        <line x1="16" y1="8" x2="2" y2="22" />
-        <line x1="17.5" y1="15" x2="9" y2="15" />
-      </svg>
-    ),
-  },
-  {
-    number: "06",
-    title: "TRANSPARENT PARTNERSHIP",
-    description: "Thorough pre-inspection vehicle mapping, stage-by-stage photo and video updates throughout the transformation, and comprehensive warranty documentation.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M9 12l2 2 4-4" />
-      </svg>
-    ),
-  },
-];
 
 export default function CarbonDifference() {
   return (
@@ -83,34 +13,89 @@ export default function CarbonDifference() {
       <div className="container">
         <SectionHeading
           number="02"
-          label="WHY CHOOSE CARBON"
-          title="THE CARBON ADVANTAGE."
-          subtitle="Engineering precision, dust-free climate bays, and aerospace-tier materials designed to elevate and safeguard your automobile."
+          label="WHY CHOOSE CARBON?"
+          title="MORE THAN DETAILING."
+          subtitle="A Commitment to Perfection."
           align="center"
         />
 
-        <div className={styles.grid}>
-          {pillars.map((pillar, idx) => (
-            <Reveal
-              key={pillar.number}
-              y={30}
-              duration={0.6}
-              delay={idx * 0.08}
-              className={styles.pillarWrapper}
-            >
-              <div className={styles.pillar}>
-                <div className={styles.pillarTop}>
-                  <div className={styles.iconBox}>{pillar.icon}</div>
-                  <span className={styles.pillarNumber}>{pillar.number}</span>
+        <div className={styles.contentGrid}>
+          {/* Card 1: Exceptional Care & Road Challenges */}
+          <Reveal y={24} duration={0.65} delay={0.1} className={styles.cardWrapper}>
+            <div className={styles.card}>
+              <div className={styles.cardHeader}>
+                <div className={styles.iconBox}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
                 </div>
-                <div className={styles.pillarLine}></div>
-                <h3 className={styles.pillarTitle}>{pillar.title}</h3>
-                <p className={styles.pillarText}>{pillar.description}</p>
-                <div className={styles.cardHoverGlow} />
+                <span className={styles.cardBadge}>CARE & PROTECTION</span>
               </div>
-            </Reveal>
-          ))}
+              <p className={styles.cardText}>
+                At Carbon The Detailing Studio, we believe every vehicle deserves exceptional care, lasting protection, and a finish that stands out. From everyday road challenges to the demands of maintaining a luxury vehicle, your car&apos;s paint and interiors face constant exposure to scratches, UV rays, contaminants, and wear.
+              </p>
+              <div className={styles.featureList}>
+                <span className={styles.featureChip}>Scratches & Swirls</span>
+                <span className={styles.featureChip}>UV Degradation</span>
+                <span className={styles.featureChip}>Environmental Contaminants</span>
+                <span className={styles.featureChip}>Interior & Exterior Wear</span>
+              </div>
+              <div className={styles.cardGlow} />
+            </div>
+          </Reveal>
+
+          {/* Card 2: Advanced Solutions Under One Roof */}
+          <Reveal y={24} duration={0.65} delay={0.2} className={styles.cardWrapper}>
+            <div className={styles.card}>
+              <div className={styles.cardHeader}>
+                <div className={styles.iconBox}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
+                <span className={styles.cardBadge}>UNDER ONE ROOF</span>
+              </div>
+              <p className={styles.cardText}>
+                That&apos;s why we bring together advanced automotive protection, precision workmanship, and premium detailing solutions under one roof. From Paint Protection Film (PPF) and Colour PPF to Graphene Coating, window films, and interior and exterior detailing, every service is designed to help preserve your vehicle&apos;s appearance, enhance its finish, and maintain its appeal.
+              </p>
+              <div className={styles.featureList}>
+                <span className={styles.featureChip}>Paint Protection Film (PPF)</span>
+                <span className={styles.featureChip}>Colour PPF</span>
+                <span className={styles.featureChip}>Graphene Coating</span>
+                <span className={styles.featureChip}>Window Films</span>
+                <span className={styles.featureChip}>Interior & Exterior Detailing</span>
+              </div>
+              <div className={styles.cardGlow} />
+            </div>
+          </Reveal>
         </div>
+
+        {/* Bottom Banner: Standout Philosophy Statement */}
+        <Reveal y={24} duration={0.7} delay={0.3}>
+          <div className={styles.statementBanner}>
+            <div className={styles.statementAccentBar} />
+            <div className={styles.statementInner}>
+              <div className={styles.statementQuoteWrapper}>
+                <div className={styles.statementQuoteIcon}>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p className={styles.statementQuote}>
+                  At Carbon, it&apos;s not just about how your car looks today. It&apos;s about how well it stays protected for tomorrow.
+                </p>
+              </div>
+              <Link href="#booking" className={styles.statementBtn}>
+                BOOK YOUR SLOT
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
