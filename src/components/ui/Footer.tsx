@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteConfig } from "@/data/siteConfig";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -23,7 +24,7 @@ export default function Footer() {
 
               <div className={styles.infoCardsList}>
                 {/* Call Us */}
-                <a href="tel:+919959517361" className={styles.infoCard}>
+                <a href={`tel:${siteConfig.telephoneRaw}`} className={styles.infoCard}>
                   <div className={styles.infoIconBox}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -31,7 +32,7 @@ export default function Footer() {
                   </div>
                   <div className={styles.infoCardContent}>
                     <span className={styles.infoCardLabel}>Call Us</span>
-                    <span className={styles.infoCardValue}>+91 9959517361</span>
+                    <span className={styles.infoCardValue}>{siteConfig.telephone}</span>
                   </div>
                 </a>
 
@@ -131,8 +132,8 @@ export default function Footer() {
               <li><a href="https://www.instagram.com/carbon.hyd/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
               <li><a href="https://www.facebook.com/Carbon.hyd/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
               <li><a href="https://maps.app.goo.gl/mFHht68AYNDtpZAD8" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
-              <li><a href="https://wa.me/919959517361" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-              <li><a href="tel:+919959517361">+91 9959517361</a></li>
+              <li><a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+              <li><a href={`tel:${siteConfig.telephoneRaw}`}>{siteConfig.telephone}</a></li>
             </ul>
           </div>
 

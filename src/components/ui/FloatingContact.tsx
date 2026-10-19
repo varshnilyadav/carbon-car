@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { siteConfig } from "@/data/siteConfig";
 import styles from "./FloatingContact.module.css";
 
 export default function FloatingContact() {
@@ -82,12 +83,12 @@ export default function FloatingContact() {
 
         {/* WhatsApp Icon */}
         <a
-          href="https://wa.me/919959517361"
+          href={siteConfig.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           className={`${styles.floatingIconBtn} ${styles.whatsappBtn}`}
           aria-label="Chat with us on WhatsApp"
-          title="Chat on WhatsApp +91 9959517361"
+          title={`Chat on WhatsApp ${siteConfig.whatsappNumber}`}
         >
           <svg
             width="22"
@@ -127,7 +128,7 @@ export default function FloatingContact() {
         </a>
 
         <a
-          href="https://wa.me/919959517361"
+          href={siteConfig.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           className={`${styles.mobileBarItem} ${styles.mobileBarItemWhatsapp}`}

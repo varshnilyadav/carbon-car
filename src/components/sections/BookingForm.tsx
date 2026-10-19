@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import SectionHeading from "../ui/SectionHeading";
 import Magnetic from "@/components/motion/Magnetic";
 import Reveal from "@/components/motion/Reveal";
+import { siteConfig } from "@/data/siteConfig";
 import styles from "./BookingForm.module.css";
 
 export default function BookingForm() {
@@ -47,12 +48,44 @@ export default function BookingForm() {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
+  const [lastWhatsappUrl, setLastWhatsappUrl] = useState(siteConfig.whatsappUrl);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitState("loading");
 
+    const serviceMap: Record<string, string> = {
+      ppf: "Paint Protection Film (PPF)",
+      ceramic: "Ceramic Coating",
+      detailing: "Interior & Exterior Detailing",
+      graphene: "Graphene Coating",
+      wrapping: "Color PPF / Car Wrapping",
+      sunfilms: "Sun Films / Tinting",
+      other: "Custom Transformation",
+    };
+
+    const serviceTitle = serviceMap[formData.service] || formData.service || "Automotive Transformation Consultation";
+
+    const text = [
+      `*New Consultation Request — CARBON Studio*`,
+      ``,
+      `*Name:* ${formData.name}`,
+      `*Phone:* ${formData.phone}`,
+      `*Vehicle:* ${formData.vehicle || "Not specified"}`,
+      `*Service:* ${serviceTitle}`,
+      formData.message ? `*Notes:* ${formData.message}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const whatsappUrl = `${siteConfig.whatsappUrl}?text=${encodeURIComponent(text)}`;
+    setLastWhatsappUrl(whatsappUrl);
+
     setTimeout(() => {
       setSubmitState("success");
+      // Redirect to WhatsApp
+      window.location.href = whatsappUrl;
+
       setTimeout(() => {
         setSubmitState("idle");
         setFormData({
@@ -62,8 +95,8 @@ export default function BookingForm() {
           service: "",
           message: "",
         });
-      }, 4000);
-    }, 900);
+      }, 6000);
+    }, 600);
   };
 
   return (
@@ -91,18 +124,18 @@ export default function BookingForm() {
                   <span className={styles.contactLabel}>ENQUIRIES & CALL</span>
                   <p className={styles.contactText}>
                     <a
-                      href="tel:+919959517361"
+                      href={`tel:${siteConfig.telephoneRaw}`}
                       style={{ color: "var(--color-off-white)", display: "block", marginBottom: "4px" }}
                     >
-                      +91 9959517361
+                      {siteConfig.telephone}
                     </a>
                     <a
-                      href="https://wa.me/919959517361"
+                      href={siteConfig.whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ color: "var(--color-accent)" }}
                     >
-                      Chat on WhatsApp
+                      Chat on WhatsApp ({siteConfig.whatsappNumber})
                     </a>
                   </p>
                 </div>
@@ -126,7 +159,26 @@ export default function BookingForm() {
                   </svg>
                 </div>
                 <h3>REQUEST RECEIVED</h3>
-                <p>A Carbon specialist will contact you shortly to confirm your consultation.</p>
+                <p>Opening WhatsApp to send your consultation details directly to the studio...</p>
+                <a
+                  href={lastWhatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-block",
+                    marginTop: "1rem",
+                    padding: "0.65rem 1.25rem",
+                    backgroundColor: "#25d366",
+                    color: "#ffffff",
+                    borderRadius: "4px",
+                    fontWeight: 700,
+                    fontSize: "0.8rem",
+                    textDecoration: "none",
+                    letterSpacing: "0.05em",
+                  }}
+                >
+                  CLICK HERE IF NOT REDIRECTED
+                </a>
               </div>
             ) : (
               <form className={styles.form} onSubmit={handleSubmit}>
