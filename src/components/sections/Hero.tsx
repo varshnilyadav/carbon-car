@@ -157,7 +157,7 @@ export default function Hero() {
       <div className={styles.content}>
         <div className={styles.eyebrowWrapper}>
           <span className={`${styles.eyebrow} gsap-eyebrow`}>
-            HYDERABAD&apos;S AUTOMOTIVE TRANSFORMATION STUDIO
+            CARBON HYDERABAD • JUBILEE HILLS STUDIO
           </span>
         </div>
 
@@ -184,7 +184,7 @@ export default function Hero() {
         </h1>
         
         <p className={`${styles.subtitle} gsap-desc`}>
-          Premium paint protection film, color PPF and ceramic coating at Jubilee Hills&apos; dedicated PPF studio.
+          Welcome to CARBON, Hyderabad&apos;s premier studio for PPF (paint protection film), color PPF and ceramic coating in Jubilee Hills.
         </p>
         
         <div className={styles.actions}>

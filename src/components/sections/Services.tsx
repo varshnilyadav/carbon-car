@@ -7,7 +7,21 @@ import Reveal from "@/components/motion/Reveal";
 import TiltCard from "@/components/motion/TiltCard";
 import styles from "./Services.module.css";
 
+// Curated core protection & detailing services for the homepage
+const homepageSlugs = [
+  "ppf",
+  "color-ppf",
+  "ceramic-coating",
+  "graphene-coating",
+  "sun-films",
+  "interior-exterior-detailing",
+];
+
 export default function Services() {
+  const featuredServices = homepageSlugs
+    .map((slug) => services.find((s) => s.slug === slug))
+    .filter((s): s is typeof services[0] => Boolean(s));
+
   return (
     <section className={`section ${styles.services}`} id="services">
       <div className="container">
@@ -19,7 +33,7 @@ export default function Services() {
         />
 
         <div className={styles.grid}>
-          {services.map((service, index) => (
+          {featuredServices.map((service, index) => (
             <Reveal
               key={service.id}
               y={30}

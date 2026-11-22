@@ -12,9 +12,17 @@ export const business = {
   legalName: "CARBON",
   descriptor: "Automotive Transformation Studio",
 
-  title: "PPF in Hyderabad | Paint Protection Film Studio | CARBON",
+  title: "CARBON Hyderabad | PPF in Hyderabad | Paint Protection Film",
   description:
-    "Premium PPF in Hyderabad: paint protection film, color PPF and ceramic coating at CARBON Studio, Jubilee Hills. Book a free consultation today.",
+    "CARBON Hyderabad: Premier studio for PPF in Hyderabad, color PPF and ceramic coating at Jubilee Hills. Book a free vehicle inspection with CARBON Hyd today.",
+
+  alternateNames: [
+    "CARBON Hyd",
+    "CARBON Hyderabad",
+    "CARBON - The Detailing Studio",
+    "Carbon The Detailing Studio Hyderabad",
+    "CARBON Studio Jubilee Hills",
+  ],
 
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.carbonhyd.studio").replace(/\/$/, ""),
   ogImage: "/images/og-image.jpg",

@@ -59,7 +59,7 @@ export default function BrandIntro() {
 
           <Reveal y={20} duration={0.6} delay={0.3}>
             <p className={styles.text}>
-              Carbon is an elite automotive transformation studio and the premier destination for <Link href="/services/ppf" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}>PPF in Hyderabad</Link>. Paint Protection Film (PPF) is an optically clear, high-tensile thermoplastic polyurethane barrier that physically shields your vehicle against stone chips, scratches, and road debris while self-healing fine swirl marks with ambient heat.
+              CARBON is Hyderabad&apos;s elite automotive transformation studio and the premier destination for <Link href="/services/ppf" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}>PPF in Hyderabad</Link>. Paint Protection Film (PPF) is an optically clear, high-tensile thermoplastic polyurethane barrier that physically shields your vehicle against stone chips, scratches, and road debris while self-healing fine swirl marks with ambient heat.
             </p>
           </Reveal>
 
