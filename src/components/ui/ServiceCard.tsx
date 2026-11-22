@@ -33,6 +33,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   };
 
   const badgeNumber = String(index).padStart(2, "0");
+  const anchorLabel = `${title} in Hyderabad`;
 
   return (
     <Link
@@ -40,6 +41,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
       className={styles.card}
       ref={cardRef}
       onMouseMove={handleMouseMove}
+      aria-label={anchorLabel}
     >
       <div className={styles.glossSweep} aria-hidden="true" />
 
@@ -56,7 +58,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         <div className={styles.imageWrapper}>
           <Image
             src={image}
-            alt={title}
+            alt={`${title} service at CARBON - The Detailing Studio Hyderabad`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className={styles.image}

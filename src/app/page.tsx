@@ -11,10 +11,28 @@ import Testimonials from "@/components/sections/Testimonials";
 import BookingForm from "@/components/sections/BookingForm";
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/ui/Footer";
+import { faqs } from "@/data/siteData";
 
 export default function Home() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Navbar />
       <main className="carbon-texture">
         <Hero />

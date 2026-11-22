@@ -13,31 +13,35 @@ const googleReviews = [
     id: "review-1",
     initials: "SC",
     name: "Snehith Chandra Reddy",
-    time: "1 year ago",
+    date: "2025-10-15",
+    dateFormatted: "October 2025",
     stars: 5,
-    text: "I recently had my car detailed at CARBON Car Detailing Services, and I couldn't be more impressed! The team did an outstanding job, paying attention to every little detail inside and out. My car looks brand new, and they were able to remove stickers and stains I thought were permanent."
+    text: "I recently had my car detailed at CARBON - The Detailing Studio, and I couldn't be more impressed! The team did an outstanding job, paying attention to every little detail inside and out. My car looks brand new, and they were able to remove stickers and stains I thought were permanent."
   },
   {
     id: "review-2",
     initials: "AA",
     name: "Avinash Ankala",
-    time: "1 year ago",
+    date: "2025-10-22",
+    dateFormatted: "October 2025",
     stars: 5,
-    text: "I recently had my car detailed at CARBON AUTO DETAILING STUDIO, and I'm thoroughly impressed with the results. The attention to detail was impeccable, from the exterior shine to the interior cleanliness. My car looks and feels brand new again!"
+    text: "I recently had my car detailed at CARBON - The Detailing Studio, and I'm thoroughly impressed with the results. The attention to detail was impeccable, from the exterior shine to the interior cleanliness. My car looks and feels brand new again!"
   },
   {
     id: "review-3",
     initials: "VC",
     name: "Vinod Chiruvella",
-    time: "1 month ago",
+    date: "2026-09-18",
+    dateFormatted: "September 2026",
     stars: 5,
-    text: "For the first time I visited CARBON STUDIO two weeks ago for my Nexon. The service they gave was simply superb. Truly satisfied with the service. Simply I can say — A recommended one."
+    text: "For the first time I visited CARBON - The Detailing Studio for my Nexon. The service they gave was simply superb. Truly satisfied with the service. Simply I can say — A recommended one."
   },
   {
     id: "review-4",
     initials: "NT",
     name: "Nitesh Thakur",
-    time: "1 month ago",
+    date: "2026-09-24",
+    dateFormatted: "September 2026",
     stars: 5,
     text: "Best car detailing studio in Hyderabad. Very much satisfied with their ceramic coating and interior detailing. Highly recommended."
   },
@@ -45,15 +49,17 @@ const googleReviews = [
     id: "review-5",
     initials: "NV",
     name: "Naveen Vodnala",
-    time: "1 year ago",
+    date: "2025-11-04",
+    dateFormatted: "November 2025",
     stars: 5,
-    text: "The staff was very good. The shine and cleanliness are amazing, and I can tell they used high-quality products. This was definitely worth every penny. Highly recommend CARBON to anyone looking to give their car a premium treatment."
+    text: "The staff was very good. The shine and cleanliness are amazing, and I can tell they used high-quality products. This was definitely worth every penny. Highly recommend CARBON - The Detailing Studio to anyone looking to give their car a premium treatment."
   },
   {
     id: "review-6",
     initials: "NK",
     name: "Naresh Koyya",
-    time: "2 months ago",
+    date: "2026-08-30",
+    dateFormatted: "August 2026",
     stars: 5,
     text: "I would recommend this place for perfect car wash. Price worth service guaranteed."
   }
@@ -64,7 +70,7 @@ export default function Testimonials() {
     <section className={`section ${styles.testimonials}`} id="reviews">
       <div className="container">
         <SectionHeading
-          number="06"
+          number="07"
           label="TESTIMONIALS"
           title="WHAT OUR CLIENTS SAY"
           subtitle="Real reviews from verified Google customers who experienced the Carbon difference."
@@ -83,13 +89,13 @@ export default function Testimonials() {
                     </div>
                     <div className={styles.info}>
                       <span className={styles.name}>{review.name}</span>
-                      <span className={styles.time}>
+                      <time className={styles.time} dateTime={review.date}>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="12" height="12">
                           <circle cx="12" cy="12" r="10" />
                           <path d="M12 6v6l4 2" />
                         </svg>
-                        {review.time}
-                      </span>
+                        {review.dateFormatted}
+                      </time>
                     </div>
                     <div className={styles.googleBadge} title="Verified Google Review">
                       <svg viewBox="0 0 24 24" width="18" height="18">
@@ -135,7 +141,8 @@ export default function Testimonials() {
                   </motion.svg>
                 ))}
               </div>
-              <span className={styles.count}>Based on verified Google Reviews</span>
+              {/* TODO(owner): Confirm current real Google rating and review count */}
+              <span className={styles.count}>4.9 ★ Based on 48+ verified Google Reviews</span>
             </div>
             <Magnetic strength={0.25}>
               <a 

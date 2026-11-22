@@ -8,6 +8,7 @@ import { ServiceCard } from "@/components/ui/ServiceCard";
 import ServiceGallery from "@/components/ui/ServiceGallery";
 import PPFPackages from "@/components/sections/PPFPackages";
 import ClaroPPFSection from "@/components/sections/ClaroPPFSection";
+import ServiceFAQSection from "@/components/sections/ServiceFAQ";
 import { services } from "@/data/siteData";
 import { siteConfig } from "@/data/siteConfig";
 import styles from "./ServicePage.module.css";
@@ -33,16 +34,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const imageUrl = `${siteConfig.url}${service.image}`;
 
   return {
-    title: `${service.title} | CARBON Automotive Studio Hyderabad`,
-    description: service.shortDescription,
+    title: service.metaTitle,
+    description: service.metaDescription,
     alternates: {
       canonical: pageUrl,
     },
     openGraph: {
       type: "article",
       url: pageUrl,
-      title: `${service.title} | CARBON Hyderabad`,
-      description: service.shortDescription,
+      title: service.metaTitle,
+      description: service.metaDescription,
       images: [
         {
           url: imageUrl,
@@ -54,8 +55,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${service.title} | CARBON Hyderabad`,
-      description: service.shortDescription,
+      title: service.metaTitle,
+      description: service.metaDescription,
       images: [imageUrl],
     },
   };
@@ -82,21 +83,57 @@ export default async function ServicePage({ params }: Props) {
     url: `${siteConfig.url}/services/${slug}`,
     image: `${siteConfig.url}${service.image}`,
     provider: {
-      "@type": "AutoRepair",
+      "@type": "AutomotiveBusiness",
+      "@id": `${siteConfig.url}/#business`,
       name: siteConfig.name,
       url: siteConfig.url,
       telephone: siteConfig.telephoneRaw,
-      sameAs: [
-        siteConfig.instagramUrl,
-        siteConfig.facebookUrl,
-        siteConfig.googleMapsUrl,
-      ],
     },
     areaServed: {
       "@type": "City",
-      name: "Hyderabad",
+      name: siteConfig.areaServed.name,
     },
   };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${siteConfig.url}/#services`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: service.title,
+        item: `${siteConfig.url}/services/${slug}`,
+      },
+    ],
+  };
+
+  const serviceFaqJsonLd = service.faqs?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: service.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
 
   return (
     <>
@@ -104,6 +141,16 @@ export default async function ServicePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      {serviceFaqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceFaqJsonLd) }}
+        />
+      )}
       <Navbar />
       <main className={styles.main}>
         {/* Service Hero */}
@@ -111,7 +158,7 @@ export default async function ServicePage({ params }: Props) {
           <div className={styles.heroBg}>
             <Image
               src={service.image}
-              alt={service.title}
+              alt={`${service.title} at CARBON - The Detailing Studio Hyderabad`}
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
               priority
@@ -240,6 +287,9 @@ export default async function ServicePage({ params }: Props) {
             </div>
           </section>
         )}
+
+        {/* Service FAQs (Rendered in SSR HTML before CTA) */}
+        <ServiceFAQSection faqs={service.faqs} serviceTitle={service.title} />
 
         {/* CTA */}
         <section className={styles.ctaSection}>

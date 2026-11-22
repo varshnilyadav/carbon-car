@@ -15,16 +15,16 @@ export default function Footer() {
               <div className={styles.brandHeader}>
                 <span className={styles.brandName}>CARBON</span>
                 <span className={styles.brandDivider}></span>
-                <span className={styles.brandSub}>AUTO DETAILING STUDIO</span>
+                <span className={styles.brandSub}>THE DETAILING STUDIO</span>
               </div>
 
               <p className={styles.brandDesc}>
-                Hyderabad&apos;s leading automotive transformation studio. We don&apos;t just wash cars; we protect and restore your investment with world-class graphene coatings, PPF, and obsessive attention to detail.
+                Hyderabad&apos;s leading automotive transformation studio. We don&apos;t just wash cars; we protect and elevate your vehicle with advanced graphene coatings, self-healing PPF, and obsessive attention to detail.
               </p>
 
               <div className={styles.infoCardsList}>
                 {/* Call Us */}
-                <a href={`tel:${siteConfig.telephoneRaw}`} className={styles.infoCard}>
+                <a href={`tel:${siteConfig.telephoneRaw}`} className={styles.infoCard} aria-label="Call CARBON detailing studio">
                   <div className={styles.infoIconBox}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -32,7 +32,26 @@ export default function Footer() {
                   </div>
                   <div className={styles.infoCardContent}>
                     <span className={styles.infoCardLabel}>Call Us</span>
-                    <span className={styles.infoCardValue}>{siteConfig.telephone}</span>
+                    <span className={styles.infoCardValue}>{siteConfig.telephoneDisplay}</span>
+                  </div>
+                </a>
+
+                {/* WhatsApp */}
+                <a
+                  href={siteConfig.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.infoCard}
+                  aria-label="Chat with CARBON on WhatsApp"
+                >
+                  <div className={styles.infoIconBox}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                  </div>
+                  <div className={styles.infoCardContent}>
+                    <span className={styles.infoCardLabel}>WhatsApp</span>
+                    <span className={styles.infoCardValue}>{siteConfig.whatsappDisplay}</span>
                   </div>
                 </a>
 
@@ -45,17 +64,18 @@ export default function Footer() {
                     </svg>
                   </div>
                   <div className={styles.infoCardContent}>
-                    <span className={styles.infoCardLabel}>Hours</span>
-                    <span className={styles.infoCardValue}>10:00 AM - 7:00 PM (Everyday)</span>
+                    <span className={styles.infoCardLabel}>Studio Hours</span>
+                    <span className={styles.infoCardValue}>{siteConfig.hours.display}</span>
                   </div>
                 </div>
 
                 {/* Address */}
                 <a
-                  href="https://maps.app.goo.gl/mFHht68AYNDtpZAD8"
+                  href={siteConfig.googleMapsUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="me noopener noreferrer"
                   className={styles.infoCard}
+                  aria-label="View CARBON studio location on Google Maps"
                 >
                   <div className={styles.infoIconBox}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
@@ -64,8 +84,8 @@ export default function Footer() {
                     </svg>
                   </div>
                   <div className={styles.infoCardContent}>
-                    <span className={styles.infoCardLabel}>Address</span>
-                    <span className={styles.infoCardValue}>CARBON Studio, Hyderabad, Telangana</span>
+                    <span className={styles.infoCardLabel}>Studio Address</span>
+                    <span className={styles.infoCardValue}>{siteConfig.address.fullAddress}</span>
                   </div>
                 </a>
               </div>
@@ -81,7 +101,7 @@ export default function Footer() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="CARBON Automotive Transformation Studio Location"
+                title="CARBON - The Detailing Studio Location in Jubilee Hills Hyderabad"
                 className={styles.mapIframe}
               />
               <div className={`${styles.mapOverlayBorder} map-overlay-border`} />
@@ -92,30 +112,30 @@ export default function Footer() {
         <div className={styles.grid}>
           
           <div className={styles.brand}>
-            <h2 className={styles.logo}>CARBON</h2>
-            <p className={styles.tagline}>HYDERABAD&apos;S AUTOMOTIVE TRANSFORMATION STUDIO</p>
+            <p className={styles.logo}>CARBON</p>
+            <p className={styles.tagline}>THE DETAILING STUDIO • HYDERABAD</p>
             <div className={styles.techDetail}>
-              <span className={styles.coord}>17.4253° N, 78.3951° E</span>
+              <span className={styles.coord}>17.4254° N, 78.3950° E</span>
               <span className={styles.rule}></span>
             </div>
           </div>
 
           <div className={styles.links}>
-            <h3 className={styles.columnTitle}>EXPLORE</h3>
+            <p className={styles.columnTitle}>EXPLORE</p>
             <ul className={styles.list}>
-              <li><Link href="/#home">Home</Link></li>
-              <li><Link href="/#about">About</Link></li>
-              <li><Link href="/#services">Services</Link></li>
-              <li><Link href="/#transformations">Transformations</Link></li>
-              <li><Link href="/#studio">Studio</Link></li>
-              <li><Link href="/#reviews">Reviews</Link></li>
-              <li><Link href="/#contact">Contact</Link></li>
-              <li><Link href="/sitemap">Sitemap</Link></li>
+              <li><Link href="/#home" aria-label="CARBON Studio Home">Home</Link></li>
+              <li><Link href="/#about" aria-label="About CARBON Studio">About</Link></li>
+              <li><Link href="/#services" aria-label="Detaling & Protection Services">Services</Link></li>
+              <li><Link href="/#transformations" aria-label="Car Transformations Gallery">Transformations</Link></li>
+              <li><Link href="/#studio" aria-label="The Carbon Detailing Lab">Studio</Link></li>
+              <li><Link href="/#reviews" aria-label="Verified Customer Reviews">Reviews</Link></li>
+              <li><Link href="/#contact" aria-label="Studio Location and Contact">Contact</Link></li>
+              <li><Link href="/sitemap" aria-label="Website Architecture Sitemap">Sitemap</Link></li>
             </ul>
           </div>
 
           <div className={styles.links}>
-            <h3 className={styles.columnTitle}>SERVICES</h3>
+            <p className={styles.columnTitle}>SERVICES</p>
             <ul className={styles.list}>
               <li><Link href="/services/interior-exterior-detailing">Interior & Exterior Detailing</Link></li>
               <li><Link href="/services/graphene-coating">Graphene Coating</Link></li>
@@ -123,24 +143,29 @@ export default function Footer() {
               <li><Link href="/services/ppf">Paint Protection Film (PPF)</Link></li>
               <li><Link href="/services/color-ppf">Color PPF</Link></li>
               <li><Link href="/services/sun-films">Sun Films</Link></li>
+              <li><Link href="/services/car-wrapping">Car Wrapping</Link></li>
+              <li><Link href="/services/bodykits">Body Kits & Aero</Link></li>
+              <li><Link href="/services/restoration">Car Restoration</Link></li>
+              <li><Link href="/services/paint-refinishing">Paint Refinishing</Link></li>
+              <li><Link href="/services/performance-upgrades">Performance Upgrades</Link></li>
             </ul>
           </div>
 
           <div className={styles.links}>
-            <h3 className={styles.columnTitle}>CONNECT</h3>
+            <p className={styles.columnTitle}>CONNECT</p>
             <ul className={styles.list}>
-              <li><a href="https://www.instagram.com/carbon.hyd/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-              <li><a href="https://www.facebook.com/Carbon.hyd/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-              <li><a href="https://maps.app.goo.gl/mFHht68AYNDtpZAD8" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
-              <li><a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-              <li><a href={`tel:${siteConfig.telephoneRaw}`}>{siteConfig.telephone}</a></li>
+              <li><a href={siteConfig.instagramUrl} target="_blank" rel="me noopener noreferrer" aria-label="CARBON on Instagram">Instagram</a></li>
+              <li><a href={siteConfig.facebookUrl} target="_blank" rel="me noopener noreferrer" aria-label="CARBON on Facebook">Facebook</a></li>
+              <li><a href={siteConfig.googleMapsUrl} target="_blank" rel="me noopener noreferrer" aria-label="CARBON Google Maps Business Listing">Google Maps</a></li>
+              <li><a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Chat with CARBON on WhatsApp">{siteConfig.whatsappDisplay}</a></li>
+              <li><a href={`tel:${siteConfig.telephoneRaw}`} aria-label="Call CARBON studio">{siteConfig.telephoneDisplay}</a></li>
             </ul>
           </div>
 
         </div>
 
         <div className={styles.bottom}>
-          <p>© {new Date().getFullYear()} CARBON — All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} CARBON - The Detailing Studio. All Rights Reserved.</p>
           <div className={styles.carbonTexture}></div>
         </div>
       </div>

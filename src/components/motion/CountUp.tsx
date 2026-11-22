@@ -23,7 +23,9 @@ export default function CountUp({
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const shouldReduceMotion = useReducedMotion();
-  const [displayValue, setDisplayValue] = useState(() => (shouldReduceMotion ? end : 0));
+
+  // Server-rendered HTML outputs the real final value for SEO crawlability
+  const [displayValue, setDisplayValue] = useState(end);
 
   useEffect(() => {
     if (!isInView || shouldReduceMotion) return;
@@ -32,7 +34,14 @@ export default function CountUp({
     let animationFrameId: number;
 
     const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
+      if (!startTime) {
+        startTime = timestamp;
+        // Animation starts from zero
+        setDisplayValue(0);
+        animationFrameId = requestAnimationFrame(step);
+        return;
+      }
+
       const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
       // Ease out cubic
       const easedProgress = 1 - Math.pow(1 - progress, 3);

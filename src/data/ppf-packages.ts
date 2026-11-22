@@ -22,15 +22,15 @@ export const ppfPackages: PPFPackage[] = [
     name: "ESSENTIAL",
     years: 5,
     tagline: "Everyday protection against chips and scratches",
-    coverage: "Front-end / high-impact areas", // TODO: confirm with studio
+    coverage: "Front-end / high-impact areas", // TODO(owner): confirm coverage details
     features: [
       "Self-healing top coat",
       "Protection against stone chips and road debris",
       "Hydrophobic, easy-to-clean finish",
       "Professional installation by trained technicians",
-      "5-year manufacturer-backed warranty" // TODO: confirm terms
+      "5-year warranty", // TODO(owner): confirm warranty terms
     ],
-    bestFor: "Daily drivers and first-time PPF buyers"
+    bestFor: "Daily drivers and first-time PPF buyers",
   },
   {
     id: "advance",
@@ -38,76 +38,76 @@ export const ppfPackages: PPFPackage[] = [
     years: 7,
     badge: "MOST POPULAR",
     tagline: "Extended protection with broader coverage",
-    coverage: "Extended coverage, such as front-end plus panels", // TODO: confirm with studio
+    coverage: "Extended coverage, such as front-end plus side panels", // TODO(owner): confirm coverage details
     features: [
       "Everything in Essential",
-      "Higher-grade film for improved clarity and durability", // TODO: confirm with studio
-      "Stain and yellowing resistance", // TODO: verify claim for the chosen film
-      "7-year warranty", // TODO: confirm terms
-      "Complimentary post-install care guidance"
+      "Enhanced optical clarity and durability", // TODO(owner): confirm with studio
+      "Stain and environmental resistance", // TODO(owner): confirm with studio
+      "7-year warranty", // TODO(owner): confirm warranty terms
+      "Complimentary post-install care guidance",
     ],
-    bestFor: "Owners who want long-term protection and value retention"
+    bestFor: "Owners who want long-term protection and value retention",
   },
   {
     id: "ultimate",
     name: "ULTIMATE",
     years: 10,
     tagline: "Complete, long-term protection",
-    coverage: "Full-body coverage", // TODO: confirm with studio
+    coverage: "Full-body coverage", // TODO(owner): confirm coverage details
     features: [
       "Everything in Advance",
-      "Premium top-tier film with maximum clarity and gloss", // TODO: confirm with studio
-      "Full-vehicle wrap-around edges where possible", // TODO: confirm with studio
-      "10-year warranty", // TODO: confirm terms
-      "Priority servicing and inspections" // TODO: confirm with studio
+      "High-clarity film with maximum gloss retention", // TODO(owner): confirm with studio
+      "Edge-wrapped borders wherever panel gaps allow", // TODO(owner): confirm with studio
+      "10-year warranty", // TODO(owner): confirm warranty terms
+      "Priority inspections and check-ups", // TODO(owner): confirm with studio
     ],
-    bestFor: "Premium and performance vehicles, and owners who want the best possible finish"
-  }
+    bestFor: "Flagship luxury & sports vehicles, and owners who want the best possible finish",
+  },
 ];
 
 export const ppfComparisonRows: PPFComparisonRow[] = [
   {
     attribute: "Warranty Duration",
-    essential: "5 Years", // TODO: confirm with studio
-    advance: "7 Years", // TODO: confirm with studio
-    ultimate: "10 Years" // TODO: confirm with studio
+    essential: "5 Years", // TODO(owner): confirm warranty terms
+    advance: "7 Years", // TODO(owner): confirm warranty terms
+    ultimate: "10 Years", // TODO(owner): confirm warranty terms
   },
   {
     attribute: "Coverage",
-    essential: "Front-end / high-impact areas", // TODO: confirm with studio
-    advance: "Extended front-end plus side panels", // TODO: confirm with studio
-    ultimate: "Full-body comprehensive wrap" // TODO: confirm with studio
+    essential: "Front-end / high-impact areas",
+    advance: "Extended front-end plus side panels",
+    ultimate: "Full-body comprehensive coverage",
   },
   {
     attribute: "Film Type",
-    essential: "Automotive Grade TPU", // TODO: confirm with studio
-    advance: "Optical Clarity Enhanced TPU", // TODO: confirm with studio
-    ultimate: "Ultra-Premium Multi-Layer TPU" // TODO: confirm with studio
+    essential: "Confirmed at consultation",
+    advance: "Confirmed at consultation",
+    ultimate: "Confirmed at consultation",
   },
   {
     attribute: "Self-Healing",
-    essential: "Heat-activated (Ambient / Sun)", // TODO: confirm with studio
-    advance: "Advanced Elastomeric Healing", // TODO: confirm with studio
-    ultimate: "Rapid Micro-Scratch Recovery" // TODO: confirm with studio
+    essential: "Confirmed at consultation",
+    advance: "Confirmed at consultation",
+    ultimate: "Confirmed at consultation",
   },
   {
     attribute: "Hydrophobic Finish",
-    essential: "Standard Hydrophobic", // TODO: confirm with studio
-    advance: "Enhanced Stain-Resistant Top Coat", // TODO: confirm with studio
-    ultimate: "Maximum Contact-Angle Hydrophobic" // TODO: confirm with studio
+    essential: "Confirmed at consultation",
+    advance: "Confirmed at consultation",
+    ultimate: "Confirmed at consultation",
   },
   {
     attribute: "Gloss Retention",
-    essential: "High Gloss OEM Finish", // TODO: confirm with studio
-    advance: "Deep Mirror Gloss", // TODO: confirm with studio
-    ultimate: "Ultra-Reflective Optical Clarity" // TODO: confirm with studio
+    essential: "Confirmed at consultation",
+    advance: "Confirmed at consultation",
+    ultimate: "Confirmed at consultation",
   },
   {
     attribute: "Ideal For",
     essential: "Daily drivers & first-time PPF buyers",
-    advance: "Owners seeking long-term protection & value",
-    ultimate: "Premium & performance vehicles"
-  }
+    advance: "Owners seeking long-term protection",
+    ultimate: "Flagship luxury & sports vehicles",
+  },
 ];
 
 export const ppfPackagesNote =

@@ -12,7 +12,7 @@ export default function Services() {
     <section className={`section ${styles.services}`} id="services">
       <div className="container">
         <SectionHeading
-          number="02"
+          number="03"
           label="SERVICES"
           title="TRANSFORM EVERY ELEMENT."
           subtitle="Professional detailing. Long-lasting protection. Immaculate results."

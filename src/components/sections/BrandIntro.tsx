@@ -46,7 +46,7 @@ export default function BrandIntro() {
         {/* Right: Content with staggered Reveal */}
         <div className={styles.content}>
           <Reveal y={20} duration={0.6} delay={0.1}>
-            <span className={styles.eyebrow}>ABOUT US</span>
+            <span className={styles.eyebrow}>01 / ABOUT US</span>
           </Reveal>
 
           <Reveal y={25} duration={0.7} delay={0.2}>
@@ -58,13 +58,13 @@ export default function BrandIntro() {
 
           <Reveal y={20} duration={0.6} delay={0.3}>
             <p className={styles.text}>
-              Carbon is an elite automotive transformation studio. We treat every project as a unique engineering challenge, combining precision detailing, protective films, and performance builds to elevate your vehicle far beyond factory standards.
+              Carbon is an elite automotive transformation studio. We treat every project as a unique engineering challenge, combining precision detailing, protective films, and advanced coatings to elevate your vehicle far beyond factory standards.
             </p>
           </Reveal>
 
           <Reveal y={20} duration={0.6} delay={0.4}>
             <p className={styles.text}>
-              Operating from our cutting-edge studio in Hyderabad, our master technicians utilize precision LED inspection lighting, climate-controlled bays, and the world&apos;s finest ceramic coatings and self-healing films to deliver an unmatched standard of automotive excellence.
+              Operating from our cutting-edge studio in Hyderabad, our technicians utilize precision LED inspection lighting, climate-controlled bays, and advanced ceramic coatings and self-healing films to deliver an exceptional standard of automotive care.
             </p>
           </Reveal>
 
@@ -72,7 +72,7 @@ export default function BrandIntro() {
             <div className={styles.collab}>
               <div className={styles.collabLine}></div>
               <div className={styles.collabContent}>
-                <span className={styles.collabTitle}>CARBON AUTOMOTIVE STUDIO</span>
+                <span className={styles.collabTitle}>CARBON - THE DETAILING STUDIO</span>
               </div>
             </div>
           </Reveal>

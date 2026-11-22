@@ -63,18 +63,32 @@
   user-select: none;
 }
 
-.answerContainer {
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+/* CSS Grid Transition for SEO crawlability: All answers are always present in the DOM */
+.answerWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.answerWrapper.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
 }
 
 .answerInner {
-  padding-bottom: 1.5rem;
+  overflow: hidden;
+  padding-bottom: 0;
   padding-right: 2rem;
+  transition: padding-bottom 0.35s ease;
+}
+
+.answerWrapper.open .answerInner {
+  padding-bottom: 1.5rem;
 }
 
 .answer {
   font-size: 0.95rem;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
 }

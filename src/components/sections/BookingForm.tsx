@@ -55,13 +55,18 @@ export default function BookingForm() {
     setSubmitState("loading");
 
     const serviceMap: Record<string, string> = {
+      "interior-exterior-detailing": "Interior & Exterior Detailing",
+      "graphene-coating": "Graphene Coating",
+      "ceramic-coating": "Ceramic Coating",
       ppf: "Paint Protection Film (PPF)",
-      ceramic: "Ceramic Coating",
-      detailing: "Interior & Exterior Detailing",
-      graphene: "Graphene Coating",
-      wrapping: "Color PPF / Car Wrapping",
-      sunfilms: "Sun Films / Tinting",
-      other: "Custom Transformation",
+      "color-ppf": "Color PPF",
+      "sun-films": "Sun Films",
+      "car-wrapping": "Car Wrapping",
+      bodykits: "Body Kits & Aero",
+      restoration: "Car Restoration",
+      "paint-refinishing": "Paint Refinishing",
+      "performance-upgrades": "Performance Upgrades (Stage 1/2)",
+      other: "Multiple Services / Consultation",
     };
 
     const serviceTitle = serviceMap[formData.service] || formData.service || "Automotive Transformation Consultation";
@@ -84,6 +89,7 @@ export default function BookingForm() {
     setTimeout(() => {
       setSubmitState("success");
       // Redirect to WhatsApp
+      // eslint-disable-next-line @next/next/no-location-assign-relative-destination
       window.location.href = whatsappUrl;
 
       setTimeout(() => {
@@ -108,7 +114,7 @@ export default function BookingForm() {
         <div className={styles.grid}>
           <div className={styles.info}>
             <SectionHeading
-              number="07"
+              number="08"
               label="CONSULTATION"
               title="READY TO TRANSFORM YOUR CAR?"
               subtitle="Schedule a consultation at the Carbon Studio to discuss your vision, inspect your vehicle, and engineer a custom transformation plan."
@@ -118,7 +124,7 @@ export default function BookingForm() {
               <div className={styles.contactDetails}>
                 <div className={styles.contactItem}>
                   <span className={styles.contactLabel}>STUDIO LOCATION</span>
-                  <p className={styles.contactText}>Hyderabad, Telangana, India</p>
+                  <p className={styles.contactText}>{siteConfig.address.fullAddress}</p>
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactLabel}>ENQUIRIES & CALL</span>
@@ -126,24 +132,25 @@ export default function BookingForm() {
                     <a
                       href={`tel:${siteConfig.telephoneRaw}`}
                       style={{ color: "var(--color-off-white)", display: "block", marginBottom: "4px" }}
+                      aria-label="Call CARBON studio"
                     >
-                      {siteConfig.telephone}
+                      {siteConfig.telephoneDisplay}
                     </a>
                     <a
                       href={siteConfig.whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ color: "var(--color-accent)" }}
+                      aria-label="Chat on WhatsApp with CARBON studio"
                     >
-                      Chat on WhatsApp ({siteConfig.whatsappNumber})
+                      {siteConfig.whatsappDisplay}
                     </a>
                   </p>
                 </div>
                 <div className={styles.contactItem}>
                   <span className={styles.contactLabel}>HOURS</span>
                   <p className={styles.contactText}>
-                    Monday - Saturday<br />
-                    10:00 AM - 7:00 PM
+                    {siteConfig.hours.display}
                   </p>
                 </div>
               </div>
@@ -158,7 +165,7 @@ export default function BookingForm() {
                     <path d="M20 6L9 17l-5-5" />
                   </svg>
                 </div>
-                <h3>REQUEST RECEIVED</h3>
+                <p className={styles.successTitle}>REQUEST RECEIVED</p>
                 <p>Opening WhatsApp to send your consultation details directly to the studio...</p>
                 <a
                   href={lastWhatsappUrl}
@@ -269,6 +276,11 @@ export default function BookingForm() {
                       <option value="ppf">Paint Protection Film (PPF)</option>
                       <option value="color-ppf">Color PPF</option>
                       <option value="sun-films">Sun Films</option>
+                      <option value="car-wrapping">Car Wrapping</option>
+                      <option value="bodykits">Body Kits & Aero</option>
+                      <option value="restoration">Car Restoration</option>
+                      <option value="paint-refinishing">Paint Refinishing</option>
+                      <option value="performance-upgrades">Performance Upgrades</option>
                       <option value="other">Multiple Services / Consultation</option>
                     </select>
                     <label htmlFor="service" className={styles.floatingLabel}>

@@ -35,7 +35,7 @@ export default function Gallery() {
     }, 420);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [filteredItems.length]);
 
   // Lock Lenis and body scroll when Lightbox is open
   useEffect(() => {
@@ -201,7 +201,7 @@ export default function Gallery() {
         <div className={styles.pinnedHeader}>
           <div className="container">
             <SectionHeading
-              number="05"
+              number="06"
               label="GALLERY"
               title="CAR TRANSFORMATION GALLERY"
               align="center"
@@ -216,7 +216,7 @@ export default function Gallery() {
             className={`${styles.track} ${shouldCenterRow ? styles.trackCentered : ""}`}
           >
             <AnimatePresence mode="popLayout">
-              {filteredItems.map((item, idx) => (
+              {filteredItems.map((item) => (
                 <motion.div
                   key={item.id}
                   layout
@@ -244,7 +244,7 @@ export default function Gallery() {
                       fill
                       sizes="(max-width: 1024px) 85vw, 560px"
                       className={styles.parallaxImg}
-                      loading={idx < 3 ? "eager" : "lazy"}
+                      loading="lazy"
                     />
                   </div>
                   <div className={styles.overlay}>

@@ -58,7 +58,7 @@ export default function FloatingContact() {
       <div className={styles.rightBottomIcons}>
         {/* Instagram Icon */}
         <a
-          href="https://www.instagram.com/carbon.hyd/"
+          href={siteConfig.instagramUrl}
           target="_blank"
           rel="noopener noreferrer"
           className={`${styles.floatingIconBtn} ${styles.instagramBtn}`}
@@ -108,7 +108,7 @@ export default function FloatingContact() {
       {/* Mobile Sticky Action Bar (< 768px) */}
       <nav className={styles.mobileStickyBar} aria-label="Quick contact and booking bar">
         <a
-          href="tel:+919959517361"
+          href={`tel:${siteConfig.telephoneRaw}`}
           className={styles.mobileBarItem}
           aria-label="Call CARBON studio"
         >

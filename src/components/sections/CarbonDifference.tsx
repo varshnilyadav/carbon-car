@@ -32,7 +32,7 @@ export default function CarbonDifference() {
                 <span className={styles.cardBadge}>CARE & PROTECTION</span>
               </div>
               <p className={styles.cardText}>
-                At Carbon The Detailing Studio, we believe every vehicle deserves exceptional care, lasting protection, and a finish that stands out. From everyday road challenges to the demands of maintaining a luxury vehicle, your car&apos;s paint and interiors face constant exposure to scratches, UV rays, contaminants, and wear.
+                At Carbon Automotive Transformation Studio, we believe every vehicle deserves exceptional care, lasting protection, and a finish that stands out. From everyday road challenges to the demands of maintaining a luxury vehicle, your car&apos;s paint and interiors face constant exposure to scratches, UV rays, contaminants, and wear.
               </p>
               <div className={styles.featureList}>
                 <span className={styles.featureChip}>Scratches & Swirls</span>
@@ -86,7 +86,7 @@ export default function CarbonDifference() {
                   At Carbon, it&apos;s not just about how your car looks today. It&apos;s about how well it stays protected for tomorrow.
                 </p>
               </div>
-              <Link href="#booking" className={styles.statementBtn}>
+              <Link href="#booking" className={styles.statementBtn} aria-label="Book your transformation slot at Carbon Studio">
                 BOOK YOUR SLOT
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <line x1="5" y1="12" x2="19" y2="12" />

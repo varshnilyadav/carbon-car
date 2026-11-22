@@ -25,7 +25,7 @@ export default function StudioExperience() {
       <div className={`container ${styles.grid}`}>
         <div className={styles.content}>
           <Reveal y={20} duration={0.6}>
-            <span className={styles.eyebrow}>04 / THE STUDIO</span>
+            <span className={styles.eyebrow}>05 / THE STUDIO</span>
           </Reveal>
 
           <Reveal y={24} duration={0.7} delay={0.1}>
@@ -34,21 +34,22 @@ export default function StudioExperience() {
 
           <Reveal y={20} duration={0.6} delay={0.2}>
             <p className={styles.text}>
-              Our facility was designed with a single purpose: to provide the ultimate environment for automotive perfection. Climate-controlled detailing bays, advanced LED inspection tunnels, and a surgical-grade workspace ensure every vehicle is treated with uncompromising care.
+              Our facility was designed with a single purpose: to provide the ultimate environment for automotive perfection. Climate-controlled detailing bays, advanced LED inspection lighting, and dedicated clean bays ensure every vehicle is treated with uncompromising care.
             </p>
           </Reveal>
 
           <Reveal y={20} duration={0.6} delay={0.3}>
             <div className={styles.stats}>
               <div className={styles.stat}>
-                <CountUp end={10} suffix="K" duration={2} className={styles.statValue} />
+                <CountUp end={9700} duration={2} className={styles.statValue} />
                 <span className={styles.statLabel}>SQ FT FACILITY</span>
               </div>
               <div className={styles.statLine}></div>
               <div className={styles.stat}>
-                <span className={styles.statValue}>ISO</span>
-                <span className={styles.statLabel}>CERTIFIED BAYS</span>
+                <span className={styles.statValue}>100%</span>
+                <span className={styles.statLabel}>DEDICATED BAYS</span>
               </div>
+              {/* TODO(owner): Re-enable ISO certification stat once independent documentation is confirmed */}
             </div>
           </Reveal>
         </div>
@@ -68,7 +69,7 @@ export default function StudioExperience() {
                   src="/images/studio.webp"
                   alt="Carbon Studio Detailing & PPF Clean Bay in Hyderabad"
                   fill
-                  priority
+                  loading="lazy"
                   className={styles.image}
                   sizes="(max-width: 992px) 100vw, 55vw"
                 />

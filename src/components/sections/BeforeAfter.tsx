@@ -82,7 +82,7 @@ export default function BeforeAfter() {
 
   const comparisons = [
     { beforeSrc: "/services/general.jpg", afterSrc: "/services/detailing.jpg", label: "LUXURY SEDAN", service: "Paint Correction & Ceramic Coating" },
-    { beforeSrc: "/services/restoration.jpg", afterSrc: "/services/bodykits.jpg", label: "SPORTS CAR", service: "Complete Restoration" },
+    { beforeSrc: "/services/paint.jpg", afterSrc: "/services/ppf.jpg", label: "SPORTS CAR", service: "Paint Protection Film (PPF)" },
   ];
 
   return (

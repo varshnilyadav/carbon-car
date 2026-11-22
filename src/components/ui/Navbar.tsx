@@ -159,7 +159,11 @@ export default function Navbar() {
           </nav>
 
           <div className={styles.actionContainer}>
-            <Link href="/#booking" className={styles.ctaButton}>
+            <Link
+              href="/#booking"
+              className={styles.ctaButton}
+              aria-label="Book your consultation slot at CARBON Studio"
+            >
               BOOK YOUR SLOT
             </Link>
             <button

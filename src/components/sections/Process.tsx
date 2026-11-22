@@ -11,7 +11,7 @@ const steps = [
   { number: "01", title: "CONSULTATION", desc: "We discuss your vision, inspect the vehicle, and determine the precise requirements for your transformation." },
   { number: "02", title: "INSPECTION", desc: "A rigorous multi-point inspection under specialized lighting to identify every imperfection and opportunity." },
   { number: "03", title: "TRANSFORMATION PLAN", desc: "A customized blueprint is engineered for your vehicle, outlining the exact processes, materials, and timeline." },
-  { number: "04", title: "CRAFTSMANSHIP", desc: "Our specialists execute the plan with precision, from paint correction to performance upgrades." },
+  { number: "04", title: "CRAFTSMANSHIP", desc: "Our specialists execute the plan with precision, from multi-stage paint refinement to meticulous protective installations." },
   { number: "05", title: "QUALITY CONTROL", desc: "Every surface and system undergoes a final meticulous review to ensure Carbon standards are met." },
   { number: "06", title: "HANDOVER", desc: "The final reveal. We walk you through the transformation and provide detailed maintenance instructions." }
 ];
@@ -91,7 +91,7 @@ export default function Process() {
     <section className={`section ${styles.process}`} ref={containerRef}>
       <div className="container">
         <SectionHeading
-          number="03"
+          number="04"
           label="PROCESS"
           title="HOW WE TRANSFORM."
         />

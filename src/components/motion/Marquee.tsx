@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useSyncExternalStore } from "react";
 import { useReducedMotion } from "framer-motion";
 import styles from "./Marquee.module.css";
+
+const emptySubscribe = () => () => {};
 
 interface MarqueeProps {
   children: React.ReactNode;
@@ -23,9 +25,10 @@ export default function Marquee({
   const trackRef = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
   const [isPaused, setIsPaused] = useState(false);
+  const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
   useEffect(() => {
-    if (shouldReduceMotion) return;
+    if (shouldReduceMotion || !isMounted) return;
 
     let animationFrameId: number;
     let lastTime = performance.now();
@@ -85,7 +88,7 @@ export default function Marquee({
       window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [speed, direction, isPaused, shouldReduceMotion]);
+  }, [speed, direction, isPaused, shouldReduceMotion, isMounted]);
 
   return (
     <div
@@ -100,9 +103,11 @@ export default function Marquee({
         style={shouldReduceMotion ? { transform: "none" } : undefined}
       >
         <div className={styles.itemGroup}>{children}</div>
-        <div className={styles.itemGroup} aria-hidden="true">
-          {children}
-        </div>
+        {isMounted && (
+          <div className={styles.itemGroup} aria-hidden="true">
+            {children}
+          </div>
+        )}
       </div>
     </div>
   );

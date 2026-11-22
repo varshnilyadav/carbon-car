@@ -9,6 +9,18 @@
   background-color: var(--color-obsidian);
 }
 
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* 
   Wrapper specifically for parallax translation.
   will-change tells the browser to optimize this layer for transform changes.

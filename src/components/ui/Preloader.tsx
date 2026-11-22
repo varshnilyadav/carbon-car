@@ -1,15 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import styles from "./Preloader.module.css";
+
+const emptySubscribe = () => () => {};
 
 export default function Preloader() {
   const pathname = usePathname();
   const [loading, setLoading] = useState(true);
   const [fading, setFading] = useState(false);
   const [progress, setProgress] = useState(0);
+  const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
   // Run progress on initial load and route changes
   useEffect(() => {
@@ -81,7 +84,7 @@ export default function Preloader() {
         <div className={styles.logoWrapper}>
           <Image
             src="/assets/carbon-logo.png"
-            alt="CARBON The Detailing Studio"
+            alt="CARBON Automotive Transformation Studio"
             width={340}
             height={204}
             priority
@@ -101,7 +104,7 @@ export default function Preloader() {
           
           <div className={styles.metaRow}>
             <span className={styles.tagline}>AUTOMOTIVE TRANSFORMATION</span>
-            <span className={styles.progressText}>{progress}%</span>
+            <span className={styles.progressText}>{isMounted ? progress : 100}%</span>
           </div>
         </div>
       </div>

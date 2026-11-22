@@ -142,7 +142,6 @@ export default function Hero() {
             poster="/hero-bg.jpg"
           >
             <source src="/hero-video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
           <div className={`${styles.overlay} gsap-overlay`}></div>
         </div>
@@ -156,29 +155,45 @@ export default function Hero() {
         </div>
         
         <h1 className={styles.title}>
-          <span className={styles.maskContainer}>
-            <span className="hero-word">ENGINEERED</span>
-          </span>{" "}
-          <span className={styles.maskContainer}>
-            <span className="hero-word">TO</span>
+          <span className={styles.srOnly}>
+            Car Detailing, PPF &amp; Ceramic Coating Studio in Hyderabad
           </span>
-          <br/>
-          <span className={`${styles.maskContainer} ${styles.highlightContainer}`}>
-            <span className={`hero-word ${styles.highlight}`}>TRANSFORM.</span>
+          <span aria-hidden="true">
+            <span className={styles.maskContainer}>
+              <span className="hero-word">ENGINEERED</span>
+            </span>{" "}
+            <span className={styles.maskContainer}>
+              <span className="hero-word">TO</span>
+            </span>
+            <br/>
+            <span className={`${styles.maskContainer} ${styles.highlightContainer}`}>
+              <span className={`hero-word ${styles.highlight}`}>TRANSFORM.</span>
+            </span>
           </span>
         </h1>
         
         <p className={`${styles.subtitle} gsap-desc`}>
-          Precision detailing. Performance upgrades. Bespoke styling.<br/>
-          Complete automotive transformation.
+          Precision detailing. PPF &amp; coating protection. Bespoke styling.
         </p>
         
         <div className={styles.actions}>
           <Magnetic strength={0.3}>
-            <a href="#booking" className={`${styles.primaryBtn} gsap-cta`}>BOOK YOUR TRANSFORMATION</a>
+            <a
+              href="#booking"
+              className={`${styles.primaryBtn} gsap-cta`}
+              aria-label="Book your automotive transformation consultation slot"
+            >
+              BOOK YOUR TRANSFORMATION
+            </a>
           </Magnetic>
           <Magnetic strength={0.3}>
-            <a href="#services" className={`${styles.secondaryBtn} gsap-cta`}>EXPLORE SERVICES</a>
+            <a
+              href="#services"
+              className={`${styles.secondaryBtn} gsap-cta`}
+              aria-label="Explore our detailing, PPF, and coating services"
+            >
+              EXPLORE SERVICES
+            </a>
           </Magnetic>
         </div>
       </div>

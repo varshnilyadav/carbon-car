@@ -29,7 +29,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: siteConfig.title,
   description: siteConfig.description,
-  keywords: "car detailing Hyderabad, premium car detailing Hyderabad, PPF Hyderabad, paint protection film Hyderabad, ceramic coating Hyderabad, car wrapping Hyderabad, car modification Hyderabad",
   alternates: {
     canonical: siteConfig.url,
   },
@@ -55,52 +54,53 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [`${siteConfig.url}/images/og-image.jpg`],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/manifest.json",
 };
 
+// TODO(owner): Add aggregateRating only if it matches confirmed Google reviews count and score
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "AutoRepair",
-  name: siteConfig.legalName,
-  alternateName: siteConfig.name,
+  "@type": "AutomotiveBusiness",
+  "@id": `${siteConfig.url}/#business`,
+  name: siteConfig.name,
+  alternateName: siteConfig.legalName,
   url: siteConfig.url,
   logo: `${siteConfig.url}/assets/carbon-nav-logo.png`,
   image: `${siteConfig.url}/images/og-image.jpg`,
   description: siteConfig.description,
   telephone: siteConfig.telephoneRaw,
+  hasMap: siteConfig.googleMapsUrl,
+  areaServed: {
+    "@type": "City",
+    name: siteConfig.areaServed.name,
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: siteConfig.address.streetAddress,
     addressLocality: siteConfig.address.addressLocality,
     addressRegion: siteConfig.address.addressRegion,
+    postalCode: siteConfig.address.postalCode,
     addressCountry: siteConfig.address.addressCountry,
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 17.4253809,
-    longitude: 78.3951665,
+    latitude: siteConfig.geo.latitude,
+    longitude: siteConfig.geo.longitude,
   },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      opens: "10:00",
-      closes: "19:00",
-    },
-  ],
+  openingHoursSpecification: siteConfig.hours.openingHoursSpecification,
   sameAs: [
     siteConfig.instagramUrl,
     siteConfig.facebookUrl,
     siteConfig.googleMapsUrl,
   ],
-  priceRange: "$$$$",
 };
 
 export default function RootLayout({

@@ -5,6 +5,8 @@ import Image from "next/image";
 import Reveal from "@/components/motion/Reveal";
 import {
   SHOW_CLARO_SECTION,
+  SHOW_CLARO_SPECS,
+  SHOW_CLARO_HIGHLIGHTS,
   claroPPFData,
   ClaroHighlight,
 } from "@/data/claro-ppf";
@@ -99,8 +101,8 @@ export default function ClaroPPFSection() {
           </Reveal>
         </div>
 
-        {/* Highlights Grid (if provided) */}
-        {highlights && highlights.length > 0 && (
+        {/* Highlights Grid (if provided and enabled) */}
+        {SHOW_CLARO_HIGHLIGHTS && highlights && highlights.length > 0 && (
           <div className={styles.highlightsGrid}>
             {highlights.map((item, idx) => (
               <Reveal key={idx} y={24} duration={0.6} delay={idx * 0.08}>
@@ -117,8 +119,8 @@ export default function ClaroPPFSection() {
           </div>
         )}
 
-        {/* Specifications Table Slot (if provided) */}
-        {specifications && specifications.length > 0 && (
+        {/* Specifications Table Slot (if provided and enabled) */}
+        {SHOW_CLARO_SPECS && specifications && specifications.length > 0 && (
           <Reveal y={24} duration={0.65}>
             <div className={styles.specsSection}>
               <div className={styles.specsHeader}>
