@@ -49,6 +49,9 @@ const mainPages = [
 ];
 
 const packagesAndSolutions = [
+  { name: "PPF Cost Guide 2026", href: "/ppf-cost-in-hyderabad", badge: "Pricing" },
+  { name: "PPF vs Ceramic Coating", href: "/ppf-vs-ceramic-coating", badge: "Comparison" },
+  { name: "PPF for Luxury Cars", href: "/ppf-for-luxury-cars-hyderabad", badge: "Exotics" },
   { name: "Essential PPF (5-Year)", href: "/services/ppf#packages", badge: "Warranty" },
   { name: "Advance PPF (7-Year)", href: "/services/ppf#packages", badge: "Most Popular" },
   { name: "Ultimate PPF (10-Year)", href: "/services/ppf#packages", badge: "Top Tier" },
@@ -149,7 +152,7 @@ export default function SitemapPage() {
           {/* XML Machine-Readable Sitemap Banner for Search Engines */}
           <div className={styles.xmlBanner}>
             <div className={styles.xmlInfo}>
-              <h3>XML SITEMAP FOR SEARCH ENGINES</h3>
+              <h2>XML SITEMAP FOR SEARCH ENGINES</h2>
               <p>
                 Looking for the machine-readable XML index for Google Search Console, Bing Webmaster, or SEO crawlers?
               </p>

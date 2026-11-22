@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import CountUp from "@/components/motion/CountUp";
 import Reveal from "@/components/motion/Reveal";
+import { business } from "@/lib/business";
 import styles from "./StudioExperience.module.css";
 
 export default function StudioExperience() {
@@ -41,15 +42,14 @@ export default function StudioExperience() {
           <Reveal y={20} duration={0.6} delay={0.3}>
             <div className={styles.stats}>
               <div className={styles.stat}>
-                <CountUp end={9700} duration={2} className={styles.statValue} />
-                <span className={styles.statLabel}>SQ FT FACILITY</span>
+                <CountUp end={parseFloat(business.rating.ratingValue)} decimals={1} duration={1.5} className={styles.statValue} />
+                <span className={styles.statLabel}>GOOGLE RATING</span>
               </div>
               <div className={styles.statLine}></div>
               <div className={styles.stat}>
-                <span className={styles.statValue}>100%</span>
-                <span className={styles.statLabel}>DEDICATED BAYS</span>
+                <CountUp end={parseInt(business.rating.reviewCount, 10)} duration={1.5} className={styles.statValue} />
+                <span className={styles.statLabel}>VERIFIED REVIEWS</span>
               </div>
-              {/* TODO(owner): Re-enable ISO certification stat once independent documentation is confirmed */}
             </div>
           </Reveal>
         </div>

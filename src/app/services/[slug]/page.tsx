@@ -8,6 +8,7 @@ import { ServiceCard } from "@/components/ui/ServiceCard";
 import ServiceGallery from "@/components/ui/ServiceGallery";
 import PPFPackages from "@/components/sections/PPFPackages";
 import ClaroPPFSection from "@/components/sections/ClaroPPFSection";
+import PPFDeepDive from "@/components/sections/PPFDeepDive";
 import ServiceFAQSection from "@/components/sections/ServiceFAQ";
 import { services } from "@/data/siteData";
 import { siteConfig } from "@/data/siteConfig";
@@ -79,6 +80,7 @@ export default async function ServicePage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "Service",
     name: service.title,
+    serviceType: service.slug === "ppf" ? "Paint Protection Film Installation" : service.title,
     description: service.shortDescription,
     url: `${siteConfig.url}/services/${slug}`,
     image: `${siteConfig.url}${service.image}`,
@@ -91,7 +93,7 @@ export default async function ServicePage({ params }: Props) {
     },
     areaServed: {
       "@type": "City",
-      name: siteConfig.areaServed.name,
+      name: "Hyderabad",
     },
   };
 
@@ -201,12 +203,44 @@ export default async function ServicePage({ params }: Props) {
           serviceTitle={service.title}
         />
 
-        {/* PPF Specific Sections: Packages and Claro PPF */}
+        {/* PPF Specific Sections: Deep Dive, Packages and Claro PPF */}
         {service.slug === "ppf" && (
           <>
+            <PPFDeepDive />
             <PPFPackages />
             <ClaroPPFSection />
           </>
+        )}
+
+        {/* Contextual cross-service link to PPF on all other service pages */}
+        {service.slug !== "ppf" && (
+          <section className={styles.crossLinkSection}>
+            <div className="container">
+              <div className={styles.crossLinkBox}>
+                <div className={styles.crossLinkContent}>
+                  <span className={styles.crossLinkBadge}>MAXIMUM PAINT ARMOR</span>
+                  <h2 className={styles.crossLinkTitle}>Looking for Ultimate Stone Chip Defense?</h2>
+                  <p className={styles.crossLinkText}>
+                    {service.slug === "color-ppf" && (
+                      <>Looking for optical crystal-clear protection instead of color styling? Explore our self-healing <Link href="/services/ppf" className={styles.crossLinkAnchor}>Paint Protection Film (PPF)</Link> installations in Hyderabad.</>
+                    )}
+                    {service.slug === "ceramic-coating" && (
+                      <>Liquid coatings deliver intense gloss, but cannot stop rock chips. Protect high-impact panels with <Link href="/services/ppf" className={styles.crossLinkAnchor}>PPF in Hyderabad</Link> before applying your ceramic coating.</>
+                    )}
+                    {service.slug === "graphene-coating" && (
+                      <>For dual-layer armor against heat and road debris, combine your coating with our certified <Link href="/services/ppf" className={styles.crossLinkAnchor}>Paint Protection Film</Link> packages.</>
+                    )}
+                    {service.slug !== "color-ppf" && service.slug !== "ceramic-coating" && service.slug !== "graphene-coating" && (
+                      <>Protect your vehicle&apos;s factory finish with self-healing, optically clear <Link href="/services/ppf" className={styles.crossLinkAnchor}>PPF in Hyderabad</Link> at our dedicated Jubilee Hills clean-bay studio.</>
+                    )}
+                  </p>
+                </div>
+                <Link href="/services/ppf" className={styles.crossLinkBtn}>
+                  View PPF Studio Services →
+                </Link>
+              </div>
+            </div>
+          </section>
         )}
 
         {/* Benefits & Included */}
@@ -214,7 +248,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="container">
             <div className={styles.detailsGrid}>
               <div className={styles.detailBox}>
-                <h3 className={styles.detailTitle}>KEY BENEFITS</h3>
+                <h2 className={styles.detailTitle}>KEY BENEFITS</h2>
                 <ul className={styles.detailList}>
                   {service.benefits.map((benefit, i) => (
                     <li key={i}>
@@ -228,7 +262,7 @@ export default async function ServicePage({ params }: Props) {
               </div>
 
               <div className={styles.detailBox}>
-                <h3 className={styles.detailTitle}>WHAT&apos;S INCLUDED</h3>
+                <h2 className={styles.detailTitle}>WHAT&apos;S INCLUDED</h2>
                 <ul className={styles.detailList}>
                   {service.included.map((item, i) => (
                     <li key={i}>
@@ -255,7 +289,7 @@ export default async function ServicePage({ params }: Props) {
                 <div key={i} className={styles.processStep}>
                   <div className={styles.stepNumber}>0{i + 1}</div>
                   <div className={styles.stepContent}>
-                    <h4>{step.title}</h4>
+                    <h3>{step.title}</h3>
                     <p>{step.description}</p>
                   </div>
                 </div>
@@ -280,6 +314,7 @@ export default async function ServicePage({ params }: Props) {
                       title={rel.title}
                       description={rel.shortDescription}
                       image={rel.image}
+                      imageAlt={rel.imageAlt}
                     />
                   </div>
                 ))}

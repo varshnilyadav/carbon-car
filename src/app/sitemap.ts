@@ -5,13 +5,31 @@ import { siteConfig } from "@/data/siteConfig";
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
 
-  // Primary Landing Page & Sitemap Directory
+  // Primary Landing Page, Guides & Sitemap Directory
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${siteConfig.url}`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 1.0,
+    },
+    {
+      url: `${siteConfig.url}/ppf-cost-in-hyderabad`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteConfig.url}/ppf-vs-ceramic-coating`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteConfig.url}/ppf-for-luxury-cars-hyderabad`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${siteConfig.url}/sitemap`,

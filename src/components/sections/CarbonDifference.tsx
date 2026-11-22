@@ -32,13 +32,13 @@ export default function CarbonDifference() {
                 <span className={styles.cardBadge}>CARE & PROTECTION</span>
               </div>
               <p className={styles.cardText}>
-                At Carbon Automotive Transformation Studio, we believe every vehicle deserves exceptional care, lasting protection, and a finish that stands out. From everyday road challenges to the demands of maintaining a luxury vehicle, your car&apos;s paint and interiors face constant exposure to scratches, UV rays, contaminants, and wear.
+                Every vehicle deserves exceptional care and lasting physical armor. From airborne highway gravel on the Outer Ring Road to extreme UV exposure, your clear coat faces constant threat. Investing in dedicated paint protection film creates a durable sacrificial barrier that absorbs high-speed impacts, keeping your original paint pristine through years of daily driving.
               </p>
               <div className={styles.featureList}>
-                <span className={styles.featureChip}>Scratches & Swirls</span>
+                <span className={styles.featureChip}>Stone Chip Defense</span>
+                <span className={styles.featureChip}>Self-Healing Clear Coat</span>
                 <span className={styles.featureChip}>UV Degradation</span>
-                <span className={styles.featureChip}>Environmental Contaminants</span>
-                <span className={styles.featureChip}>Interior & Exterior Wear</span>
+                <span className={styles.featureChip}>Daily Road Grime</span>
               </div>
               <div className={styles.cardGlow} />
             </div>
@@ -54,17 +54,17 @@ export default function CarbonDifference() {
                     <path d="m9 12 2 2 4-4" />
                   </svg>
                 </div>
-                <span className={styles.cardBadge}>UNDER ONE ROOF</span>
+                <span className={styles.cardBadge}>JUBILEE HILLS STUDIO</span>
               </div>
               <p className={styles.cardText}>
-                That&apos;s why we bring together advanced automotive protection, precision workmanship, and premium detailing solutions under one roof. From Paint Protection Film (PPF) and Colour PPF to Graphene Coating, window films, and interior and exterior detailing, every service is designed to help preserve your vehicle&apos;s appearance, enhance its finish, and maintain its appeal.
+                As Jubilee Hills&apos; dedicated studio for <Link href="/services/ppf" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}>PPF in Hyderabad</Link>, we engineer every installation with hospital-grade cleanliness and surgical precision. Backed by dust-filtered extraction, high-CRI inspection illumination, and certified application techniques, our multi-tier PPF and ceramic packages deliver unmatched clarity, hydrophobic beading, and enduring gloss.
               </p>
               <div className={styles.featureList}>
-                <span className={styles.featureChip}>Paint Protection Film (PPF)</span>
+                <span className={styles.featureChip}>Full-Body TPU PPF</span>
                 <span className={styles.featureChip}>Colour PPF</span>
                 <span className={styles.featureChip}>Graphene Coating</span>
                 <span className={styles.featureChip}>Window Films</span>
-                <span className={styles.featureChip}>Interior & Exterior Detailing</span>
+                <span className={styles.featureChip}>Precision Detailing</span>
               </div>
               <div className={styles.cardGlow} />
             </div>
@@ -86,8 +86,8 @@ export default function CarbonDifference() {
                   At Carbon, it&apos;s not just about how your car looks today. It&apos;s about how well it stays protected for tomorrow.
                 </p>
               </div>
-              <Link href="#booking" className={styles.statementBtn} aria-label="Book your transformation slot at Carbon Studio">
-                BOOK YOUR SLOT
+              <Link href="#booking" className={styles.statementBtn} aria-label="Reserve your automotive consultation appointment at Carbon Studio">
+                RESERVE YOUR APPOINTMENT
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />

@@ -19,6 +19,7 @@ export interface Service {
   shortDescription: string;
   description: string;
   image: string;
+  imageAlt?: string;
   benefits: string[];
   included: string[];
   process: { title: string; description: string }[];
@@ -28,6 +29,135 @@ export interface Service {
 }
 
 export const services: Service[] = [
+  {
+    id: "ppf",
+    slug: "ppf",
+    title: "Paint Protection Film (PPF) in Hyderabad",
+    metaTitle: "Paint Protection Film (PPF) in Hyderabad | CARBON",
+    metaDescription:
+      "Self-healing TPU PPF in Hyderabad: protect your car from chips and scratches in dust-free bays at CARBON Studio, Jubilee Hills. Book your inspection today.",
+    tagline: "Optically clear, self-healing polyurethane armor shielding your paint from stone chips and road debris.",
+    shortDescription:
+      "A transparent protective film designed to help shield your vehicle's paint from stone chips, minor scratches, road debris, and everyday wear. Preserve your original paint while maintaining its factory appearance.",
+    description:
+      "Paint Protection Film (PPF) is the definitive physical barrier engineered to protect your vehicle's factory paintwork against real-world driving conditions in Hyderabad. Constructed from advanced high-tensile thermoplastic polyurethane (TPU), the film provides robust impact absorption against airborne stone chips, highway gravel on the Outer Ring Road, construction fallout, and parking scuffs. The top layer features advanced elastomeric polymers that self-heal light swirl marks and fine scratches when exposed to ambient heat or warm water. Every installation begins with a multi-stage paint decontamination and single-stage polish, utilizing precision computer-cut templates or custom bespoke bulk wrapping with tucked edges for a near-invisible finish.",
+    image: "/images/services/ppf.webp",
+    imageAlt: "BMW M4 with high-gloss Paint Protection Film (PPF) at CARBON Studio Jubilee Hills Hyderabad",
+    images: [
+      {
+        src: "/gallery/bmw-precision-ppf-installation-hyderabad.webp",
+        alt: "BMW 630i GT precision edge-wrapped TPU Paint Protection Film in Hyderabad",
+        caption: "Full Body TPU PPF on BMW",
+      },
+      {
+        src: "/gallery/ferrari-488-gtb-ppf-hyderabad.webp",
+        alt: "Ferrari 488 GTB with full body Paint Protection Film at CARBON Hyderabad",
+        caption: "Ferrari 488 GTB TPU Protection",
+      },
+      {
+        src: "/gallery/bmw-m2-lamborghini-huracan-ppf-hyderabad.webp",
+        alt: "BMW M2 and Lamborghini Huracan in PPF clean room bay at CARBON Hyderabad",
+        caption: "Supercar & Performance PPF",
+      },
+      {
+        src: "/gallery/clean-room-ppf-installation-bay-hyderabad.webp",
+        alt: "Climate-controlled dust-free PPF installation bay at CARBON Studio Hyderabad",
+        caption: "Dust-Free Installation Bay",
+      },
+      {
+        src: "/gallery/range-rover-custom-ppf-application-hyderabad.webp",
+        alt: "Range Rover Autobiography custom bulk PPF application and edge tucking in Hyderabad",
+        caption: "Bespoke Panel Edge Tucking",
+      },
+    ],
+    benefits: [
+      "High impact resistance shielding vulnerable paintwork from high-speed stone chips and gravel",
+      "Self-healing elastomeric topcoat that erases fine swirl marks and light scratches with heat",
+      "Optically transparent finish that preserves the exact factory depth, color, and metallic sparkle",
+      "Stain, chemical, and UV resistance preventing premature paint discoloration and yellowing",
+      "Edge-wrapped installation methodology wherever panel gaps permit for a seamless appearance",
+    ],
+    included: [
+      "Full vehicle exterior wash, iron chemical decontamination, and surface claying",
+      "Pre-installation single-stage polish to ensure clear coat perfection beneath the film",
+      "Computer-aided precision template plotting or bespoke custom panel cut pattern selection",
+      "Dust-controlled bay installation using specialized slip and tack solutions",
+      "Edge wrapping around hood corners, fenders, door edges, and bumper recesses",
+      "Post-installation heat setting, seam inspection, and final quality control check",
+    ],
+    process: [
+      {
+        title: "Paint Inspection & Prep",
+        description: "Meticulous surface decontamination and gloss refinement under specialized studio lighting.",
+      },
+      {
+        title: "Template Alignment",
+        description: "Digital design plotting or bespoke custom wrapping mapped to exact vehicle body lines.",
+      },
+      {
+        title: "Precision Installation",
+        description: "Dust-free application in dedicated bays with specialized squeegeeing to prevent silvering.",
+      },
+      {
+        title: "Edge Wrapping & Cure",
+        description: "Tucking edges into panel gaps, followed by post-heating and inspection for zero lifting.",
+      },
+    ],
+    recommendedFor:
+      "New luxury vehicles, sports cars, highway commuters, and any vehicle owner seeking the highest level of physical protection against stone chips and road hazards.",
+    faqs: [
+      {
+        question: "How much does PPF cost in Hyderabad?",
+        answer:
+          "The cost of PPF in Hyderabad depends on vehicle dimensions, chosen film technology (standard TPU, instant self-healing, matte, or infused ceramic top-coat), and coverage scope (such as front-end high-impact protection versus complete full-body wrap). // TODO(owner): review and confirm exact price ranges for PPF packages (e.g. front-end packages starting from ₹XX,XXX and comprehensive full-body packages starting from ₹X,XX,XXX). Contact CARBON Studio at +91 9959517361 or via WhatsApp (+91 7416393300) for a tailored vehicle inspection and accurate estimate.",
+      },
+      {
+        question: "How long does PPF installation take?",
+        answer:
+          "A complete full-body PPF installation typically requires 3 to 5 business days. This timeframe ensures multi-stage paint decontamination, pre-installation machine polishing, precision computer-cut plotting or bespoke hand edge-tucking, and a mandatory 24-hour setting inspection to guarantee zero edge lifting.",
+      },
+      {
+        question: "What warranty is provided with Paint Protection Film at CARBON?",
+        answer:
+          "At CARBON, our premium TPU films come backed by comprehensive manufacturer warranties ranging from 5 to 10 years depending on the selected package (Essential, Advance, or Ultimate). // TODO(owner): review and confirm exact warranty terms and covered conditions (such as yellowing, bubbling, cracking, and delamination).",
+      },
+      {
+        question: "What is matte PPF and can it convert gloss car paint to satin?",
+        answer:
+          "Yes! Matte (or satin) PPF features a specialized frosted, light-diffusing polyurethane topcoat. When applied over factory gloss paint, it completely transforms the vehicle into a stunning stealth satin finish while providing the exact same high-tensile stone chip defense and self-healing performance as clear PPF.",
+      },
+      {
+        question: "Should I choose full-body PPF or a partial front-end package?",
+        answer:
+          "If highway driving, gravel resistance, and budget efficiency are your priorities, a high-impact front package (bumper, hood, front fenders, mirrors, and headlights) shields the areas most exposed to stone chips. However, for full peace of mind, parking ding defense, key protection, and maximum resale value preservation, a full-body wrap is the gold standard.",
+      },
+      {
+        question: "Can PPF be safely removed without damaging original factory paint?",
+        answer:
+          "Yes. High-grade aliphatic TPU films use non-aggressive acrylic adhesives that bond firmly to factory clear coat but release cleanly when removed by professional technicians using controlled steam and gentle heat. Factory clear coat remains untouched and preserved in original condition underneath.",
+      },
+      {
+        question: "How should I wash and care for my car after PPF installation?",
+        answer:
+          "We recommend waiting 7 full days after installation before the first wash to allow moisture beneath the film to fully evaporate and adhesives to cure. After that, use a two-bucket wash method with pH-neutral car shampoo and microfiber wash mitts. Avoid abrasive polishes, harsh solvents, or aiming high-pressure water jets directly at panel seam edges.",
+      },
+      {
+        question: "Does PPF turn yellow over time under Hyderabad's heat and sunlight?",
+        answer:
+          "No. Cheap PVC or TPH films turn yellow because of inferior plasticizers, but CARBON uses exclusively 100% aliphatic thermoplastic polyurethane (TPU) engineered with integrated UV stabilizers and optical clarity blockers that resist Hyderabad's intense ultraviolet radiation and temperature spikes.",
+      },
+      {
+        question: "How does Paint Protection Film compare to ceramic coating?",
+        answer:
+          "PPF provides physical impact defense. Made from high-tensile thermoplastic polyurethane (TPU), it absorbs high-speed gravel, stone chips, scratches, and parking scuffs that liquid coatings cannot stop. Ceramic coating provides chemical resistance, gloss, and water beading. Many owners combine both by applying ceramic coating over PPF for the ultimate combination of impact armor and self-cleaning gloss.",
+      },
+      {
+        question: "Can PPF and ceramic coating be combined on the same car?",
+        answer:
+          "Yes, this is our most popular luxury package. We install self-healing TPU PPF across the painted body for stone chip and scratch armor, and then apply a ceramic or graphene nano-coating over the film. This yields the ultimate dual-layer defense: extreme physical impact absorption paired with intense hydrophobic beading and self-cleaning slickness.",
+      },
+    ],
+  },
   {
     id: "interior-exterior-detailing",
     slug: "interior-exterior-detailing",
@@ -41,6 +171,7 @@ export const services: Service[] = [
     description:
       "Our Interior & Exterior Detailing service delivers complete, meticulous care engineered to restore cleanliness, enhance gloss, and refresh every single detail of your vehicle. The exterior begins with a multi-stage pH-neutral snow foam wash, followed by chemical iron fallout removal and mechanical clay decontamination to clear embedded road contaminants. Exterior surfaces, plastics, and wheels are then treated to a refined protective finishing sealant. Inside the cabin, every crevice receives focused attention: deep fiber extraction, thorough vacuuming, steam sanitization of vents, and pH-balanced conditioning of leather and interior surfaces. Note: This service is designed for thorough rejuvenation and surface cleansing; it is clearly distinguished from multi-stage abrasive paint correction or permanent protective film installations.",
     image: "/images/services/interior-exterior-detailing.webp",
+    imageAlt: "Mercedes-Benz E-Class undergoing multi-stage interior and exterior detailing in Hyderabad",
     benefits: [
       "Non-abrasive surface cleansing safe for factory finishes, clear coats, and trim",
       "Comprehensive leather conditioning and upholstery extraction to prevent cracking and wear",
@@ -135,6 +266,7 @@ export const services: Service[] = [
     description:
       "Graphene Coating represents the forefront of modern nano-surface protection. Infused with reduced graphene oxide matrices, this advanced formulation bonds tightly with your vehicle's clear coat to deliver an ultra-slick, resilient protective barrier. Graphene's honeycomb molecular structure offers natural heat dissipation properties, which helps reduce surface temperatures in direct sunlight and significantly lowers the risk of mineral water spotting compared to conventional coatings. The result is a hyper-reflective wet-look gloss, remarkable water contact angles, and effortless washing characteristics. Durability and ongoing protection depend on surface preparation, adherence to manufacturer curing schedules, environmental exposure, and proper pH-neutral maintenance washing routines.",
     image: "/images/services/graphene-coating.webp",
+    imageAlt: "Porsche 911 protected with ultra-hydrophobic 10H graphene coating in Hyderabad",
     benefits: [
       "High contact angle hydrophobicity delivering rapid water sheeting and self-cleaning behavior",
       "Superior thermal dissipation properties that help mitigate mineral water-spot etching",
@@ -206,6 +338,7 @@ export const services: Service[] = [
     description:
       "Ceramic Coating is an established standard in high-end automotive surface protection. Utilizing advanced silicon dioxide (SiO2) nanotechnology, the liquid coating chemically bonds with the vehicle's factory clear coat, curing into a semi-permanent sacrificial glass shield. Prior to application, the paint undergoes thorough surface decontamination and optional machine polishing to remove swirl marks, haze, and oxidation, ensuring the optical clarity beneath the coating is flawless. Once cured, ceramic coating shields the paint from UV oxidation, bird droppings, acid rain, and road film, while imparting a rich candy-like depth and intense hydrophobic behavior that keeps your vehicle cleaner for longer between washes.",
     image: "/images/services/ceramic-coating.webp",
+    imageAlt: "Audi RS5 with high-gloss nano ceramic coating application in Hyderabad",
     benefits: [
       "Sacrificial barrier protecting factory clear coat from environmental fallout",
       "Intense candy-like gloss, optical clarity, and color depth that enhances paintwork",
@@ -266,77 +399,6 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "ppf",
-    slug: "ppf",
-    title: "Paint Protection Film (PPF)",
-    metaTitle: "Paint Protection Film in Hyderabad | CARBON",
-    metaDescription:
-      "Optically clear, self-healing TPU paint protection film shielding your luxury car from stone chips and scratches in Hyderabad. Book a consultation today.",
-    tagline: "Optically clear, self-healing polyurethane armor shielding your paint from stone chips and road debris.",
-    shortDescription:
-      "A transparent protective film designed to help shield your vehicle's paint from stone chips, minor scratches, road debris, and everyday wear. Preserve your original paint while maintaining its factory appearance.",
-    description:
-      "Paint Protection Film (PPF) is the definitive physical barrier engineered to protect your vehicle's factory paintwork against real-world driving conditions. Constructed from advanced high-tensile thermoplastic polyurethane (TPU), the film provides robust impact absorption against airborne stone chips, highway gravel, road salt, bug splatter, and minor surface abrasions. The top layer features advanced elastomeric polymers that self-heal light swirl marks and fine scratches when exposed to natural ambient heat or warm water. Every installation begins with a rigorous paint inspection and panel prep, utilizing precision computer-cut templates or custom bespoke bulk wrapping with tucked edges for a near-invisible finish. While PPF offers superior protection against standard road debris and daily driving hazards, it is designed to mitigate impacts rather than guarantee absolute invulnerability against severe collisions.",
-    image: "/images/services/ppf.webp",
-    benefits: [
-      "High impact resistance shielding vulnerable paintwork from high-speed stone chips and gravel",
-      "Self-healing elastomeric topcoat that erases fine swirl marks and light scratches with heat",
-      "Optically transparent finish that preserves the exact factory depth, color, and metallic sparkle",
-      "Stain, chemical, and UV resistance preventing premature paint discoloration and yellowing",
-      "Edge-wrapped installation methodology wherever panel gaps permit for a seamless appearance",
-    ],
-    included: [
-      "Full vehicle exterior wash, iron chemical decontamination, and surface claying",
-      "Pre-installation single-stage polish to ensure clear coat perfection beneath the film",
-      "Computer-aided precision template plotting or bespoke custom panel cut pattern selection",
-      "Dust-controlled bay installation using specialized slip and tack solutions",
-      "Edge wrapping around hood corners, fenders, door edges, and bumper recesses",
-      "Post-installation heat setting, seam inspection, and final quality control check",
-    ],
-    process: [
-      {
-        title: "Paint Inspection & Prep",
-        description: "Meticulous surface decontamination and gloss refinement under specialized studio lighting.",
-      },
-      {
-        title: "Template Alignment",
-        description: "Digital design plotting or bespoke custom wrapping mapped to exact vehicle body lines.",
-      },
-      {
-        title: "Precision Installation",
-        description: "Dust-free application in dedicated bays with specialized squeegeeing to prevent silvering.",
-      },
-      {
-        title: "Edge Wrapping & Cure",
-        description: "Tucking edges into panel gaps, followed by post-heating and inspection for zero lifting.",
-      },
-    ],
-    recommendedFor:
-      "New luxury vehicles, sports cars, highway commuters, and any vehicle owner seeking the highest level of physical protection against stone chips and road hazards.",
-    faqs: [
-      {
-        question: "How does Paint Protection Film (PPF) compare to ceramic coating?",
-        answer:
-          "PPF provides physical impact defense. Made from high-tensile thermoplastic polyurethane (TPU), it absorbs high-speed gravel, stone chips, scratches, and parking scuffs that liquid coatings cannot stop. Ceramic coating provides chemical resistance, gloss, and water beading. Many owners combine both by applying ceramic coating over PPF for the ultimate combination of impact armor and self-cleaning gloss.",
-      },
-      {
-        question: "How does the self-healing technology in PPF work?",
-        answer:
-          "Modern high-grade TPU films feature an elastomeric polymer topcoat with shape-memory properties. When fine scratches, wash swirls, or micro-abrasions occur on the surface, exposure to ambient heat—such as Hyderabad's afternoon sunlight or warm water—relaxes the polymer chains back into their original smooth structure, making light scratches vanish.",
-      },
-      {
-        question: "Will PPF yellow, peel, or damage factory paint upon removal?",
-        answer:
-          "High-quality aliphatic TPU films formulated with advanced UV stabilizers do not yellow prematurely under harsh sunlight. When professionally installed with tucked edges in dust-controlled bays and maintained properly, PPF can be cleanly removed years later without lifting factory clear coat, preserving the original vehicle paintwork underneath.",
-      },
-      {
-        question: "How long does a full PPF installation take?",
-        answer:
-          "A full-body PPF installation typically requires three to five business days. This timeframe covers detailed surface decontamination, pre-installation polish, precision computer-cut plotting or bespoke hand-wrapping around edge borders, and a mandatory post-installation settling inspection to verify that all seams remain perfectly bonded.",
-      },
-    ],
-  },
-  {
     id: "color-ppf",
     slug: "color-ppf",
     title: "Color PPF",
@@ -349,6 +411,7 @@ export const services: Service[] = [
     description:
       "Color PPF bridges the gap between vibrant vehicle styling and the heavy-duty physical defense of authentic thermoplastic polyurethane protection film. Unlike thin traditional films that offer minimal impact resistance, Color PPF features full-thickness TPU construction with self-healing properties, UV blockers, and deep color saturation free of orange-peel texture. Available in a curated spectrum of finishes—including ultra-high gloss, stealth satin, deep metallics, and bespoke tones—it allows you to redefine your vehicle's visual identity while safeguarding the original factory paint beneath. The transformation is completely reversible, preserving the resale value and untouched condition of your original clear coat.",
     image: "/images/services/color-ppf.webp",
+    imageAlt: "Lamborghini Huracan with satin military green color PPF wrap in Hyderabad",
     benefits: [
       "Striking visual transformation with the clarity, depth, and mirror reflection of OEM-grade paint",
       "Genuine full-thickness TPU film providing robust stone chip and scratch protection",
@@ -432,6 +495,7 @@ export const services: Service[] = [
     description:
       "Our Sun Films service provides premium automotive window films specifically engineered to elevate cabin comfort, reduce glare, and protect vehicle interiors from the harsh tropical sun. Utilizing advanced nano-ceramic and infrared-rejecting technology, these films reject a substantial portion of solar heat without relying on illegal dark dyes. The non-metallized construction ensures zero interference with electronic systems including GPS, cellular signals, and RFID toll tags. Depending on film specification, occupants enjoy up to 99% UV radiation blocking—preventing leather upholstery fading and dashboard cracking while minimizing eye fatigue during daytime driving. All film recommendations and installations are executed with strict adherence to applicable Indian vehicle-window tint regulations, balancing optical transparency, legal compliance, and thermal comfort.",
     image: "/images/services/sun-films.webp",
+    imageAlt: "Range Rover with ceramic heat rejection window sun film in Hyderabad",
     benefits: [
       "Blocks up to 99% of harmful UV radiation, protecting occupants' skin and interior leather/dash trims",
       "Substantial infrared heat reduction, significantly lowering cabin temperatures in direct sunlight",
@@ -503,7 +567,8 @@ export const services: Service[] = [
       "Transform your vehicle's identity with precision cast vinyl wraps. Choose from ultra-gloss, stealth satin, brushed metallic, or bespoke design accents while fully preserving factory paint.",
     description:
       "Our Car Wrapping service at CARBON - The Detailing Studio delivers complete aesthetic personalization engineered to the highest automotive standards. Using premium multi-layer cast vinyl from global leaders such as 3M, Avery Dennison, and Inozetek, our wrap technicians redefine your vehicle's color palette with showroom-level gloss, stealth satin, deep matte, or metallic textures. Unlike cosmetic roadside jobs, every wrap at CARBON begins with exhaustive surface decontamination, multi-stage paint cleansing, and careful removal of badges, lights, and non-structural exterior trim to allow seamless deep edge tucking. This meticulous edge-wrapping technique eliminates visible factory paint seams around door apertures, hood margins, and bumper recesses, ensuring the finished result resembles a factory-sprayed bespoke finish rather than a temporary sticker. Beyond visual impact, cast vinyl serves as an effective barrier against sun fading, minor swirl marks, bird droppings, and superficial road abrasion. Crucially, the process is 100% reversible; high-grade automotive adhesives release cleanly without leaving stubborn residue or compromising factory clear coats, preserving your vehicle's resale value and underlying OEM finish.",
-    image: "/images/services/car-wrapping.webp",
+    image: "/images/services/car-vinyl-wrap-hyderabad.webp",
+    imageAlt: "BMW M3 with matte frozen grey vinyl car wrap in Hyderabad",
     benefits: [
       "Complete reversible color transformation preserving original factory paint underneath",
       "Expansive selection of finishes including ultra-gloss, stealth satin, matte, and metallic",
@@ -541,13 +606,13 @@ export const services: Service[] = [
       "Owners seeking a bold, distinctive color change, matte or satin restyling, or commercial luxury branding while keeping factory paint intact and reversible.",
     images: [
       {
-        src: "/images/services/car-wrapping.webp",
-        alt: "Full-body luxury car vinyl wrap transformation at CARBON - The Detailing Studio",
+        src: "/images/services/car-vinyl-wrap-hyderabad.webp",
+        alt: "BMW M3 with full-body matte grey vinyl wrap in Hyderabad",
         caption: "Bespoke Cast Vinyl Color Change",
       },
       {
-        src: "/gallery/gallery-14.webp",
-        alt: "Custom color vinyl application with seamless edge tucking in Hyderabad",
+        src: "/gallery/lamborghini-huracan-spyder-color-ppf-hyderabad.webp",
+        alt: "Lamborghini Huracan Spyder custom color PPF installation in Hyderabad",
         caption: "Precision Edge-Tucked Finish",
       },
     ],
@@ -587,7 +652,8 @@ export const services: Service[] = [
       "Elevate your vehicle's road presence and aerodynamic efficiency with premium front splitters, rear diffusers, side skirts, ducktail spoilers, and widebody styling packages.",
     description:
       "The Body Kits & Aerodynamics service at CARBON - The Detailing Studio brings motorsport-inspired road presence and authentic composite craftsmanship to luxury, performance, and sports vehicles. We source and install world-class aerodynamic packages crafted from pre-preg dry carbon fiber, wet carbon composites, and high-impact polyurethane from respected global tuners. Whether you are looking for subtle OEM+ enhancements—such as a front bumper splitter, carbon mirror caps, side skirt extensions, and a rear trunk spoiler—or complete widebody conversions with aggressive rear diffusers, our master technicians ensure uncompromising precision. Every aerodynamic component undergoes dry test-fitting before final installation, verifying millimeter-accurate panel gap alignment, uniform shut lines, and structural rigidity. Custom bracketry, stainless-steel fasteners, and structural automotive bonding agents are utilized to ensure all aerodynamic elements withstand high-speed highway airflow without vibration, detachment, or paint damage. All composite components can be paired with Paint Protection Film (PPF) or nano-ceramic coatings to safeguard delicate carbon fiber weaves against stone chips, rock fragments, and clear coat UV yellowing.",
-    image: "/images/services/bodykits.webp",
+    image: "/images/services/aerodynamic-body-kit-hyderabad.webp",
+    imageAlt: "Porsche Cayman with aerodynamic carbon fiber body kit installation in Hyderabad",
     benefits: [
       "Authentic pre-preg carbon fiber, forged composite, and high-tensile polyurethane hardware",
       "Engineered aerodynamic downforce management reducing high-speed vehicle lift",
@@ -625,13 +691,13 @@ export const services: Service[] = [
       "Sports coupes, luxury performance sedans, and high-end SUVs seeking an aggressive road stance, aerodynamic stability, and bespoke carbon fiber craftsmanship.",
     images: [
       {
-        src: "/images/services/bodykits.webp",
-        alt: "Custom carbon fiber body kit and aerodynamic splitter installation on performance coupe",
+        src: "/images/services/aerodynamic-body-kit-hyderabad.webp",
+        alt: "Porsche Cayman with custom carbon fiber aero splitter and spoiler in Hyderabad",
         caption: "Pre-Preg Carbon Fiber Aero Package",
       },
       {
-        src: "/gallery/gallery-7.webp",
-        alt: "Performance aerodynamic styling and bodykit fitment at CARBON studio Hyderabad",
+        src: "/gallery/bmw-m2-lamborghini-huracan-ppf-hyderabad.webp",
+        alt: "BMW M2 and Lamborghini Huracan aerodynamic fitment in Hyderabad studio",
         caption: "Precision Splitter & Diffuser Fitment",
       },
     ],
@@ -671,7 +737,8 @@ export const services: Service[] = [
       "Bespoke restoration services bringing vintage, classic, and collector automobiles back to pristine showroom glory with period-correct craftsmanship.",
     description:
       "The Car Restoration program at CARBON - The Detailing Studio is dedicated to the preservation, revival, and rejuvenation of historic, vintage, and modern-classic automobiles. Every classic automobile represents a unique chapter in automotive design and engineering history. Our master restoration craftsmen take a preservation-first philosophy, combining archival research, traditional metalcraft, and cutting-edge detailing science to return beloved vehicles to museum-grade condition. The restoration scope can range from comprehensive aesthetic revivals—including multi-stage paint rejuvenation, chrome brightwork restoration, and interior leather hide reconditioning—to complete bare-metal teardowns, corrosion remediation, electrical harness rebuilding, and suspension overhauls. We specialize in sourcing authentic period-correct hardware, trim moldings, and materials from global heritage specialist networks. Metal panels with surface corrosion are meticulously treated and leveled using lead-loading or metal-finishing techniques before receiving multiple coats of epoxy primer and period-matched polyurethane paint. Inside the cabin, dried or cracked vintage leather is conditioned or faithfully re-trimmed with authentic grain patterns and hand-stitching. The completed restoration preserves mechanical authenticity, elevates functional reliability, and revitalizes the timeless elegance of your historic automobile for generations to come.",
-    image: "/images/services/restoration.webp",
+    image: "/images/services/classic-car-restoration-hyderabad.webp",
+    imageAlt: "Classic Mercedes-Benz SL undergoing complete concourse restoration in Hyderabad",
     benefits: [
       "Preservation-first methodology prioritizing authentic period-correct restoration standards",
       "Bare-metal rust remediation, structural sheet-metal leveling, and epoxy sealing",
@@ -710,13 +777,13 @@ export const services: Service[] = [
       "Collectors, enthusiasts, and custodians of vintage, classic, and modern-classic automobiles seeking authentic craftsmanship and long-term investment preservation.",
     images: [
       {
-        src: "/images/services/restoration.webp",
-        alt: "Classic Ferrari surface refinement and heritage restoration at CARBON studio",
+        src: "/images/services/classic-car-restoration-hyderabad.webp",
+        alt: "Classic Mercedes-Benz SL heritage paint and chrome restoration in Hyderabad",
         caption: "Classic Heritage Paint Refinement",
       },
       {
-        src: "/gallery/gallery-6.webp",
-        alt: "Vintage automobile detailing and surface revival in Hyderabad",
+        src: "/gallery/ferrari-f430-surface-refinement-hyderabad.webp",
+        alt: "Ferrari F430 multi-stage rotary paint correction and refinement in Hyderabad",
         caption: "Comprehensive Historic Rejuvenation",
       },
     ],
@@ -756,7 +823,8 @@ export const services: Service[] = [
       "Factory-calibrated automotive paint respray, spot repairs, and clear coat restoration executed in dedicated heated down-draft spray environments.",
     description:
       "Our Paint Refinishing service at CARBON - The Detailing Studio provides factory-level panel respraying, color-blending, and scratch remediation engineered to eliminate visible repairs. When road debris, deep key scratches, parking scrapes, or clear coat oxidation penetrate beyond the safe depth of machine polishing, professional paint refinishing becomes essential. Our studio is equipped with computerized spectrophotometer color analysis technology that reads your vehicle's exact paint pigmentation, metallic flake density, and clear coat depth, accounting for natural sun aging and paint batch variances. Refinishing is executed in an advanced sealed down-draft spray booth equipped with positive air filtration to prevent airborne dust contamination. We exclusively use premium automotive polyurethane paint systems, OEM-approved basecoats, and ultra-high-solid (UHS) scratch-resistant clear coats that replicate the exact factory orange-peel texture and gloss depth of European, Japanese, and American luxury marques. After application, components undergo controlled infrared baking cycles that achieve full chemical curing, followed by microscopic wet sanding and rotary polishing to blend newly sprayed panels seamlessly with adjacent bodywork. The resulting finish is visually undetectable, structurally durable, and backed by comprehensive paint adhesion warranties.",
-    image: "/images/services/paint-refinishing.webp",
+    image: "/images/services/paint-refinishing-booth-hyderabad.webp",
+    imageAlt: "Audi R8 in dedicated down-draft paint refinishing booth in Hyderabad",
     benefits: [
       "Spectrophotometer computerized pigment and metallic flake matching for seamless color blend",
       "Sealed down-draft spray booth with positive-pressure HEPA filtration eliminating dust nibs",
@@ -794,13 +862,13 @@ export const services: Service[] = [
       "Vehicles with deep stone chips, parking scrapes, panel resprays, vandalism scratches, or localized clear coat oxidation requiring factory-invisible restoration.",
     images: [
       {
-        src: "/images/services/paint-refinishing.webp",
-        alt: "Precision automotive paint refinishing and panel respray in down-draft spray booth",
+        src: "/images/services/paint-refinishing-booth-hyderabad.webp",
+        alt: "Audi R8 in dedicated down-draft paint refinishing booth in Hyderabad",
         caption: "Factory-Calibrated Paint Refinishing",
       },
       {
-        src: "/gallery/gallery-2.webp",
-        alt: "Flawless clear coat finish after panel refinishing and optical machine polishing",
+        src: "/gallery/audi-q7-paint-correction-hyderabad.webp",
+        alt: "Audi Q7 exterior deep clean and multi-stage paint correction in Hyderabad",
         caption: "Seamless Clear Coat Depth & Gloss",
       },
     ],
@@ -840,7 +908,8 @@ export const services: Service[] = [
       "Engineered powertrain enhancement packages including Stage 1 and Stage 2 ECU/TCU remapping, free-flowing performance exhaust systems, and sport intake hardware.",
     description:
       "Our Performance Upgrades division at CARBON - The Detailing Studio combines cutting-edge automotive calibration science with premium aftermarket hardware to unlock your vehicle's true performance potential. We deliver tailored Stage 1 and Stage 2 ECU and TCU tuning calibrations engineered specifically for turbocharged, supercharged, and naturally aspirated engines from German, British, Italian, and Japanese performance manufacturers. Stage 1 calibrations optimize air-fuel ratios, ignition timing, and boost parameters within conservative factory safety margins, delivering significant horsepower and torque gains, sharpening throttle response, and smoothing power delivery without requiring physical hardware modifications. For enthusiasts seeking heightened dynamics, our Stage 2 packages integrate high-flow downpipes, sport catalytic converters, free-flowing stainless or titanium cat-back exhaust systems, upgraded intercoolers, and cold-air intake induction kits. Every software calibration is accompanied by comprehensive pre-and-post diagnostic scanning, live data logging of air-mass flow, intake temperatures, and exhaust gas temperatures to verify mechanical health. Transmission (TCU) software upgrades increase clutch clamping pressure, optimize shift speeds, and elevate torque limits for seamless power delivery. All calibrations are customized for Indian environmental conditions and fuel octanes (95 and 99 RON), ensuring robust reliability, exhilarating performance, and refined everyday drivability.",
-    image: "/images/services/performance-upgrades.webp",
+    image: "/images/services/performance-tuning-upgrades-hyderabad.webp",
+    imageAlt: "BMW M2 Competition undergoing performance exhaust and ECU upgrade in Hyderabad",
     benefits: [
       "Substantial horsepower and torque enhancements safely calibrated within OEM thermal thresholds",
       "Sharpened throttle responsiveness, reduced turbo lag, and broader mid-range torque curves",
@@ -878,13 +947,13 @@ export const services: Service[] = [
       "Performance car owners, turbocharged sports sedans, and hot hatches seeking increased horsepower, responsive overtaking capability, and an enriched acoustic exhaust note.",
     images: [
       {
-        src: "/images/services/performance-upgrades.webp",
-        alt: "Stage 1 and Stage 2 ECU performance tuning and diagnostic calibration at CARBON studio",
+        src: "/images/services/performance-tuning-upgrades-hyderabad.webp",
+        alt: "BMW M2 Competition ECU software calibration and exhaust upgrade in Hyderabad",
         caption: "Engineered ECU Calibration & Data Logging",
       },
       {
-        src: "/gallery/gallery-9.webp",
-        alt: "BMW M2 performance tuning and exhaust hardware installation in Hyderabad",
+        src: "/gallery/bmw-m2-protective-finish-hyderabad.webp",
+        alt: "BMW M2 Competition studio handover with hydrophobic protective finish in Hyderabad",
         caption: "Powertrain Upgrades & Performance Refinement",
       },
     ],
@@ -988,19 +1057,29 @@ export interface FAQ {
 
 export const faqs: FAQ[] = [
   {
+    question: "What is PPF?",
+    answer:
+      "Paint Protection Film (PPF) is an optically transparent, high-tensile thermoplastic polyurethane (TPU) film applied directly over automotive clear coat. It acts as an impact-absorbing physical shield protecting factory paint against stone chips, highway gravel, road tar, bird droppings, minor scratches, and wash swirl marks while self-healing fine blemishes under heat.",
+  },
+  {
+    question: "How much does PPF cost in Hyderabad?",
+    answer:
+      "The cost of paint protection film in Hyderabad depends on vehicle dimensions, chosen film technology, and coverage scope (such as front-end high-impact protection versus complete full-body wrap). TODO(owner): Confirm exact price range for PPF packages (e.g. front-end packages starting from ₹XX,XXX and comprehensive full-body packages starting from ₹X,XX,XXX). Contact CARBON Studio at +91 9959517361 or via WhatsApp (+91 7416393300) for a tailored vehicle inspection and accurate estimate.",
+  },
+  {
+    question: "How long does PPF last?",
+    answer:
+      "Professional-grade thermoplastic polyurethane (TPU) paint protection films typically last between 5 to 10 years, backed by manufacturer warranties against yellowing, bubbling, cracking, and delamination. With regular maintenance washing and scheduled studio check-ups at CARBON, the film retains high optical clarity and self-healing performance for years.",
+  },
+  {
+    question: "How long does PPF installation take?",
+    answer:
+      "A complete full-body PPF installation typically requires 3 to 5 business days. This timeframe ensures multi-stage paint decontamination, pre-installation machine polishing, precision computer-cut plotting or bespoke hand edge-tucking, and a mandatory 24-hour setting inspection to guarantee zero edge lifting.",
+  },
+  {
     question: "What services does CARBON - The Detailing Studio offer?",
     answer:
       "CARBON specializes in 11 comprehensive automotive transformation services in Hyderabad: Paint Protection Film (PPF), Color PPF, Nano-Ceramic Coating, Graphene Coating, Automotive Sun Films, Interior & Exterior Detailing, Vinyl Car Wrapping, Body Kits & Aerodynamics, Classic Car Restoration, Precision Paint Refinishing, and Stage 1 & 2 Performance Upgrades.",
-  },
-  {
-    question: "What is Paint Protection Film (PPF) and how does it protect my car?",
-    answer:
-      "PPF (Paint Protection Film) is an optically transparent, self-healing thermoplastic polyurethane (TPU) film installed across painted surfaces. It forms a high-tensile physical shield absorbing stone chips, highway gravel, parking scuffs, bug acids, and chemical fallout, preserving your vehicle's pristine factory paint with zero orange-peel texture.",
-  },
-  {
-    question: "How long does Paint Protection Film (PPF) installation take?",
-    answer:
-      "A complete full-body PPF installation typically requires 3 to 5 business days. This timeframe ensures multi-stage paint decontamination, pre-installation machine polishing, precision computer-cut plotting or bespoke hand edge-tucking, and a mandatory 24-hour setting inspection to guarantee zero edge lifting.",
   },
   {
     question: "What is ceramic coating and how does it protect automotive paint?",
@@ -1097,98 +1176,98 @@ export interface GalleryItem {
 export const galleryItems: GalleryItem[] = [
   {
     id: "g1",
-    src: "/gallery/gallery-1.webp",
-    alt: "Ferrari 488 GTB Full Body Paint Protection Film & Detailing",
+    src: "/gallery/ferrari-488-gtb-ppf-hyderabad.webp",
+    alt: "Ferrari 488 GTB with full body Paint Protection Film at CARBON Hyderabad",
     category: "PPF",
   },
   {
     id: "g2",
-    src: "/gallery/gallery-2.webp",
-    alt: "Audi Q7 Exterior Deep Clean & Multi-Stage Paint Correction",
+    src: "/gallery/audi-q7-paint-correction-hyderabad.webp",
+    alt: "Audi Q7 exterior deep clean and multi-stage paint correction in Hyderabad",
     category: "DETAILING",
   },
   {
     id: "g3",
-    src: "/gallery/gallery-3.webp",
-    alt: "Porsche Brake Caliper & Wheel Detailing Refinement",
+    src: "/gallery/porsche-wheel-caliper-detailing-hyderabad.webp",
+    alt: "Porsche 911 GT3 brake caliper and alloy wheel detailing in Hyderabad",
     category: "DETAILING",
   },
   {
     id: "g4",
-    src: "/gallery/gallery-4.webp",
-    alt: "Porsche Red Brake Calipers & Alloy Wheel Refinement",
+    src: "/gallery/porsche-alloy-wheel-refinement-hyderabad.webp",
+    alt: "Porsche Panamera red brake calipers and ceramic coated alloy wheels in Hyderabad",
     category: "DETAILING",
   },
   {
     id: "g5",
-    src: "/gallery/gallery-5.webp",
-    alt: "Ferrari Underbody Cleansing & Wheel Arch Refinement on Hydraulic Lift",
+    src: "/gallery/ferrari-underbody-cleansing-hyderabad.webp",
+    alt: "Ferrari 458 underbody steam cleansing on hydraulic lift in Jubilee Hills Hyderabad",
     category: "DETAILING",
   },
   {
     id: "g6",
-    src: "/gallery/gallery-6.webp",
-    alt: "Classic Ferrari F430 Surface Refinement & Multi-Stage Paint Correction",
+    src: "/gallery/ferrari-f430-surface-refinement-hyderabad.webp",
+    alt: "Ferrari F430 multi-stage rotary paint correction and refinement in Hyderabad",
     category: "DETAILING",
   },
   {
     id: "g7",
-    src: "/gallery/gallery-7.webp",
-    alt: "BMW M2 & Lamborghini Huracan at Carbon Studio",
+    src: "/gallery/bmw-m2-lamborghini-huracan-ppf-hyderabad.webp",
+    alt: "BMW M2 and Lamborghini Huracan in PPF clean room bay at CARBON Hyderabad",
     category: "PPF",
   },
   {
     id: "g8",
-    src: "/gallery/gallery-8.webp",
-    alt: "Classic Ferrari F430 Complete Studio Detailing & Finish",
+    src: "/gallery/ferrari-f430-detailing-studio-hyderabad.webp",
+    alt: "Ferrari F430 complete concourse studio detailing handover in Hyderabad",
     category: "DETAILING",
   },
   {
     id: "g9",
-    src: "/gallery/gallery-9.webp",
-    alt: "BMW M2 Studio Handover & Protective Finish",
+    src: "/gallery/bmw-m2-protective-finish-hyderabad.webp",
+    alt: "BMW M2 Competition studio handover with hydrophobic protective finish in Hyderabad",
     category: "PPF",
   },
   {
     id: "g10",
-    src: "/gallery/gallery-10.webp",
-    alt: "Mercedes-Maybach Luxury Detailing & VIP Studio Handover",
+    src: "/gallery/mercedes-maybach-luxury-detailing-hyderabad.webp",
+    alt: "Mercedes-Maybach S-Class luxury interior and exterior detailing in Hyderabad",
     category: "DETAILING",
   },
   {
     id: "g11",
-    src: "/gallery/gallery-11.webp",
-    alt: "Purple Audi RS Ultra-Gloss Nano Ceramic Coating & Wheel Protection",
+    src: "/gallery/audi-rs-ceramic-coating-hyderabad.webp",
+    alt: "Audi RS7 ultra-gloss nano ceramic coating and wheel protection in Hyderabad",
     category: "CERAMIC COATING",
   },
   {
     id: "g12",
-    src: "/gallery/gallery-12.webp",
-    alt: "Dust-Controlled Dedicated PPF Installation Bay",
+    src: "/gallery/clean-room-ppf-installation-bay-hyderabad.webp",
+    alt: "Climate-controlled dust-free PPF installation bay at CARBON Studio Hyderabad",
     category: "PPF",
   },
   {
     id: "g13",
-    src: "/gallery/gallery-13.webp",
-    alt: "Range Rover Velar Deep Black Gloss Paint Correction & Protection",
+    src: "/gallery/range-rover-velar-paint-correction-hyderabad.webp",
+    alt: "Range Rover Velar deep black paint correction and ceramic protection in Hyderabad",
     category: "DETAILING",
   },
   {
     id: "g14",
-    src: "/gallery/gallery-14.webp",
-    alt: "Lamborghini Huracan Spyder Custom Color PPF & Detailing",
+    src: "/gallery/lamborghini-huracan-spyder-color-ppf-hyderabad.webp",
+    alt: "Lamborghini Huracan Spyder custom color PPF installation in Hyderabad",
     category: "PPF",
   },
   {
     id: "g15",
-    src: "/gallery/gallery-15.webp",
-    alt: "BMW Precision TPU Paint Protection Film Installation",
+    src: "/gallery/bmw-precision-ppf-installation-hyderabad.webp",
+    alt: "BMW 630i GT precision edge-wrapped TPU Paint Protection Film in Hyderabad",
     category: "PPF",
   },
   {
     id: "g16",
-    src: "/gallery/gallery-16.webp",
-    alt: "Range Rover Custom Bulk Film Application & Edge Tucking",
+    src: "/gallery/range-rover-custom-ppf-application-hyderabad.webp",
+    alt: "Range Rover Autobiography custom bulk PPF application and edge tucking in Hyderabad",
     category: "PPF",
   },
 ];

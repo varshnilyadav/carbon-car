@@ -4,6 +4,7 @@ import BrandsMarquee from "@/components/sections/BrandsMarquee";
 import BrandIntro from "@/components/sections/BrandIntro";
 import CarbonDifference from "@/components/sections/CarbonDifference";
 import Services from "@/components/sections/Services";
+import PPFPackages from "@/components/sections/PPFPackages";
 import Process from "@/components/sections/Process";
 import StudioExperience from "@/components/sections/StudioExperience";
 import Gallery from "@/components/sections/Gallery";
@@ -40,6 +41,7 @@ export default function Home() {
         <BrandIntro />
         <CarbonDifference />
         <Services />
+        <PPFPackages />
         <Process />
         <StudioExperience />
         <Gallery />

@@ -26,7 +26,7 @@ export default function Hero() {
         videoRef.current.pause();
       }
       gsap.set(".hero-word", { y: "0%", autoAlpha: 1 });
-      gsap.set(".gsap-eyebrow, .gsap-desc, .gsap-cta, .gsap-scroll", { autoAlpha: 1, y: 0 });
+      gsap.set(".gsap-eyebrow, .gsap-tagline, .gsap-desc, .gsap-cta, .gsap-scroll", { autoAlpha: 1, y: 0 });
       gsap.set(".gsap-overlay", { autoAlpha: 1 });
       return;
     }
@@ -49,6 +49,13 @@ export default function Hero() {
       { autoAlpha: 0, y: 15 },
       { autoAlpha: 1, y: 0, duration: 0.9 },
       0.15
+    );
+
+    // Tagline: "ENGINEERED TO TRANSFORM."
+    tl.fromTo(".gsap-tagline",
+      { autoAlpha: 0, y: 15 },
+      { autoAlpha: 1, y: 0, duration: 0.9 },
+      0.22
     );
 
     // Headline: line by line masked slide-up, staggered ~60ms per word
@@ -153,27 +160,31 @@ export default function Hero() {
             HYDERABAD&apos;S AUTOMOTIVE TRANSFORMATION STUDIO
           </span>
         </div>
+
+        <p className={`${styles.heroTagline} gsap-tagline`}>
+          ENGINEERED TO TRANSFORM.
+        </p>
         
         <h1 className={styles.title}>
-          <span className={styles.srOnly}>
-            Car Detailing, PPF &amp; Ceramic Coating Studio in Hyderabad
+          <span className={styles.maskContainer}>
+            <span className="hero-word">PPF</span>
+          </span>{" "}
+          <span className={styles.maskContainer}>
+            <span className="hero-word">IN</span>
+          </span>{" "}
+          <span className={styles.maskContainer}>
+            <span className="hero-word">HYDERABAD</span>
           </span>
-          <span aria-hidden="true">
-            <span className={styles.maskContainer}>
-              <span className="hero-word">ENGINEERED</span>
-            </span>{" "}
-            <span className={styles.maskContainer}>
-              <span className="hero-word">TO</span>
-            </span>
-            <br/>
-            <span className={`${styles.maskContainer} ${styles.highlightContainer}`}>
-              <span className={`hero-word ${styles.highlight}`}>TRANSFORM.</span>
+          <br />
+          <span className={`${styles.maskContainer} ${styles.highlightContainer}`}>
+            <span className={`hero-word ${styles.highlight}`}>
+              PAINT PROTECTION FILM STUDIO
             </span>
           </span>
         </h1>
         
         <p className={`${styles.subtitle} gsap-desc`}>
-          Precision detailing. PPF &amp; coating protection. Bespoke styling.
+          Premium paint protection film, color PPF and ceramic coating at Jubilee Hills&apos; dedicated PPF studio.
         </p>
         
         <div className={styles.actions}>

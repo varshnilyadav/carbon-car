@@ -107,7 +107,7 @@ export default function PPFPackages() {
                         isPopular ? styles.popularBookBtn : ""
                       }`}
                     >
-                      Request Quote
+                      Request {pkg.name} Quote
                     </Link>
                   </div>
                 </TiltCard>

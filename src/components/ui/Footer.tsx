@@ -94,14 +94,14 @@ export default function Footer() {
             {/* Right Column: Map Wrapper */}
             <div className={`${styles.mapWrapper} map-wrapper`}>
               <iframe
-                src="https://maps.google.com/maps?q=CARBON+Hyderabad+17.425366,78.395036&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                src={`https://maps.google.com/maps?q=CARBON+Hyderabad+${siteConfig.geo.latitude},${siteConfig.geo.longitude}&t=&z=17&ie=UTF8&iwloc=&output=embed`}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="CARBON - The Detailing Studio Location in Jubilee Hills Hyderabad"
+                title="CARBON Studio Location in Jubilee Hills Hyderabad"
                 className={styles.mapIframe}
               />
               <div className={`${styles.mapOverlayBorder} map-overlay-border`} />
@@ -137,10 +137,10 @@ export default function Footer() {
           <div className={styles.links}>
             <p className={styles.columnTitle}>SERVICES</p>
             <ul className={styles.list}>
+              <li><Link href="/services/ppf" title="Paint Protection Film (PPF) in Hyderabad">PPF in Hyderabad</Link></li>
               <li><Link href="/services/interior-exterior-detailing">Interior & Exterior Detailing</Link></li>
               <li><Link href="/services/graphene-coating">Graphene Coating</Link></li>
               <li><Link href="/services/ceramic-coating">Ceramic Coating</Link></li>
-              <li><Link href="/services/ppf">Paint Protection Film (PPF)</Link></li>
               <li><Link href="/services/color-ppf">Color PPF</Link></li>
               <li><Link href="/services/sun-films">Sun Films</Link></li>
               <li><Link href="/services/car-wrapping">Car Wrapping</Link></li>

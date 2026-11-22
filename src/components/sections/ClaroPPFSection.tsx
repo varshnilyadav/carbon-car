@@ -159,7 +159,7 @@ export default function ClaroPPFSection() {
                   <polygon points="5 3 19 12 5 21 5 3" />
                 </svg>
               </div>
-              <h4 className={styles.mediaTitle}>Brand Showcase Video</h4>
+              <h3 className={styles.mediaTitle}>Brand Showcase Video</h3>
               <p className={styles.mediaSub}>
                 Studio testing, water contact angle & high-speed gravel defense footage coming soon.
               </p>

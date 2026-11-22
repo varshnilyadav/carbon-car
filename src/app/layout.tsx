@@ -65,7 +65,8 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 };
 
-// TODO(owner): Add aggregateRating only if it matches confirmed Google reviews count and score
+// Schema.org AutomotiveBusiness structured data
+// Note: aggregateRating is deliberately excluded (Google ignores self-reported ratings on LocalBusiness)
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AutomotiveBusiness",
@@ -75,7 +76,14 @@ const jsonLd = {
   url: siteConfig.url,
   logo: `${siteConfig.url}/assets/carbon-nav-logo.png`,
   image: `${siteConfig.url}/images/og-image.jpg`,
-  description: siteConfig.description,
+  description:
+    "Premium PPF in Hyderabad: paint protection film, PPF installation, color PPF and ceramic coating at CARBON Studio, Jubilee Hills. Book a free consultation today.",
+  knowsAbout: [
+    "Paint Protection Film",
+    "PPF installation",
+    "Ceramic coating",
+    "Car detailing",
+  ],
   telephone: siteConfig.telephoneRaw,
   hasMap: siteConfig.googleMapsUrl,
   areaServed: {

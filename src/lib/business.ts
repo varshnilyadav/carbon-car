@@ -1,19 +1,20 @@
 /**
- * Centralized business constants for CARBON - The Detailing Studio.
+ * Centralized business constants for CARBON.
  * Single source of truth for Name, Address, Phone (NAP), Hours, Socials, and SEO.
+ * Verified against official Google Maps place data.
  */
 
 export const business = {
-  name: "CARBON - The Detailing Studio",
+  name: "CARBON",
   shortName: "CARBON",
   brandName: "CARBON",
   brandSub: "THE DETAILING STUDIO",
-  legalName: "CARBON - The Detailing Studio",
+  legalName: "CARBON",
   descriptor: "Automotive Transformation Studio",
 
-  title: "Car Detailing, PPF & Ceramic Coating in Hyderabad | CARBON",
+  title: "PPF in Hyderabad | Paint Protection Film Studio | CARBON",
   description:
-    "Premium car detailing, PPF, ceramic and graphene coating in Hyderabad. Book a consultation at CARBON Studio.",
+    "Premium PPF in Hyderabad: paint protection film, color PPF and ceramic coating at CARBON Studio, Jubilee Hills. Book a free consultation today.",
 
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.carbonhyd.studio").replace(/\/$/, ""),
   ogImage: "/images/og-image.jpg",
@@ -32,27 +33,27 @@ export const business = {
   // Social profile URLs
   instagramUrl: "https://www.instagram.com/carbon.hyd/",
   facebookUrl: "https://www.facebook.com/Carbon.hyd/",
-  googleMapsUrl: "https://maps.app.goo.gl/mFHht68AYNDtpZAD8",
-  hasMap: "https://maps.app.goo.gl/mFHht68AYNDtpZAD8",
+  googleMapsUrl:
+    "https://www.google.com/maps/place/CARBON/@17.4253809,78.3951665,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb91cd034b5469:0x580848e2ba547d27!8m2!3d17.4253809!4d78.3951665!16s%2Fg%2F11x9bphbmx",
+  hasMap:
+    "https://www.google.com/maps/place/CARBON/@17.4253809,78.3951665,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb91cd034b5469:0x580848e2ba547d27!8m2!3d17.4253809!4d78.3951665!16s%2Fg%2F11x9bphbmx",
 
-  // Postal Address
-  // TODO(owner): Confirm official registered street address and postal code
+  // Postal Address verified from Google Maps listing
   address: {
-    streetAddress: "Plot No. 183, Road No. 52, BNR Hills, BN Reddy Colony, Jubilee Hills",
-    landmark: "BNR Hills, Jubilee Hills",
-    addressLocality: "Hyderabad",
+    streetAddress: "Plot no 183, Rd No 52",
+    landmark: "BNR Hills, BN Reddy Colony, Jubilee Hills",
+    addressLocality: "BNR Hills, BN Reddy Colony, Jubilee Hills, Hyderabad",
     addressRegion: "Telangana",
     postalCode: "500033",
     addressCountry: "IN",
     fullAddress:
-      "Plot No. 183, Road No. 52, BNR Hills, BN Reddy Colony, Jubilee Hills, Hyderabad, Telangana – 500033",
+      "Plot no 183, Rd No 52, BNR Hills, BN Reddy Colony, Jubilee Hills, Hyderabad, Telangana 500033",
   },
 
-  // Hours
-  // TODO(owner): Confirm whether operating hours are Monday – Saturday 10:00 AM – 7:00 PM or Everyday 10:00 AM – 7:00 PM
+  // Hours verified from Google Maps listing
   hours: {
-    display: "Monday – Saturday: 10:00 AM – 7:00 PM (Sunday: Closed / By Appointment)",
-    displayShort: "Mon – Sat: 10:00 AM – 7:00 PM",
+    display: "Mon – Sat: 10:00 AM – Midnight | Sun: 11:00 AM – 5:00 PM",
+    displayShort: "Mon – Sat: 10 AM – 12 AM | Sun: 11 AM – 5 PM",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -65,14 +66,20 @@ export const business = {
           "Saturday",
         ],
         opens: "10:00",
-        closes: "19:00",
+        closes: "24:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Sunday"],
+        opens: "11:00",
+        closes: "17:00",
       },
     ],
   },
 
   geo: {
-    latitude: 17.425366,
-    longitude: 78.395036,
+    latitude: 17.4253809,
+    longitude: 78.3951665,
   },
 
   areaServed: {
@@ -80,11 +87,10 @@ export const business = {
     name: "Hyderabad",
   },
 
-  // Verified Reviews & Rating
-  // TODO(owner): Confirm exact verified Google rating (currently 4.9) and total review count (currently 48+)
+  // Verified Reviews & Rating from official Google Maps listing
   rating: {
     ratingValue: "4.9",
-    reviewCount: "48",
+    reviewCount: "56",
   },
 };
 

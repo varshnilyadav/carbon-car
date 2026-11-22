@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Reveal from "@/components/motion/Reveal";
@@ -58,13 +59,13 @@ export default function BrandIntro() {
 
           <Reveal y={20} duration={0.6} delay={0.3}>
             <p className={styles.text}>
-              Carbon is an elite automotive transformation studio. We treat every project as a unique engineering challenge, combining precision detailing, protective films, and advanced coatings to elevate your vehicle far beyond factory standards.
+              Carbon is an elite automotive transformation studio and the premier destination for <Link href="/services/ppf" style={{ color: "inherit", textDecoration: "underline", textUnderlineOffset: "3px" }}>PPF in Hyderabad</Link>. Paint Protection Film (PPF) is an optically clear, high-tensile thermoplastic polyurethane barrier that physically shields your vehicle against stone chips, scratches, and road debris while self-healing fine swirl marks with ambient heat.
             </p>
           </Reveal>
 
           <Reveal y={20} duration={0.6} delay={0.4}>
             <p className={styles.text}>
-              Operating from our cutting-edge studio in Hyderabad, our technicians utilize precision LED inspection lighting, climate-controlled bays, and advanced ceramic coatings and self-healing films to deliver an exceptional standard of automotive care.
+              For supercar, luxury sedan, and modern SUV owners navigating demanding road conditions, proper installation is everything. In our dedicated dust-controlled bays in Jubilee Hills, certified specialists execute computer-cut alignment and bespoke edge-wrapping, ensuring seamless, invisible coverage that protects your factory finish and preserves resale value.
             </p>
           </Reveal>
 

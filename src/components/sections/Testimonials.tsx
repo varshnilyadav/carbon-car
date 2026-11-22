@@ -6,63 +6,55 @@ import Marquee from "@/components/motion/Marquee";
 import CountUp from "@/components/motion/CountUp";
 import Magnetic from "@/components/motion/Magnetic";
 import Reveal from "@/components/motion/Reveal";
+import { business } from "@/lib/business";
 import styles from "./Testimonials.module.css";
 
 const googleReviews = [
   {
     id: "review-1",
-    initials: "SC",
-    name: "Snehith Chandra Reddy",
-    date: "2025-10-15",
-    dateFormatted: "October 2025",
+    initials: "KM",
+    name: "Kiran Mahadik",
+    date: "2026-09-26",
+    dateFormatted: "September 2026",
     stars: 5,
-    text: "I recently had my car detailed at CARBON - The Detailing Studio, and I couldn't be more impressed! The team did an outstanding job, paying attention to every little detail inside and out. My car looks brand new, and they were able to remove stickers and stains I thought were permanent."
+    text: "Got my MG done with PPF at Carbon The Detailing Studio and I'm really happy with the overall experience. The quality of the PPF work is excellent and the finish looks very clean and premium. The team was professional, explained everything properly, and paid attention to the small details. Really happy with how my car turned out. Highly recommended if you're looking for quality PPF work!",
   },
   {
     id: "review-2",
-    initials: "AA",
-    name: "Avinash Ankala",
-    date: "2025-10-22",
-    dateFormatted: "October 2025",
+    initials: "AB",
+    name: "Aman Bedi",
+    date: "2026-08-17",
+    dateFormatted: "August 2026",
     stars: 5,
-    text: "I recently had my car detailed at CARBON - The Detailing Studio, and I'm thoroughly impressed with the results. The attention to detail was impeccable, from the exterior shine to the interior cleanliness. My car looks and feels brand new again!"
+    text: "Got the PPF done for my Creta at CARBON and had an excellent experience overall. The entire process was handled professionally and, most importantly, the work was completed within the committed timeline. A special mention to Shankar, who coordinated everything extremely well and was very helpful throughout the process. He walked me through the different PPF variants, explained the pros and cons of each, and helped me understand what would work best for the car from a long-term protection perspective rather than simply pushing a particular option. Really appreciated the transparency, quality of work, and regular updates throughout. Very happy with the final finish and would definitely recommend CARBON to anyone looking for good-quality PPF and car detailing work in Hyderabad.",
   },
   {
     id: "review-3",
-    initials: "VC",
-    name: "Vinod Chiruvella",
-    date: "2026-09-18",
-    dateFormatted: "September 2026",
+    initials: "KG",
+    name: "Koushik Gowd",
+    date: "2026-08-10",
+    dateFormatted: "August 2026",
     stars: 5,
-    text: "For the first time I visited CARBON - The Detailing Studio for my Nexon. The service they gave was simply superb. Truly satisfied with the service. Simply I can say — A recommended one."
+    text: "Had my BMW 630i GT protected with PPF at Carbon, and honestly, the experience was excellent from start to finish. When you own a premium car like the 630i GT, you expect the same level of perfection in the protection and detailing work. The team did an outstanding job. The PPF installation is extremely clean, with precise edges, excellent finishing, and no compromise on quality. Highly impressed with the workmanship and service. Definitely one of the places I would recommend for premium car PPF and detailing in Hyderabad.",
   },
   {
     id: "review-4",
-    initials: "NT",
-    name: "Nitesh Thakur",
-    date: "2026-09-24",
-    dateFormatted: "September 2026",
+    initials: "KK",
+    name: "Kiran Kumar",
+    date: "2026-07-16",
+    dateFormatted: "July 2026",
     stars: 5,
-    text: "Best car detailing studio in Hyderabad. Very much satisfied with their ceramic coating and interior detailing. Highly recommended."
+    text: "I recently took my BMW E90 320i in for a service while working within a budget. After a thorough inspection, I was provided with a detailed estimate and was able to choose the most essential repairs that fit my budget. What really impressed me was the honesty and transparency throughout the process. Highly recommend their professional approach and quality workmanship!",
   },
   {
     id: "review-5",
-    initials: "NV",
-    name: "Naveen Vodnala",
-    date: "2025-11-04",
-    dateFormatted: "November 2025",
+    initials: "SK",
+    name: "Shashank Kasala",
+    date: "2026-06-26",
+    dateFormatted: "June 2026",
     stars: 5,
-    text: "The staff was very good. The shine and cleanliness are amazing, and I can tell they used high-quality products. This was definitely worth every penny. Highly recommend CARBON - The Detailing Studio to anyone looking to give their car a premium treatment."
+    text: "I had a wonderful experience at Carbon CarSpa. The entire team treated us with genuine warmth and professionalism from the moment we walked in. What impressed me the most was their honesty—they didn't try to upsell unnecessary products. Instead, they patiently explained everything about PPF wraps and car accessories, helping us understand what was actually worth investing in and what wasn't. If you're looking for experts who genuinely care about your car and your budget, I highly recommend Carbon.",
   },
-  {
-    id: "review-6",
-    initials: "NK",
-    name: "Naresh Koyya",
-    date: "2026-08-30",
-    dateFormatted: "August 2026",
-    stars: 5,
-    text: "I would recommend this place for perfect car wash. Price worth service guaranteed."
-  }
 ];
 
 export default function Testimonials() {
@@ -89,13 +81,15 @@ export default function Testimonials() {
                     </div>
                     <div className={styles.info}>
                       <span className={styles.name}>{review.name}</span>
-                      <time className={styles.time} dateTime={review.date}>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="12" height="12">
-                          <circle cx="12" cy="12" r="10" />
-                          <path d="M12 6v6l4 2" />
-                        </svg>
-                        {review.dateFormatted}
-                      </time>
+                      {review.date ? (
+                        <time className={styles.time} dateTime={review.date}>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="12" height="12">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 6v6l4 2" />
+                          </svg>
+                          {review.dateFormatted}
+                        </time>
+                      ) : null}
                     </div>
                     <div className={styles.googleBadge} title="Verified Google Review">
                       <svg viewBox="0 0 24 24" width="18" height="18">
@@ -123,7 +117,7 @@ export default function Testimonials() {
         <Reveal y={24} duration={0.7} delay={0.1}>
           <div className={styles.googleReviews}>
             <div className={styles.googleStats}>
-              <CountUp end={4.9} decimals={1} duration={1.6} className={styles.rating} />
+              <CountUp end={parseFloat(business.rating.ratingValue)} decimals={1} duration={1.6} className={styles.rating} />
               <div className={styles.ratingStars}>
                 {[...Array(5)].map((_, i) => (
                   <motion.svg 
@@ -141,20 +135,17 @@ export default function Testimonials() {
                   </motion.svg>
                 ))}
               </div>
-              {/* TODO(owner): Confirm current real Google rating and review count */}
-              <span className={styles.count}>4.9 ★ Based on 48+ verified Google Reviews</span>
+              <span className={styles.count}>{business.rating.ratingValue} ★ Based on {business.rating.reviewCount} verified Google Reviews</span>
             </div>
             <Magnetic strength={0.25}>
               <a 
-                href="https://www.google.com/maps/place/CARBON/@17.4253809,78.3925916,1858m/data=!3m1!1e3!4m8!3m7!1s0x3bcb91cd034b5469:0x580848e2ba547d27!8m2!3d17.4253809!4d78.3951665!9m1!1b1!16s%2Fg%2F11x9bphbmx!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D" 
+                href={business.googleMapsUrl} 
                 target="_blank" 
-                rel="noopener noreferrer"
-                className={styles.googleBtn}
+                rel="me noopener noreferrer"
+                className="btn btn-outline"
+                style={{ fontSize: "0.85rem", padding: "0.75rem 1.75rem" }}
               >
-                VIEW ALL GOOGLE REVIEWS
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" />
-                </svg>
+                VIEW ON GOOGLE MAPS
               </a>
             </Magnetic>
           </div>

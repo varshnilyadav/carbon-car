@@ -43,6 +43,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height, 80px);
+}
+
+[id] {
+  scroll-margin-top: var(--nav-height, 80px);
+}
+
 a {
   color: inherit;
   text-decoration: none;

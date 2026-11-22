@@ -34,7 +34,9 @@ export default function Services() {
                   title={service.title}
                   description={service.shortDescription}
                   image={service.image}
+                  imageAlt={service.imageAlt}
                   index={index + 1}
+                  isPrimary={index === 0}
                 />
               </TiltCard>
             </Reveal>

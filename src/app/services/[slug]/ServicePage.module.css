@@ -212,6 +212,7 @@
   line-height: 1;
 }
 
+.stepContent h3,
 .stepContent h4 {
   font-family: var(--font-heading);
   font-size: 1rem;
@@ -269,6 +270,89 @@
 .ctaBtn:hover {
   background-color: var(--color-off-white);
   color: var(--color-obsidian);
+}
+
+/* Cross-Link Box to PPF */
+.crossLinkSection {
+  padding: 3rem 0;
+  background-color: var(--color-carbon-black);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.crossLinkBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(198, 98, 37, 0.1) 0%, rgba(18, 18, 18, 0.9) 100%);
+  border: 1px solid rgba(198, 98, 37, 0.3);
+  border-radius: 4px;
+}
+
+.crossLinkContent {
+  max-width: 750px;
+}
+
+.crossLinkBadge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.crossLinkTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-off-white);
+  margin-bottom: 0.5rem;
+}
+
+.crossLinkText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.crossLinkAnchor {
+  color: var(--color-off-white);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-accent);
+}
+
+.crossLinkBtn {
+  flex-shrink: 0;
+  padding: 0.85rem 1.75rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.crossLinkBtn:hover {
+  background-color: #d86d2b;
+}
+
+@media (max-width: 768px) {
+  .crossLinkBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .crossLinkBtn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* BACK LINK */
