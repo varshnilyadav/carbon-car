@@ -109,7 +109,7 @@ export const services: Service[] = [
       {
         question: "How much does PPF cost in Hyderabad?",
         answer:
-          "The cost of PPF in Hyderabad depends on vehicle dimensions, chosen film technology (standard TPU, instant self-healing, matte, or infused ceramic top-coat), and coverage scope (such as front-end high-impact protection versus complete full-body wrap). // TODO(owner): review and confirm exact price ranges for PPF packages (e.g. front-end packages starting from ₹XX,XXX and comprehensive full-body packages starting from ₹X,XX,XXX). Contact CARBON Studio at +91 9959517361 or via WhatsApp (+91 7416393300) for a tailored vehicle inspection and accurate estimate.",
+          "The cost of PPF in Hyderabad depends on vehicle dimensions, chosen film technology (standard TPU, instant self-healing, matte, or infused ceramic top-coat), and coverage scope (such as front-end high-impact protection versus complete full-body wrap). // TODO(owner): review and confirm exact price ranges for PPF packages (e.g. front-end packages starting from ₹XX,XXX and comprehensive full-body packages starting from ₹X,XX,XXX). Contact CARBON Studio via Call / WhatsApp at +91 74163 93300 for a tailored vehicle inspection and accurate estimate.",
       },
       {
         question: "How long does PPF installation take?",
@@ -1064,7 +1064,7 @@ export const faqs: FAQ[] = [
   {
     question: "How much does PPF cost in Hyderabad?",
     answer:
-      "The cost of paint protection film in Hyderabad depends on vehicle dimensions, chosen film technology, and coverage scope (such as front-end high-impact protection versus complete full-body wrap). TODO(owner): Confirm exact price range for PPF packages (e.g. front-end packages starting from ₹XX,XXX and comprehensive full-body packages starting from ₹X,XX,XXX). Contact CARBON Studio at +91 9959517361 or via WhatsApp (+91 7416393300) for a tailored vehicle inspection and accurate estimate.",
+      "The cost of paint protection film in Hyderabad depends on vehicle dimensions, chosen film technology, and coverage scope (such as front-end high-impact protection versus complete full-body wrap). TODO(owner): Confirm exact price range for PPF packages (e.g. front-end packages starting from ₹XX,XXX and comprehensive full-body packages starting from ₹X,XX,XXX). Contact CARBON Studio via Call / WhatsApp at +91 74163 93300 for a tailored vehicle inspection and accurate estimate.",
   },
   {
     question: "How long does PPF last?",
@@ -1119,7 +1119,7 @@ export const faqs: FAQ[] = [
   {
     question: "How do I get an inspection, consultation, or price quote?",
     answer:
-      "You can request a consultation by completing our website booking form, messaging our specialists on WhatsApp (+91 7416393300), calling us directly at +91 9959517361, or visiting our Jubilee Hills studio. Because every car's paint condition and owner goals differ, we conduct an individual multi-point inspection to provide an accurate, transparent proposal.",
+      "You can request a consultation by completing our website booking form, messaging our specialists on WhatsApp (+91 74163 93300), calling us directly at +91 74163 93300, or visiting our Jubilee Hills studio. Because every car's paint condition and owner goals differ, we conduct an individual multi-point inspection to provide an accurate, transparent proposal.",
   },
   {
     question: "Do I need an appointment before visiting the studio?",

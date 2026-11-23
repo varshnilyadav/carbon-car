@@ -42,10 +42,46 @@
   margin-bottom: 2.5rem;
 }
 
+.statsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
 .stats {
   display: flex;
   align-items: center;
   gap: 2.5rem;
+}
+
+.milestonesRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.milestoneStat {
+  display: flex;
+  flex-direction: column;
+}
+
+.milestoneValue {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-off-white);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.milestoneLabel {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--color-accent);
+  text-transform: uppercase;
 }
 
 .stat {
@@ -140,7 +176,16 @@
     gap: 1.75rem;
   }
 
+  .milestonesRow {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
   .statValue {
     font-size: 2rem;
+  }
+
+  .milestoneValue {
+    font-size: 1.65rem;
   }
 }

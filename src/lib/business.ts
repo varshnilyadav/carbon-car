@@ -12,9 +12,9 @@ export const business = {
   legalName: "CARBON",
   descriptor: "Automotive Transformation Studio",
 
-  title: "CARBON Hyderabad | PPF in Hyderabad | Paint Protection Film",
+  title: "CARBON Hyderabad (CARBON Hyd) | PPF in Hyderabad Studio",
   description:
-    "CARBON Hyderabad: Premier studio for PPF in Hyderabad, color PPF and ceramic coating at Jubilee Hills. Book a free vehicle inspection with CARBON Hyd today.",
+    "CARBON Hyderabad (CARBON Hyd) is Jubilee Hills' premier studio for PPF in Hyderabad, color PPF and ceramic coating. Call/WhatsApp +91 74163 93300.",
 
   alternateNames: [
     "CARBON Hyd",
@@ -27,15 +27,15 @@ export const business = {
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.carbonhyd.studio").replace(/\/$/, ""),
   ogImage: "/images/og-image.jpg",
 
-  // Clearly labeled phone & messaging numbers
-  telephone: "+91 9959517361",
-  telephoneRaw: "+919959517361",
-  telephoneDisplay: "Call: +91 9959517361",
+  // Clearly labeled phone & messaging numbers (All unified to +91 74163 93300)
+  telephone: "+91 7416393300",
+  telephoneRaw: "+917416393300",
+  telephoneDisplay: "+91 74163 93300",
 
   whatsapp: "+91 7416393300",
   whatsappNumber: "+91 7416393300",
   whatsappNumberRaw: "+917416393300",
-  whatsappDisplay: "WhatsApp: +91 7416393300",
+  whatsappDisplay: "+91 74163 93300",
   whatsappUrl: "https://wa.me/917416393300",
 
   // Social profile URLs

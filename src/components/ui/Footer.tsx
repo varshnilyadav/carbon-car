@@ -13,9 +13,9 @@ export default function Footer() {
             {/* Left Column: Brand & Details */}
             <div className={styles.mapContent}>
               <div className={styles.brandHeader}>
-                <span className={styles.brandName}>CARBON</span>
+                <span className={styles.brandName}>CARBON HYDERABAD</span>
                 <span className={styles.brandDivider}></span>
-                <span className={styles.brandSub}>THE DETAILING STUDIO</span>
+                <span className={styles.brandSub}>CARBON HYD • THE DETAILING STUDIO</span>
               </div>
 
               <p className={styles.brandDesc}>
@@ -113,7 +113,7 @@ export default function Footer() {
           
           <div className={styles.brand}>
             <p className={styles.logo}>CARBON</p>
-            <p className={styles.tagline}>THE DETAILING STUDIO • HYDERABAD</p>
+            <p className={styles.tagline}>CARBON HYDERABAD (CARBON HYD) • JUBILEE HILLS</p>
             <div className={styles.techDetail}>
               <span className={styles.coord}>17.4254° N, 78.3950° E</span>
               <span className={styles.rule}></span>

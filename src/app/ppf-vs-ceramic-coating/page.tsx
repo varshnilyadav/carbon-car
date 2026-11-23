@@ -288,7 +288,7 @@ export default function PPFVsCeramicCoatingPage() {
                     WhatsApp: +91 7416393300
                   </a>
                   <a href={`tel:${siteConfig.telephoneRaw}`} className={styles.callCta}>
-                    Call: +91 9959517361
+                    Call: +91 74163 93300
                   </a>
                 </div>
               </div>

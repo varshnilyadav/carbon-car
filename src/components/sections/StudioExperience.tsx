@@ -40,15 +40,36 @@ export default function StudioExperience() {
           </Reveal>
 
           <Reveal y={20} duration={0.6} delay={0.3}>
-            <div className={styles.stats}>
-              <div className={styles.stat}>
-                <CountUp end={parseFloat(business.rating.ratingValue)} decimals={1} duration={1.5} className={styles.statValue} />
-                <span className={styles.statLabel}>GOOGLE RATING</span>
+            <div className={styles.statsContainer}>
+              {/* Row 1: Google Rating & Verified Reviews */}
+              <div className={styles.stats}>
+                <div className={styles.stat}>
+                  <CountUp end={parseFloat(business.rating.ratingValue)} decimals={1} duration={1.5} className={styles.statValue} />
+                  <span className={styles.statLabel}>GOOGLE RATING</span>
+                </div>
+                <div className={styles.statLine}></div>
+                <div className={styles.stat}>
+                  <CountUp end={parseInt(business.rating.reviewCount, 10)} duration={1.5} className={styles.statValue} />
+                  <span className={styles.statLabel}>VERIFIED REVIEWS</span>
+                </div>
               </div>
-              <div className={styles.statLine}></div>
-              <div className={styles.stat}>
-                <CountUp end={parseInt(business.rating.reviewCount, 10)} duration={1.5} className={styles.statValue} />
-                <span className={styles.statLabel}>VERIFIED REVIEWS</span>
+
+              {/* Row 2: Verified Volume Milestones */}
+              <div className={styles.milestonesRow}>
+                <div className={styles.milestoneStat}>
+                  <CountUp end={2700} suffix="+" duration={1.8} className={styles.milestoneValue} />
+                  <span className={styles.milestoneLabel}>PPF DONE FOR CARS</span>
+                </div>
+                <div className={styles.statLine}></div>
+                <div className={styles.milestoneStat}>
+                  <CountUp end={6500} suffix="+" duration={1.8} className={styles.milestoneValue} />
+                  <span className={styles.milestoneLabel}>GRAPHENE &amp; CERAMIC</span>
+                </div>
+                <div className={styles.statLine}></div>
+                <div className={styles.milestoneStat}>
+                  <CountUp end={8000} suffix="+" duration={1.8} className={styles.milestoneValue} />
+                  <span className={styles.milestoneLabel}>SUNFILMS</span>
+                </div>
               </div>
             </div>
           </Reveal>
